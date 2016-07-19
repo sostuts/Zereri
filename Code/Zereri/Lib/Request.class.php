@@ -1,0 +1,163 @@
+<?php
+namespace Zereri\Lib;
+
+class Request
+{
+    /**http请求方法
+     *
+     * @var mixed
+     */
+    private $method;
+
+
+    /**http头部
+     *
+     * @var array|false
+     */
+    private $header;
+
+
+    /**http内容
+     *
+     * @var bool|mixed|string
+     */
+    private $data;
+
+
+    public function __construct()
+    {
+        $this->method = $this->getMethod();
+        $this->header = $this->getHeader();
+        $this->data = $this->getData();
+    }
+
+
+    /**获取请求方法
+     *
+     * @return mixed
+     */
+    private function getMethod()
+    {
+        return $_SERVER['REQUEST_METHOD'];
+    }
+
+
+    /**获取头部信息
+     *
+     * @return array|false
+     */
+    private function getHeader()
+    {
+        return getallheaders();
+    }
+
+
+    /**获取主体信息
+     *
+     * @return bool|mixed|string
+     */
+    private function getData()
+    {
+        if (!$this->isPost()) {
+            return [];
+        }
+
+        if ($this->isForm()) {
+            return $_POST;
+        } else {
+            return $this->getInputData();
+        }
+    }
+
+
+    /**是否post请求
+     *
+     * @return bool
+     */
+    private function isPost()
+    {
+        return $this->method === "POST";
+    }
+
+
+    /**判断是否为表单
+     *
+     * @return bool|int
+     */
+    private function isForm()
+    {
+        return strpos($this->header['Content-Type'], 'form');
+    }
+
+
+    /**获取非表单内容
+     *
+     * @return bool|mixed|string
+     */
+    private function getInputData()
+    {
+        $data = $this->getPhpInput();
+
+        if ($decode_data = $this->jsonDecode($data)) {
+            return $decode_data;
+        } else {
+            return $data;
+        }
+    }
+
+
+    /**获取只读流信息
+     *
+     * @return string
+     */
+    protected function getPhpInput()
+    {
+        return file_get_contents('php://input');
+    }
+
+
+    /**json反序列化
+     *
+     * @param $data
+     *
+     * @return bool|mixed
+     */
+    protected function jsonDecode($data)
+    {
+        $data = json_decode($data, true);
+        if (is_array($data)) {
+            return $data;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**获取上传文件
+     *
+     * @param        $form_name
+     * @param string $file_path
+     *
+     * @return mixed
+     */
+//    public function getFile($form_name, $file_path = '')
+//    {
+//        $file = $_FILES[ $form_name ];
+//        $new_file_path = (new Upload($file, $file_path))->saveFile();
+//
+//        return $new_file_path;
+//    }
+
+
+
+
+    public function data()
+    {
+        return $this->data;
+    }
+
+    public function header()
+    {
+        return $this->header;
+    }
+}

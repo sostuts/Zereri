@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #f0f1f3;
+        }
+        .container{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 854px;
+            height: 385px;
+            margin-left: -427px;
+            margin-top: -196px;
+            background-color: #fff;
+            border-top: 8px solid #93d9b0;
+        }
+        .title{
+            width: 755px;
+            height: 137px;
+            margin: 0 auto;
+            font-size: 40px;
+            font-family: "华文隶书";
+            line-height: 200px;
+            border-bottom: 1px solid #a7a7a7;
+        }
+        .word{
+            width: 755px;
+            height: 216px;
+            margin: 33px auto 0px auto;
+            font-size: 17px;
+            color: #989898;
+            font-family: "Adobe 黑体 Std";
+            line-height: 27px;
+            letter-spacing: 2px;
+            word-wrap : break-word;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title">
+        Something Wrong！
+    </div>
+    <div class="word">
+        <{$content}>
+    </div>
+</div>
+</body>
+</html>
