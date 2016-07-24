@@ -29,8 +29,15 @@ class First
 ``` php
 <?php
 //框架辅佐函数response()
-void response($data = NULL,  $mode = 'json', $file = '',array $header = ['X-Powered-By' => 'Zereri'])
+void response($data = NULL,  $mode = 'json', $file = '',array $header = [])
 ```
+
+| $mode | Description  |
+| ----- | ------------ |
+| json  | 转换为json格式，默认 |
+| xml   | 转换为xml格式     |
+| text  | 纯文本，直接打印     |
+| html  | 调用模板引擎       |
 
 所以只需要将数组放进response第一个参数即可。
 
@@ -169,5 +176,8 @@ class Project
 
 
 
+#### 控制器访问配置值
 
+访问配置值：`config($name);` 
 
+例如：`config("smarty")`  
