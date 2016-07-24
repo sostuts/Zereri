@@ -94,7 +94,7 @@ class Sql
     private $aggregation;
 
 
-    public function __construct($table = '')
+    public function __construct($table)
     {
         $this->table = $table;
     }

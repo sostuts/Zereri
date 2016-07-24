@@ -43,7 +43,7 @@ class Model
      */
     protected function newInstance()
     {
-        return new Sql($this->getTableName());
+        return Factory::newSql($this->getTableName());
     }
 
 

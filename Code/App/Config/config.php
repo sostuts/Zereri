@@ -45,8 +45,7 @@ return [
      * 类名别名
      */
     'aliases'   => [
-        'Request'                  => Zereri\Lib\Request::class,
-        'HandleUri'                => Zereri\Lib\HandleUri::class,
+        'Factory'                  => Zereri\Lib\Factory::class,
         'CallController'           => Zereri\Lib\CallController::class,
         'App\Controllers\Smarty'   => Zereri\Lib\Replacement\Smarty::class,
         'App\Controllers\Session'  => Zereri\Lib\Replacement\Session::class,

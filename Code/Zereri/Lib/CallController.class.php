@@ -57,7 +57,7 @@ class CallController
     private function getReflect()
     {
         if (!$this->isMethodExists()) {
-            throw new UserException('The Method does not exist!');
+            throw new UserException('The Api does not exist!');
         }
 
         return new ReflectionMethod($this->class, $this->method);
@@ -112,7 +112,7 @@ class CallController
     private function getPostColmn($param_name)
     {
         if (!isset($this->post[ $param_name ])) {
-            throw new UserException('Post content does not have the   "' . $param_name . '"   of the colmn.');
+            throw new UserException('Post data must have the colmn <b>"' . $param_name . '"</b>.');
         }
 
         return $this->post[ $param_name ];

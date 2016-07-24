@@ -67,7 +67,7 @@ class Session
             case 5:
                 return $_SESSION[ $keys[0] ][ $keys[1] ][ $keys[2] ][ $keys[3] ][ $keys[4] ];
             default:
-                throw new UserException('Out of session index!');
+                throw new UserException('Out of the index!');
         }
     }
 

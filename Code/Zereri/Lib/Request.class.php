@@ -133,24 +133,6 @@ class Request
     }
 
 
-    /**获取上传文件
-     *
-     * @param        $form_name
-     * @param string $file_path
-     *
-     * @return mixed
-     */
-//    public function getFile($form_name, $file_path = '')
-//    {
-//        $file = $_FILES[ $form_name ];
-//        $new_file_path = (new Upload($file, $file_path))->saveFile();
-//
-//        return $new_file_path;
-//    }
-
-
-
-
     public function data()
     {
         return $this->data;

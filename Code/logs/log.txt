@@ -1,0 +1,9 @@
+[20-Jul-2016 11:05:09 PRC] PHP Fatal error:  Class 'Memcached' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Memcache.class.php on line 25
+[20-Jul-2016 11:05:09 PRC] PHP Stack trace:
+[20-Jul-2016 11:05:09 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[20-Jul-2016 11:05:09 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:31
+[20-Jul-2016 11:05:09 PRC] PHP   3. App\Controllers\Example->test() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[20-Jul-2016 11:05:09 PRC] PHP   4. Zereri\Lib\Replacement\Memcache::test() F:\phpstudy\WWW\frame\App\Controllers\Example.class.php:12
+[20-Jul-2016 11:05:09 PRC] PHP   5. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.class.php:12
+[20-Jul-2016 11:05:09 PRC] PHP   6. Zereri\Lib\Memcache->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.class.php:10
+[20-Jul-2016 11:05:09 PRC] PHP   7. Zereri\Lib\Memcache->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Memcache.class.php:15

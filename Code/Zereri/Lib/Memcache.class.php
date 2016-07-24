@@ -12,28 +12,43 @@ class Memcache
 
     public function __construct()
     {
-        $this->newInstance()->addServer();
+        $this->memcache = Register::get("memcache") ?: $this->registerInstance();
     }
 
 
-    /**实例化memcache
+    /**注册memcache并返回实例
+     *
+     * @return Memcache
+     */
+    protected function registerInstance()
+    {
+        $instance = $this->newInstance();
+        Register::set("memcache", $instance);
+
+        return $instance;
+    }
+
+
+    /**实例化memcached
      *
      * @return $this
      */
-    public function newInstance()
+    protected function newInstance()
     {
-        $this->memcache = new \Memcached();
+        $instance = new \Memcached();
+        $this->addServer($instance);
 
-        return $this;
+        return $instance;
     }
 
 
-    /**
-     * 添加服务器
+    /**添加服务器
+     *
+     * @param $instance
      */
-    public function addServer()
+    protected function addServer(&$instance)
     {
-        $this->memcache->addServers($GLOBALS['user_config']['memcached']['server']);
+        $instance->addServers($GLOBALS['user_config']['memcached']['server']);
     }
 
 
@@ -159,9 +174,4 @@ class Memcache
         return $this->memcache->getResultCode();
     }
 
-
-    public function __destruct()
-    {
-        $this->memcache->quit();
-    }
 }

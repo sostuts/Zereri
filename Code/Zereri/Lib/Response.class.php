@@ -26,7 +26,7 @@ class Response
     private $file;
 
 
-    public function __construct($content, $mode = 'json', $file = '')
+    public function __construct($content, $mode, $file)
     {
         $this->content = $content;
         $this->mode = $mode;
@@ -39,7 +39,7 @@ class Response
      */
     public function send()
     {
-        $this->{$this->mode . 'Format'}()->output();
+        $this->{$this->mode}()->output();
     }
 
 
@@ -47,7 +47,7 @@ class Response
      *
      * @return $this
      */
-    private function jsonFormat()
+    private function json()
     {
         $this->content = json_encode($this->content);
 
@@ -59,7 +59,7 @@ class Response
      *
      * @return $this
      */
-    private function xmlFormat()
+    private function xml()
     {
         $this->content = (new Xml($this->content))->create();
 
@@ -67,10 +67,20 @@ class Response
     }
 
 
+    /**纯文本
+     *
+     * @return $this
+     */
+    private function text()
+    {
+        return $this;
+    }
+
+
     /**
      * html解析
      */
-    private function htmlFormat()
+    private function html()
     {
         Smarty::load($this->file, $this->content);
 

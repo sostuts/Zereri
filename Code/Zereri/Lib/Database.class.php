@@ -41,9 +41,21 @@ class Database
 
     public function __construct()
     {
-        $this->conn = $this->connectDB();
+        $this->conn = Register::get("database") ?: $this->registerDB();
     }
 
+
+    /**注册数据库连接并且返回
+     *
+     * @return \PDO
+     */
+    protected function registerDB()
+    {
+        $conn = $this->connectDB();
+        Register::set("database", $conn);
+
+        return $conn;
+    }
 
     /**数据库连接
      *
@@ -54,7 +66,7 @@ class Database
         try {
             return new \PDO($GLOBALS['user_config']['database']['drive'] . ":host=" . $GLOBALS['user_config']['database']['host'] . ";dbname=" . $GLOBALS['user_config']['database']['dbname'], $GLOBALS['user_config']['database']['user'], $GLOBALS['user_config']['database']['pwd']);
         } catch (\PDOExcetion $e) {
-            //throw UserExcetion
+            //throw
         }
     }
 
@@ -133,9 +145,4 @@ class Database
         return $this->correct_query_res;
     }
 
-
-    public function __destruct()
-    {
-        $this->conn = NULL;
-    }
 }
