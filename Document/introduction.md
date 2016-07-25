@@ -27,6 +27,7 @@ Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，�
 | Models      | 模型文件          |
 | Session     | 默认存放session文件 |
 | Tpl         | 存放view层模板     |
+| Middles     | 中间件类          |
 
 - logs      (日志文件)
 - public  (前端文件，如\*.html、\*.css 、*.image)
