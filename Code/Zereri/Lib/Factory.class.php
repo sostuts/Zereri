@@ -10,7 +10,10 @@ class Factory
      */
     public static function newRequest()
     {
-        return new Request();
+        $request = new Request();
+        Register::set("data", $request->data());
+
+        return $request;
     }
 
 
@@ -20,7 +23,10 @@ class Factory
      */
     public static function newHandleUri()
     {
-        return new HandleUri();
+        $url = new HandleUri();
+        Register::set("method", $url->getMethod());
+
+        return $url;
     }
 
 
@@ -32,7 +38,7 @@ class Factory
     {
         $url = self::newHandleUri();
 
-        return new CallController($url->getClass(), $url->getMethod());
+        return new Call($url->getClass(), $url->getMethod());
     }
 
 

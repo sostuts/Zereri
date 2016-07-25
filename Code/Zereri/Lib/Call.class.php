@@ -4,7 +4,7 @@ namespace Zereri\Lib;
 use ReflectionMethod;
 use Zereri\Lib\UserException;
 
-class CallController
+class Call
 {
     /**控制器的类名
      *
@@ -39,6 +39,13 @@ class CallController
      * @var array
      */
     private $params = [];
+
+
+    /**控制器实例
+     *
+     * @var Object
+     */
+    private $controller;
 
 
     public function __construct($class, $method)
@@ -120,10 +127,51 @@ class CallController
 
 
     /**
-     * 调用控制器方法
+     * 调用中间件以及控制器
      */
     public function call()
     {
-        (new $this->class)->{$this->method}(...$this->params);
+        $this->controller = new $this->class;
+
+        if (isset($this->controller->middle)) {
+            $this->callBeforeMiddle()->callController()->callAfterMiddle();
+        } else {
+            $this->callController();
+        }
+    }
+
+
+    /**调用控制器
+     *
+     * @return $this
+     */
+    private function callController()
+    {
+        $this->controller->{$this->method}(...$this->params);
+
+        return $this;
+    }
+
+
+    /**调用前置中间件
+     *
+     * @return $this
+     */
+    private function callBeforeMiddle()
+    {
+        if (FALSE === Middle::call("before", $this->controller->middle)) {
+            die();
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * 调用后置中间件
+     */
+    private function callAfterMiddle()
+    {
+        Middle::call("after", $this->controller->middle);
     }
 }

@@ -7,3 +7,157 @@
 [20-Jul-2016 11:05:09 PRC] PHP   5. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.class.php:12
 [20-Jul-2016 11:05:09 PRC] PHP   6. Zereri\Lib\Memcache->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.class.php:10
 [20-Jul-2016 11:05:09 PRC] PHP   7. Zereri\Lib\Memcache->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Memcache.class.php:15
+[25-Jul-2016 15:56:03 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:03 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:03 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:03 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:03 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:04 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:04 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:04 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:04 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:04 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:05 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:05 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:05 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:05 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:05 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:05 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:05 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:05 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:05 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:05 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:05 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:05 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:05 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:05 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:05 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:05 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:05 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:06 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:06 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:06 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:06 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:06 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:06 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:06 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:06 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:06 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:06 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:06 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:06 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:06 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:06 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:06 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:06 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:06 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:06 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:06 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:07 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:07 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:07 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:07 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:07 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:07 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:07 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:07 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:07 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:07 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:07 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:07 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:07 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:07 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:07 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:08 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:08 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:08 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:08 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:08 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:08 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:08 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:08 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:08 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:08 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 15:56:08 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\HandleUri::method() in F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php on line 10
+[25-Jul-2016 15:56:08 PRC] PHP Stack trace:
+[25-Jul-2016 15:56:08 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 15:56:08 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 15:56:08 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 17:10:34 PRC] PHP Notice:  Undefined property: Zereri\Lib\HandleUri::$getMethod in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 13
+[25-Jul-2016 17:10:34 PRC] PHP Stack trace:
+[25-Jul-2016 17:10:34 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 17:10:34 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 17:10:34 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 17:10:34 PRC] PHP   4. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:10
+[25-Jul-2016 17:10:34 PRC] PHP   5. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:16
+[25-Jul-2016 17:10:34 PRC] PHP   6. Zereri\Lib\CatchErrors::Zereri\Lib\{closure}() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:13
+[25-Jul-2016 17:10:34 PRC] PHP   7. Zereri\Lib\CatchErrors::customErrorCallFunc() F:\phpstudy\WWW\frame\Zereri\Lib\CatchErrors.class.php:12
+[25-Jul-2016 17:10:34 PRC] PHP   8. Zereri\Lib\CatchErrors::customErrorHtml() F:\phpstudy\WWW\frame\Zereri\Lib\CatchErrors.class.php:25
+[25-Jul-2016 17:10:34 PRC] PHP   9. Zereri\Lib\Debug::outputError() F:\phpstudy\WWW\frame\Zereri\Lib\CatchErrors.class.php:40
+[25-Jul-2016 17:10:34 PRC] PHP  10. App\Controllers\Controller->__destruct() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:0
+[25-Jul-2016 17:10:34 PRC] PHP  11. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:22
+[25-Jul-2016 17:10:34 PRC] PHP  12. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:16
+[25-Jul-2016 17:11:46 PRC] PHP Fatal error:  Class '\App\Middle\Test' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 33
+[25-Jul-2016 17:11:46 PRC] PHP Stack trace:
+[25-Jul-2016 17:11:46 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 17:11:46 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 17:11:46 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 17:11:46 PRC] PHP   4. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:10
+[25-Jul-2016 17:11:46 PRC] PHP   5. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:16
+[25-Jul-2016 17:11:46 PRC] PHP   6. Zereri\Lib\Middle::newMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:16
+[25-Jul-2016 17:12:15 PRC] PHP Fatal error:  Interface 'App\Middles\Middle' not found in F:\phpstudy\WWW\frame\App\Middles\Test.class.php on line 5
+[25-Jul-2016 17:12:15 PRC] PHP Stack trace:
+[25-Jul-2016 17:12:15 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 17:12:15 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 17:12:15 PRC] PHP   3. App\Controllers\Controller->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:127
+[25-Jul-2016 17:12:15 PRC] PHP   4. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:10
+[25-Jul-2016 17:12:15 PRC] PHP   5. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:16
+[25-Jul-2016 17:12:15 PRC] PHP   6. Zereri\Lib\Middle::newMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:16
+[25-Jul-2016 17:12:15 PRC] PHP   7. spl_autoload_call() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:33
+[25-Jul-2016 17:12:15 PRC] PHP   8. Zereri\Lib\Auto::loadClass() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:0
+[25-Jul-2016 17:12:15 PRC] PHP   9. Zereri\Lib\Auto::load() F:\phpstudy\WWW\frame\Zereri\Lib\Auto.class.php:12
+[25-Jul-2016 17:12:15 PRC] PHP  10. Zereri\Lib\Auto::loadFile() F:\phpstudy\WWW\frame\Zereri\Lib\Auto.class.php:33
+[25-Jul-2016 17:12:15 PRC] PHP  11. require_once() F:\phpstudy\WWW\frame\Zereri\Lib\Auto.class.php:61
+[25-Jul-2016 19:19:42 PRC] PHP Fatal error:  Class '\App\Middles\fuck' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 33
+[25-Jul-2016 19:19:42 PRC] PHP Stack trace:
+[25-Jul-2016 19:19:42 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 19:19:42 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 19:19:42 PRC] PHP   3. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:128
+[25-Jul-2016 19:19:42 PRC] PHP   4. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:11
+[25-Jul-2016 19:19:42 PRC] PHP   5. Zereri\Lib\Middle::newMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:16
+[25-Jul-2016 19:26:07 PRC] PHP Fatal error:  Class '\App\Middles\fuck' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 35
+[25-Jul-2016 19:26:07 PRC] PHP Stack trace:
+[25-Jul-2016 19:26:07 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 19:26:07 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 19:26:07 PRC] PHP   3. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:128
+[25-Jul-2016 19:26:07 PRC] PHP   4. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:11
+[25-Jul-2016 19:26:07 PRC] PHP   5. Zereri\Lib\Middle::newMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:17
+[25-Jul-2016 19:26:08 PRC] PHP Fatal error:  Class '\App\Middles\fuck' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 35
+[25-Jul-2016 19:26:08 PRC] PHP Stack trace:
+[25-Jul-2016 19:26:08 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 19:26:08 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 19:26:08 PRC] PHP   3. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:128
+[25-Jul-2016 19:26:08 PRC] PHP   4. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:11
+[25-Jul-2016 19:26:08 PRC] PHP   5. Zereri\Lib\Middle::newMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:17
+[25-Jul-2016 19:26:08 PRC] PHP Fatal error:  Class '\App\Middles\fuck' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 35
+[25-Jul-2016 19:26:08 PRC] PHP Stack trace:
+[25-Jul-2016 19:26:08 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 19:26:08 PRC] PHP   2. Zereri\Lib\CallController->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 19:26:08 PRC] PHP   3. App\Controllers\Controller->callMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\CallController.class.php:128
+[25-Jul-2016 19:26:08 PRC] PHP   4. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\App\Controllers\Controller.class.php:11
+[25-Jul-2016 19:26:08 PRC] PHP   5. Zereri\Lib\Middle::newMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php:17
+[25-Jul-2016 20:34:02 PRC] PHP Fatal error:  Call to undefined method Zereri\Lib\Middle::getMthod() in F:\phpstudy\WWW\frame\Zereri\Lib\Middle.class.php on line 24
+[25-Jul-2016 20:34:02 PRC] PHP Stack trace:
+[25-Jul-2016 20:34:02 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[25-Jul-2016 20:34:02 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[25-Jul-2016 20:34:02 PRC] PHP   3. Zereri\Lib\Call->callBeforeMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Call.class.php:137
+[25-Jul-2016 20:34:02 PRC] PHP   4. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\Zereri\Lib\Call.class.php:162

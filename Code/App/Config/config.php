@@ -45,13 +45,13 @@ return [
      * 类名别名
      */
     'aliases'   => [
+        'Api'                      => Zereri\Lib\Replacement\Api::class,
         'Factory'                  => Zereri\Lib\Factory::class,
-        'CallController'           => Zereri\Lib\CallController::class,
+        'App\Models\Model'         => Zereri\Lib\Model::class,
+        'App\Middles\MiddleWare'   => Zereri\Lib\MiddleWare::class,
         'App\Controllers\Smarty'   => Zereri\Lib\Replacement\Smarty::class,
         'App\Controllers\Session'  => Zereri\Lib\Replacement\Session::class,
-        'Api'                      => Zereri\Lib\Replacement\Api::class,
-        'App\Controllers\Memcache' => Zereri\Lib\Replacement\Memcache::class,
-        'App\Models\Model'         => Zereri\Lib\Model::class
+        'App\Controllers\Memcache' => Zereri\Lib\Replacement\Memcache::class
     ],
 
 
