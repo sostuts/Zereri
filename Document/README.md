@@ -19,7 +19,7 @@
 
 ### 服务
 
-- [Memcache](https://github.com/sostuts/Zereri/blob/development/Document/memcache.md)
+- [缓存](https://github.com/sostuts/Zereri/blob/development/Document/cache.md)
 - [Session](https://github.com/sostuts/Zereri/blob/development/Document/session.md)
 - [测试](https://github.com/sostuts/Zereri/blob/development/Document/test.md)
 

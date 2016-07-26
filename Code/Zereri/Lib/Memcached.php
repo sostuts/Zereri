@@ -1,7 +1,7 @@
 <?php
 namespace Zereri\Lib;
 
-class Memcache
+class Memcached
 {
     /**memcache对象
      *
@@ -18,7 +18,7 @@ class Memcache
 
     /**注册memcache并返回实例
      *
-     * @return Memcache
+     * @return Memcached
      */
     protected function registerInstance()
     {
@@ -66,7 +66,19 @@ class Memcache
             return $this->setMulti($key, $time);
         }
 
-        return $this->operate("set", $key, $value, $time ?: $GLOBALS['user_config']['memcached']['time']);
+        return $this->operate("set", $key, $value, $time ?: $GLOBALS['user_config']['cache']['time']);
+    }
+
+
+    /**判断值是否存在
+     *
+     * @param $key
+     *
+     * @return bool
+     */
+    public function has($key)
+    {
+        return !empty($this->operate("get", $key));
     }
 
 
@@ -142,7 +154,7 @@ class Memcache
      */
     public function setMulti(array $values, $time = "")
     {
-        return $this->operate("setMulti", $values, $time ?: $GLOBALS['user_config']['memcached']['time']);
+        return $this->operate("setMulti", $values, $time ?: $GLOBALS['user_config']['cache']['time']);
     }
 
 
@@ -174,4 +186,9 @@ class Memcache
         return $this->memcache->getResultCode();
     }
 
+
+    public function __call($method, $params)
+    {
+        return $this->operate($method, ...$params);
+    }
 }

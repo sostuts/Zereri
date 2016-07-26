@@ -527,3 +527,424 @@
 [26-Jul-2016 15:59:32 PRC] PHP Stack trace:
 [26-Jul-2016 15:59:32 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
 [26-Jul-2016 15:59:32 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 22:41:46 PRC] PHP Fatal error:  Class 'redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:41:46 PRC] PHP Stack trace:
+[26-Jul-2016 22:41:46 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:41:46 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:41:46 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:41:46 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:41:46 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:41:46 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:41:46 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:41:46 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:25 PRC] PHP Fatal error:  Class name must be a valid object or a string in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:25 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:25 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:25 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:25 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:25 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:25 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:25 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:25 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:25 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:50 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:50 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:50 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:50 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:50 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:50 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:50 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:50 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:50 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:50 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:53 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:53 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:53 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:53 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:53 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:53 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:53 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:53 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:53 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:53 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:53 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:53 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:53 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:53 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:53 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:53 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:54 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:54 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:54 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:54 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:54 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:54 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:54 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:54 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:54 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:54 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:54 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:54 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:54 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:54 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:54 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:54 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:54 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:54 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:54 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:54 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:54 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:54 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:54 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:54 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:54 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:54 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:54 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:54 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:54 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:54 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:54 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:54 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:54 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:55 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:55 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:55 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:55 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:55 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:55 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:55 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:55 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:55 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:55 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:55 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:55 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:55 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:55 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:55 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:55 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:55 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:55 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:55 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:55 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:56 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:56 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:56 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:56 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:56 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:56 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:56 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:56 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:56 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:56 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:56 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:56 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:56 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:56 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:56 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:56 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:56 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:56 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:56 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:56 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:56 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:56 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:56 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:56 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:56 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:56 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:56 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:56 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:56 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:56 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:57 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:57 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:57 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:57 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:57 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:57 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:57 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:57 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:57 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:57 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:57 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:57 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:57 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:57 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:57 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:57 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:57 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:57 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:57 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:57 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:57 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:57 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:57 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:57 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:57 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:57 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:57 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:58 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:58 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:58 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:58 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:58 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:58 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:58 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:58 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:58 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:58 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php on line 10
+[26-Jul-2016 22:42:58 PRC] PHP Stack trace:
+[26-Jul-2016 22:42:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:42:58 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:42:58 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:42:58 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:42:58 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:58 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:42:58 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:42:58 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:55 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:55 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:55 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:55 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:55 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:55 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:55 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:55 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:55 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:55 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:55 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:55 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:55 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:56 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:56 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:56 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:56 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:56 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:56 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:56 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:56 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:56 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:56 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:56 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:56 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:56 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:57 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:57 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:57 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:57 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:57 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:57 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:57 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:57 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:57 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:57 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:57 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:57 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:57 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:57 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:57 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:57 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:57 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:57 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:57 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:57 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:57 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:57 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:57 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:57 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:57 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:57 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:57 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:57 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:57 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:57 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:57 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:57 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:57 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:57 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:57 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:57 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:58 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:58 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:58 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:58 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:58 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:58 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:58 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:58 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:58 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:58 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:58 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:58 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:58 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:58 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:58 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:58 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:58 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:58 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:58 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:58 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:58 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:58 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:58 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:58 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:58 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:58 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:58 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:58 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:58 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:58 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:58 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:58 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:58 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:58 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:58 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:58 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:59 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:59 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:59 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:59 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:59 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:59 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:59 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:59 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:59 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:59 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:59 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:59 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:59 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:59 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:59 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:59 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:59 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:59 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:59 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:59 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:59 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:59 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:59 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:59 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:43:59 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:43:59 PRC] PHP Stack trace:
+[26-Jul-2016 22:43:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:43:59 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:43:59 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:43:59 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:43:59 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:59 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:43:59 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:59 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:43:59 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:43:59 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:43:59 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:44:00 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:44:00 PRC] PHP Stack trace:
+[26-Jul-2016 22:44:00 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:44:00 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:44:00 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:44:00 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:44:00 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:00 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:00 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:00 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:00 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:44:00 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:44:00 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:44:00 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:44:00 PRC] PHP Stack trace:
+[26-Jul-2016 22:44:00 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:44:00 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:44:00 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:44:00 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:44:00 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:00 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:00 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:00 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:00 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:44:00 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:44:00 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:44:00 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:44:00 PRC] PHP Stack trace:
+[26-Jul-2016 22:44:00 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:44:00 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:44:00 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:44:00 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:44:00 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:00 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:00 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:00 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:00 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:44:00 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:44:00 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:44:01 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:44:01 PRC] PHP Stack trace:
+[26-Jul-2016 22:44:01 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:44:01 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:44:01 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:44:01 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:44:01 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:01 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:01 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:01 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:01 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:44:01 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:44:01 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:44:01 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:44:01 PRC] PHP Stack trace:
+[26-Jul-2016 22:44:01 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:44:01 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:44:01 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:44:01 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:44:01 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:01 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:01 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:01 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:01 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:44:01 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:44:01 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[26-Jul-2016 22:44:02 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[26-Jul-2016 22:44:02 PRC] PHP Stack trace:
+[26-Jul-2016 22:44:02 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 22:44:02 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[26-Jul-2016 22:44:02 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[26-Jul-2016 22:44:02 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[26-Jul-2016 22:44:02 PRC] PHP   5. Zereri\Lib\Replacement\Cache::set() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:02 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:41
+[26-Jul-2016 22:44:02 PRC] PHP   7. Zereri\Lib\Cache->set() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:02 PRC] PHP   8. Zereri\Lib\Cache->__call() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[26-Jul-2016 22:44:02 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
+[26-Jul-2016 22:44:02 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[26-Jul-2016 22:44:02 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25

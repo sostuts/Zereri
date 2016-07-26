@@ -38,7 +38,10 @@ class Example
 
     public function e()
     {
-        response(["name"=>"Zereri"]);
+        Cache::set("aa", "bbbbbbb");
+        $res = Cache::get("aa");
+
+        response(["name" => $res]);
     }
 
     public function fuck()
@@ -46,4 +49,20 @@ class Example
         Session::set("a", "fuckyou");
         echo Session::get("a");
     }
+
+
+    /**aa方法
+     *
+     * @param string $a
+     * @param string $b
+     * @param string $c
+     *
+     * @return content.shit
+     *
+     */
+    public function aa($a, $b, $c)
+    {
+        response(["content" => $a . $b . $c]);
+    }
+
 }
