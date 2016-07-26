@@ -39,7 +39,7 @@ public function index($name, $age)
 
 ``` php
 <?php
-require "../Zereri/Lib/Test.class.php";
+require "../Zereri/Lib/Test.php";
 
 class UserTest extends PHPUnit_Framework_TestCase
 {
@@ -50,7 +50,7 @@ class UserTest extends PHPUnit_Framework_TestCase
             "name" => "test",
             "age"  => 13
         ];
-      
+
     	//获取API返回值
     	$resp = Test::curl("http://localhost/Index/index", json_encode($data));
 

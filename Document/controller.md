@@ -2,7 +2,7 @@
 
 #### 创建第一个Controller
 
-新建：/App/Controllers/First.class.php
+新建：/App/Controllers/First.php
 
 ``` php
 <?php
@@ -125,7 +125,7 @@ I am Ben, 14 years old.
 
 `例如：前端传入一个人的名字，后台返回那个人的年龄。`
 
-Controller:    /App/Controllers/Project.class.php
+Controller:    /App/Controllers/Project.php
 
 ``` php
 <?php

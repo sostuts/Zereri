@@ -26,8 +26,6 @@
 | need       | 是否必须， 1为是， 0为否，**不填默认为1** |
 | descriment | 参数的详细说明                   |
 
-
-
 - 返回值说明：`@return type name1.desc1 name2.desc2`
 
 | type        | 返回值的类型: json, xml, html 。不填默认为json |
@@ -36,11 +34,9 @@
 | name2.desc2 | 第二个返回值的名字.说明                       |
 | nameN.descN | 第N个返回值的名字.说明                       |
 
-
-
 #### 例子1
 
-/App/Controllers/Project.class.php
+/App/Controllers/Project.php
 
 
 
@@ -49,7 +45,7 @@
 ``` php
 <?php
 .....
-  
+
 public function welcome($name, $age = 0)
 {
   	response([
@@ -64,7 +60,7 @@ public function welcome($name, $age = 0)
 ``` php
 <?php
 .....
-  
+
 /**返回用户真实的名字年龄
  *
  * @param  string $name 名字
@@ -132,6 +128,4 @@ public function findPwd($user)
 - 方法**有默认值**的参数，可以在注释说明不是必须值。
 - 配合**生成函数注释的插件**可以有效提高工作效率。
 - 在不需要生成文档的函数，函数前面不需要添加注释，或者可使用`/**/`或者`//` 注释。
-
-
 

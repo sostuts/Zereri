@@ -58,7 +58,7 @@ class Auto
     private static function loadFile($file_name)
     {
         if (is_file($file_name)) {
-            require_once $file_name;
+            require $file_name;
         } else {
 //            throw new \Exception("Cant find the " . $file_name);
         }

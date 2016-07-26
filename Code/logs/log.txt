@@ -161,3 +161,369 @@
 [25-Jul-2016 20:34:02 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
 [25-Jul-2016 20:34:02 PRC] PHP   3. Zereri\Lib\Call->callBeforeMiddle() F:\phpstudy\WWW\frame\Zereri\Lib\Call.class.php:137
 [25-Jul-2016 20:34:02 PRC] PHP   4. Zereri\Lib\Middle::call() F:\phpstudy\WWW\frame\Zereri\Lib\Call.class.php:162
+[26-Jul-2016 14:21:41 PRC] PHP Fatal error:  Class 'Vendor\NoahBuscher\Macaw\Macaw' not found in F:\phpstudy\WWW\frame\public\index.php on line 17
+[26-Jul-2016 14:21:41 PRC] PHP Stack trace:
+[26-Jul-2016 14:21:41 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:21:45 PRC] PHP Fatal error:  Class 'Vendor\NoahBuscher\Macaw\Macaw' not found in F:\phpstudy\WWW\frame\public\index.php on line 17
+[26-Jul-2016 14:21:45 PRC] PHP Stack trace:
+[26-Jul-2016 14:21:45 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:55 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:55 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:55 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:55 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:55 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:57 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:57 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:57 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:57 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:57 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:57 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:57 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:57 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:57 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:58 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:58 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:58 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:58 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:58 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:58 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:58 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:58 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:58 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:58 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:58 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:58 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:58 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:59 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:59 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:59 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:59 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:59 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:59 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:59 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:59 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:59 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:59 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:59 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:59 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:45:59 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:45:59 PRC] PHP Stack trace:
+[26-Jul-2016 14:45:59 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:45:59 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:45:59 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:00 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:00 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:00 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:00 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:00 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:00 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:00 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:00 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:00 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:00 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:00 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:00 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:00 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:00 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:00 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:01 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:01 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:01 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:01 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:01 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:02 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:02 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:02 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:02 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:02 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:02 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:02 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:02 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:02 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:02 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:02 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:02 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:02 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:02 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:02 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:02 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:02 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:02 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:02 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:02 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:03 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:03 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:03 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:03 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:03 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:03 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:03 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:03 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:03 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:03 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:03 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:03 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:03 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:03 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:03 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:04 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:04 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:04 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:04 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:04 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:04 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:04 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:04 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:04 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:04 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:04 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:04 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:04 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:04 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:04 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:05 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:05 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:05 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:05 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:05 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:05 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:05 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:05 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:05 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:05 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:05 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:05 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 14:46:05 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 14:46:05 PRC] PHP Stack trace:
+[26-Jul-2016 14:46:05 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 14:46:05 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 14:46:05 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:01:52 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:01:52 PRC] PHP Stack trace:
+[26-Jul-2016 15:01:52 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:01:52 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 15:01:52 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:01:53 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:01:53 PRC] PHP Stack trace:
+[26-Jul-2016 15:01:53 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:01:53 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 15:01:53 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:04 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:04 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:04 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:04 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:12
+[26-Jul-2016 15:02:04 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:24 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:24 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:24 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:24 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:24 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:25 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:25 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:25 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:25 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:25 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:26 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:26 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:26 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:26 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:26 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:26 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:26 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:26 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:26 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:26 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:26 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:26 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:26 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:26 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:26 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:27 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:27 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:27 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:27 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:27 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:27 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:27 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:27 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:27 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:27 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:02:28 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:02:28 PRC] PHP Stack trace:
+[26-Jul-2016 15:02:28 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:02:28 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:02:28 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:03:24 PRC] PHP Fatal error:  Class 'Zereri\Lib\CatchErrors' not found in F:\phpstudy\WWW\frame\Zereri\Core\error_exception.php on line 2
+[26-Jul-2016 15:03:24 PRC] PHP Stack trace:
+[26-Jul-2016 15:03:24 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:03:24 PRC] PHP   2. require() F:\phpstudy\WWW\frame\public\index.php:13
+[26-Jul-2016 15:03:24 PRC] PHP   3. require() F:\phpstudy\WWW\frame\Zereri\load.php:5
+[26-Jul-2016 15:40:10 PRC] PHP Fatal error:  Class 'Index' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:40:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:40:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:40:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:44:10 PRC] PHP Fatal error:  Class '\App\Controllers\A' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:44:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:44:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:44:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:45:07 PRC] PHP Fatal error:  Class 'App\Controllers\A' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:45:07 PRC] PHP Stack trace:
+[26-Jul-2016 15:45:07 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:45:07 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:54:52 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:54:52 PRC] PHP Stack trace:
+[26-Jul-2016 15:54:52 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:54:52 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:55:10 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:55:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:55:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:55:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:55:11 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:55:11 PRC] PHP Stack trace:
+[26-Jul-2016 15:55:11 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:55:11 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:06 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:06 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:06 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:08 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:08 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:08 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:08 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:09 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:09 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:09 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:09 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:09 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:09 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:09 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:09 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:09 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:09 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:09 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:09 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:09 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:09 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:09 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:09 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:10 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:10 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:10 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:10 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:10 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:10 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:10 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:11 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:11 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:11 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:11 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:11 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:11 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:11 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:11 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:11 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:11 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:11 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:11 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:11 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:11 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:11 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:11 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:11 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:11 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:11 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:12 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:12 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:12 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:12 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:12 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:12 PRC] PHP Fatal error:  Class '\App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:12 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:12 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:12 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:27 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:27 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:27 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:27 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:28 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:28 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:28 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:28 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:28 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:28 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:28 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:28 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:28 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:28 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:28 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:28 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:29 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:29 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:29 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:29 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:29 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:29 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:29 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:29 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:29 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:29 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:29 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:29 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:29 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:29 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:29 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:29 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:29 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:30 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:30 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:30 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:30 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:30 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:30 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:30 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:30 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:30 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:30 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:30 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:30 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:30 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:30 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:30 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:30 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:30 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:30 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:30 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:31 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:31 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:31 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:31 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:31 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:31 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:31 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:31 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:31 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:31 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:31 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:31 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20
+[26-Jul-2016 15:59:32 PRC] PHP Fatal error:  Class 'App\Controllers\Abb' not found in F:\phpstudy\WWW\frame\vendor\noahbuscher\macaw\Macaw.php on line 83
+[26-Jul-2016 15:59:32 PRC] PHP Stack trace:
+[26-Jul-2016 15:59:32 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[26-Jul-2016 15:59:32 PRC] PHP   2. NoahBuscher\Macaw\Macaw::dispatch() F:\phpstudy\WWW\frame\public\index.php:20

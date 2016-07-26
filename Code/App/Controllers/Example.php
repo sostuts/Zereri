@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+
 use Zereri\Lib\Test;
 
 class Example
@@ -37,6 +38,12 @@ class Example
 
     public function e()
     {
+        response(["name"=>"Zereri"]);
+    }
 
+    public function fuck()
+    {
+        Session::set("a", "fuckyou");
+        echo Session::get("a");
     }
 }

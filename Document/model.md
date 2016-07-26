@@ -6,7 +6,7 @@
 
 #### 模型创建
 
-在 **/App/Models/** 文件夹下创建  Users.class.php
+在 **/App/Models/** 文件夹下创建  Users.php
 
 ``` php
 <?php
@@ -59,8 +59,6 @@ Users::insert(['name' => 'zereri', 'age' => 0]);
 更多使用方法请参考 **查询构造器** 。
 
 ---
-
-
 
 ### 关联模型
 
@@ -167,8 +165,6 @@ class Roles extends Model
 //查询roles表中admin角色拥有的权限
 Roles::belongsToMany("rbac")->where('roles.name', '=', 'admin')->select();
 ```
-
-
 
 
 

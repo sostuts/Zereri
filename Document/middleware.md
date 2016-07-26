@@ -2,7 +2,7 @@
 
 #### 创建中间件
 
-/App/Middles/Test.class.php
+/App/Middles/Test.php
 
 ``` php
 <?php
@@ -33,7 +33,7 @@ class Test implements MiddleWare
 ``` php
 <?php
 ......
-  
+
 public $middle = [
     //method1方法调用 Middle1中间件
     "method1" => "Middle1",
@@ -50,7 +50,7 @@ public $middle = [
 
 ##### 例子：
 
-/App/Controllers/Example.class.php
+/App/Controllers/Example.php
 
 ``` php
 <?php
@@ -77,6 +77,4 @@ class Example
 
 - exp() 方法调用 **Test,Auth,Mail** 三个中间件。
 - welcome() 方法调用 **Test** 中间件。
-
-
 
