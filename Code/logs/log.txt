@@ -948,3 +948,15 @@
 [26-Jul-2016 22:44:02 PRC] PHP   9. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Cache.php:10
 [26-Jul-2016 22:44:02 PRC] PHP  10. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
 [26-Jul-2016 22:44:02 PRC] PHP  11. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[28-Jul-2016 03:14:06 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php on line 38
+[28-Jul-2016 03:14:06 PRC] PHP Stack trace:
+[28-Jul-2016 03:14:06 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\public\index.php:0
+[28-Jul-2016 03:14:06 PRC] PHP   2. Zereri\Lib\Call->call() F:\phpstudy\WWW\frame\public\index.php:26
+[28-Jul-2016 03:14:06 PRC] PHP   3. Zereri\Lib\Call->callController() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:137
+[28-Jul-2016 03:14:06 PRC] PHP   4. App\Controllers\Example->e() F:\phpstudy\WWW\frame\Zereri\Lib\Call.php:150
+[28-Jul-2016 03:14:06 PRC] PHP   5. Zereri\Lib\Replacement\Queue::add() F:\phpstudy\WWW\frame\App\Controllers\Example.php:42
+[28-Jul-2016 03:14:06 PRC] PHP   6. Zereri\Lib\Replacement\Common::__callStatic() F:\phpstudy\WWW\frame\App\Controllers\Example.php:42
+[28-Jul-2016 03:14:06 PRC] PHP   7. Zereri\Lib\Queue->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Replacement\Common.php:10
+[28-Jul-2016 03:14:06 PRC] PHP   8. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Queue.php:29
+[28-Jul-2016 03:14:06 PRC] PHP   9. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
+[28-Jul-2016 03:14:06 PRC] PHP  10. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25

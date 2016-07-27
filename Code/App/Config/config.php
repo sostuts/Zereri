@@ -48,6 +48,7 @@ return [
         'Api'                     => Zereri\Lib\Replacement\Api::class,
         'Factory'                 => Zereri\Lib\Factory::class,
         'App\Models\Model'        => Zereri\Lib\Model::class,
+        'App\Queues\InQueue'      => Zereri\Lib\InQueue::class,
         'App\Middles\MiddleWare'  => Zereri\Lib\MiddleWare::class,
         'App\Controllers\Smarty'  => Zereri\Lib\Replacement\Smarty::class,
         'App\Controllers\Session' => Zereri\Lib\Replacement\Session::class,
@@ -85,7 +86,7 @@ return [
     /**
      *      Session
      * --------------------
-     *   file || memcached
+     *   file || memcached || redis
      */
     'session'   => [
         'drive' => 'file'

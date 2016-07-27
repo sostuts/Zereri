@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 
+use Zereri\Lib\Replacement\Queue;
 use Zereri\Lib\Test;
 
 class Example
@@ -38,10 +39,9 @@ class Example
 
     public function e()
     {
-        Cache::set("aa", "bbbbbbb");
-        $res = Cache::get("aa");
+        Queue::add(\App\Queues\Test::class, ["fuckyou"])->delay(5);
 
-        response(["name" => $res]);
+        response(["name" => "6"]);
     }
 
     public function fuck()
