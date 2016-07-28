@@ -10,13 +10,6 @@ class Request
     private $method;
 
 
-    /**http头部
-     *
-     * @var array|false
-     */
-    private $header;
-
-
     /**http内容
      *
      * @var bool|mixed|string
@@ -27,7 +20,6 @@ class Request
     public function __construct()
     {
         $this->method = $this->getMethod();
-        $this->header = $this->getHeader();
         $this->data = $this->getData();
     }
 
@@ -39,16 +31,6 @@ class Request
     private function getMethod()
     {
         return $_SERVER['REQUEST_METHOD'];
-    }
-
-
-    /**获取头部信息
-     *
-     * @return array|false
-     */
-    private function getHeader()
-    {
-        return getallheaders();
     }
 
 
@@ -86,7 +68,7 @@ class Request
      */
     private function isForm()
     {
-        return strpos($this->header['Content-Type'], 'form');
+        return strpos($_SERVER['CONTENT_TYPE'], 'form');
     }
 
 
@@ -136,10 +118,5 @@ class Request
     public function data()
     {
         return $this->data;
-    }
-
-    public function header()
-    {
-        return $this->header;
     }
 }

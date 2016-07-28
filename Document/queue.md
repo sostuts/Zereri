@@ -66,10 +66,8 @@ public function example()
 
 #### 启动队列执行程序
 
-- 启动 `/App/Queues/run.php` 即可。
-- 建议将此程序添加至系统**后台运行**。
-
-
+- 启动 `php /App/Queues/run.php` 。
+- 若php支持 pcntl模块，该程序自动成为守护进程。
 
 
 

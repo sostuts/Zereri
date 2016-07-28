@@ -40,14 +40,14 @@ class Run
 
 
     /**
-     * 开始
+     * 开始处理队列
      */
-    public function start()
+    protected function go()
     {
         while (true) {
             sleep(1);
             if ($instance = $this->delayToQueue()->pop()) {
-                print_r($this->handle($instance));
+                $this->handle($instance);
             }
         }
     }
@@ -127,7 +127,58 @@ class Run
             $this->redis->lPush("queue", $e_instance);
         }
     }
+
+    /**
+     * 守护进程
+     */
+    public function start()
+    {
+        if ($this->existFork()) {
+            $this->fork();
+        } else {
+            $this->go();
+        }
+    }
+
+
+    /**判断是否可以fork
+     *
+     * @return bool
+     */
+    protected function existFork()
+    {
+        return function_exists("pcntl_fork");
+    }
+
+
+    /**
+     * fork子进程并成为守护进程
+     */
+    protected function fork()
+    {
+        $pid = pcntl_fork();
+        if ($pid === 0) {
+            $this->forkDeamon();
+        } elseif ($pid > 0) {
+            exit();
+        } else {
+            $this->go();
+        }
+    }
+
+
+    /**
+     * 子进程处理队列
+     */
+    protected function forkDeamon()
+    {
+        posix_setsid();
+
+        pcntl_fork() === 0 ? $this->go() : pcntl_wait($status, WUNTRACED);
+    }
 }
 
+
 require_once '../../Zereri/load.php';
+
 (new Run())->start();

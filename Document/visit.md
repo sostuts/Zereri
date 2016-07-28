@@ -1,6 +1,20 @@
-## 访问
+## 访问机制
 
-用浏览器访问前端文件或者控制器之前，先确保服务器的web服务**根目录**指向**/public/**  ,并且确保支持 **.htaccess**文件。
+#### 准备工作
+
+- 服务器的web服务**根目录**指向**/public/**   。
+  
+- **apache**支持 **.htaccess**文件 。
+  
+- **nginx** 添加以下配置：
+  
+  ``` 
+  location / {
+      try_files $uri $uri/ /index.php?$query_string;
+  }
+  ```
+
+
 
 ---
 

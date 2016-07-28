@@ -12,6 +12,6 @@ class Test implements InQueue
 
     public function run()
     {
-        echo $this->text;
+        $this->text;
     }
 }

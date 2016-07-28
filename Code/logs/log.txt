@@ -960,3 +960,12 @@
 [28-Jul-2016 03:14:06 PRC] PHP   8. Zereri\Lib\Redis->__construct() F:\phpstudy\WWW\frame\Zereri\Lib\Queue.php:29
 [28-Jul-2016 03:14:06 PRC] PHP   9. Zereri\Lib\Redis->registerInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:15
 [28-Jul-2016 03:14:06 PRC] PHP  10. Zereri\Lib\Redis->newInstance() F:\phpstudy\WWW\frame\Zereri\Lib\Redis.php:25
+[29-Jul-2016 00:10:53 PRC] PHP Fatal error:  Call to undefined function pcntl_fork() in F:\phpstudy\WWW\frame\App\Queues\run.php on line 141
+[29-Jul-2016 00:10:53 PRC] PHP Stack trace:
+[29-Jul-2016 00:10:53 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\App\Queues\run.php:0
+[29-Jul-2016 00:13:01 PRC] PHP Fatal error:  Class 'Redis' not found in F:\phpstudy\WWW\frame\App\Queues\run.php on line 24
+[29-Jul-2016 00:13:01 PRC] PHP Stack trace:
+[29-Jul-2016 00:13:01 PRC] PHP   1. {main}() F:\phpstudy\WWW\frame\App\Queues\run.php:0
+[29-Jul-2016 00:13:01 PRC] PHP   2. start() F:\phpstudy\WWW\frame\App\Queues\run.php:154
+[29-Jul-2016 00:13:01 PRC] PHP   3. Run->__construct() F:\phpstudy\WWW\frame\App\Queues\run.php:137
+[29-Jul-2016 00:13:01 PRC] PHP   4. Run->connect() F:\phpstudy\WWW\frame\App\Queues\run.php:14
