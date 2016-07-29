@@ -4,7 +4,7 @@ namespace Zereri\Lib;
 use ReflectionMethod;
 use Zereri\Lib\UserException;
 
-class CallController
+class Call
 {
     /**控制器的类名
      *
@@ -41,6 +41,13 @@ class CallController
     private $params = [];
 
 
+    /**控制器实例
+     *
+     * @var Object
+     */
+    private $controller;
+
+
     public function __construct($class, $method)
     {
         $this->class = $class;
@@ -57,7 +64,7 @@ class CallController
     private function getReflect()
     {
         if (!$this->isMethodExists()) {
-            throw new UserException('The Method does not exist!');
+            throw new UserException('The Api does not exist!');
         }
 
         return new ReflectionMethod($this->class, $this->method);
@@ -112,7 +119,7 @@ class CallController
     private function getPostColmn($param_name)
     {
         if (!isset($this->post[ $param_name ])) {
-            throw new UserException('Post content does not have the   "' . $param_name . '"   of the colmn.');
+            throw new UserException('Post data must have the colmn <b>"' . $param_name . '"</b>.');
         }
 
         return $this->post[ $param_name ];
@@ -120,10 +127,51 @@ class CallController
 
 
     /**
-     * 调用控制器方法
+     * 调用中间件以及控制器
      */
     public function call()
     {
-        (new $this->class)->{$this->method}(...$this->params);
+        $this->controller = new $this->class;
+
+        if (isset($this->controller->middle)) {
+            $this->callBeforeMiddle()->callController()->callAfterMiddle();
+        } else {
+            $this->callController();
+        }
+    }
+
+
+    /**调用控制器
+     *
+     * @return $this
+     */
+    private function callController()
+    {
+        $this->controller->{$this->method}(...$this->params);
+
+        return $this;
+    }
+
+
+    /**调用前置中间件
+     *
+     * @return $this
+     */
+    private function callBeforeMiddle()
+    {
+        if (FALSE === Middle::call("before", $this->controller->middle)) {
+            die();
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * 调用后置中间件
+     */
+    private function callAfterMiddle()
+    {
+        Middle::call("after", $this->controller->middle);
     }
 }

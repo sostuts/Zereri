@@ -3,13 +3,13 @@ namespace Zereri\Lib;
 
 class Test
 {
-    public static function curl($url, $post = "", $cookie = "", $referer = "", $header = "")
+    public static function curl($url, $post = "", $header = ["Content-Type" => "text/json"], $cookie = "")
     {
         error_reporting(E_ALL || ~E_NOTICE);
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-        $newcookie="";
+        $newcookie = "";
         //COOKIE
         if ($cookie) {
             $newcookie = tempnam("./", "cookie");
@@ -21,20 +21,17 @@ class Test
             }
         }
         //POST 方式
-        if ($post)
+        if ($post) {
             curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
-        //referer 源网页
-        if ($referer)
-            curl_setopt($curl, CURLOPT_REFERER, $referer);
+        }
 
         //header 头部
         if ($header) {
-            //header--useragent
-            if ($header["useragent"])
-                curl_setopt($curl, CURLOPT_USERAGENT, $header["useragent"]);
-            //header--contenttype
-            if ($header["contenttype"])
-                curl_setopt($curl, CURLINFO_CONTENT_TYPE, $header["contenttype"]);
+            $header_arr = [];
+            foreach ($header as $column => $value) {
+                $header_arr[] = $column . ":" . $value;
+            }
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $header_arr);
         }
         //信任所有证书
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);

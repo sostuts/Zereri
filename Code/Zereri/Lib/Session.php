@@ -67,7 +67,7 @@ class Session
             case 5:
                 return $_SESSION[ $keys[0] ][ $keys[1] ][ $keys[2] ][ $keys[3] ][ $keys[4] ];
             default:
-                throw new UserException('Out of session index!');
+                throw new UserException('Out of the index!');
         }
     }
 
@@ -78,11 +78,14 @@ class Session
     protected static function isStart()
     {
         if (!isset($_SESSION)) {
-            if ("memcached" === $GLOBALS['user_config']['session']['drive']) {
-                ini_set("session.save_handler", "memcache");
-                ini_set("session.save_path", "tcp://" . implode(":", $GLOBALS['user_config']['memcached']['server'][0]));
+            $drive = $GLOBALS['user_config']['session']['drive'];
+            if ("file" === $drive) {
+                session_save_path($GLOBALS['config']['session']['path']);
+            } else {
+                ini_set("session.save_handler", $drive);
+                ini_set("session.save_path", "tcp://" . implode(":", isset($GLOBALS['user_config'][ $drive ]['server'][0]) ? $GLOBALS['user_config'][ $drive ]['server'][0] : $GLOBALS['user_config'][ $drive ]['server']));
             }
-            session_save_path($GLOBALS['config']['session']['path']);
+
             session_start();
         }
     }

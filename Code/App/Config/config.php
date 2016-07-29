@@ -45,22 +45,30 @@ return [
      * 类名别名
      */
     'aliases'   => [
-        'Request'                  => Zereri\Lib\Request::class,
-        'HandleUri'                => Zereri\Lib\HandleUri::class,
-        'CallController'           => Zereri\Lib\CallController::class,
-        'App\Controllers\Smarty'   => Zereri\Lib\Replacement\Smarty::class,
-        'App\Controllers\Session'  => Zereri\Lib\Replacement\Session::class,
-        'Api'                      => Zereri\Lib\Replacement\Api::class,
-        'App\Controllers\Memcache' => Zereri\Lib\Replacement\Memcache::class,
-        'App\Models\Model'         => Zereri\Lib\Model::class
+        'Api'                     => Zereri\Lib\Replacement\Api::class,
+        'Factory'                 => Zereri\Lib\Factory::class,
+        'App\Models\Model'        => Zereri\Lib\Model::class,
+        'App\Queues\InQueue'      => Zereri\Lib\InQueue::class,
+        'App\Middles\MiddleWare'  => Zereri\Lib\MiddleWare::class,
+        'App\Controllers\Smarty'  => Zereri\Lib\Replacement\Smarty::class,
+        'App\Controllers\Session' => Zereri\Lib\Replacement\Session::class,
+        'App\Controllers\Cache'   => Zereri\Lib\Replacement\Cache::class
     ],
 
 
     /**
-     * Memcached默认配置
+     * 缓存配置
+     */
+    'cache'     => [
+        "drive" => "redis",
+        'time'  => 3600
+    ],
+
+
+    /**
+     * Memcached服务器配置
      */
     'memcached' => [
-        'time'   => 3600,
         'server' => [
             ['127.0.0.1', 11211]
         ]
@@ -68,9 +76,17 @@ return [
 
 
     /**
+     * redis服务器配置
+     */
+    'redis'     => [
+        'server' => ["127.0.0.1", 6379]
+    ],
+
+
+    /**
      *      Session
      * --------------------
-     *   file || memcached
+     *   file || memcached || redis
      */
     'session'   => [
         'drive' => 'file'

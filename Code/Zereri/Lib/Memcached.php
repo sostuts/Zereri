@@ -1,7 +1,7 @@
 <?php
 namespace Zereri\Lib;
 
-class Memcache
+class Memcached
 {
     /**memcache对象
      *
@@ -12,28 +12,43 @@ class Memcache
 
     public function __construct()
     {
-        $this->newInstance()->addServer();
+        $this->memcache = Register::get("memcache") ?: $this->registerInstance();
     }
 
 
-    /**实例化memcache
+    /**注册memcache并返回实例
+     *
+     * @return Memcached
+     */
+    protected function registerInstance()
+    {
+        $instance = $this->newInstance();
+        Register::set("memcache", $instance);
+
+        return $instance;
+    }
+
+
+    /**实例化memcached
      *
      * @return $this
      */
-    public function newInstance()
+    protected function newInstance()
     {
-        $this->memcache = new \Memcached();
+        $instance = new \Memcached();
+        $this->addServer($instance);
 
-        return $this;
+        return $instance;
     }
 
 
-    /**
-     * 添加服务器
+    /**添加服务器
+     *
+     * @param $instance
      */
-    public function addServer()
+    protected function addServer(&$instance)
     {
-        $this->memcache->addServers($GLOBALS['user_config']['memcached']['server']);
+        $instance->addServers($GLOBALS['user_config']['memcached']['server']);
     }
 
 
@@ -51,7 +66,19 @@ class Memcache
             return $this->setMulti($key, $time);
         }
 
-        return $this->operate("set", $key, $value, $time ?: $GLOBALS['user_config']['memcached']['time']);
+        return $this->operate("set", $key, $value, $time ?: $GLOBALS['user_config']['cache']['time']);
+    }
+
+
+    /**判断值是否存在
+     *
+     * @param $key
+     *
+     * @return bool
+     */
+    public function has($key)
+    {
+        return !empty($this->operate("get", $key));
     }
 
 
@@ -127,7 +154,7 @@ class Memcache
      */
     public function setMulti(array $values, $time = "")
     {
-        return $this->operate("setMulti", $values, $time ?: $GLOBALS['user_config']['memcached']['time']);
+        return $this->operate("setMulti", $values, $time ?: $GLOBALS['user_config']['cache']['time']);
     }
 
 
@@ -160,8 +187,8 @@ class Memcache
     }
 
 
-    public function __destruct()
+    public function __call($method, $params)
     {
-        $this->memcache->quit();
+        return $this->operate($method, ...$params);
     }
 }

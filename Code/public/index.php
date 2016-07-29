@@ -19,10 +19,8 @@ require __DIR__ . '/../Zereri/load.php';
  * =>call the controller
  * =>send the response
  */
-$request = new Request();
+$request = Factory::newRequest();
 
-$controller = new HandleUri();
+$controller = Factory::newController();
 
-(new CallController($controller->getClass(), $controller->getMethod()))
-    ->setPost($request->data())
-    ->call();
+$controller->setPost($request->data())->call();

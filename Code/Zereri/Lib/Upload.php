@@ -6,6 +6,7 @@ class Upload
     private $file;
 
     private $file_suffix;
+
     private $file_path;
 
 

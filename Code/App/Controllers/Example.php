@@ -11,5 +11,4 @@ class Example
     {
         response(["name" => "zereri"]);
     }
-
 }
