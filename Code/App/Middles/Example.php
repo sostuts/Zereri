@@ -1,7 +1,7 @@
 <?php
 namespace App\Middles;
 
-class Test implements MiddleWare
+class Example implements MiddleWare
 {
     public function before($request)
     {

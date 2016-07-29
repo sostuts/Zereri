@@ -1,5 +1,5 @@
 <?php
-//给控制器调用
+//控制器调用
 function response($data = NULL, $mode = 'json', $file = '', array $header = [])
 {
     if ($header) {

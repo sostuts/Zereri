@@ -1,7 +1,7 @@
 <?php
 namespace App\Queues;
 
-class Test implements InQueue
+class Example implements InQueue
 {
     private $text;
 
@@ -12,6 +12,6 @@ class Test implements InQueue
 
     public function run()
     {
-        $this->text;
+        \App\Controllers\Cache::set("text", $this->text);
     }
 }
