@@ -64,7 +64,7 @@ class Database
     protected function connectDB()
     {
         try {
-            return new \PDO($GLOBALS['user_config']['database']['drive'] . ":host=" . $GLOBALS['user_config']['database']['host'] . ";dbname=" . $GLOBALS['user_config']['database']['dbname'], $GLOBALS['user_config']['database']['user'], $GLOBALS['user_config']['database']['pwd']);
+            return new \PDO($GLOBALS['user_config']['database']['drive'] . ":host=" . $GLOBALS['user_config']['database']['host'] . ";dbname=" . $GLOBALS['user_config']['database']['dbname'] . ";charset=" . $GLOBALS['user_config']['database']['charset'], $GLOBALS['user_config']['database']['user'], $GLOBALS['user_config']['database']['pwd']);
         } catch (\PDOExcetion $e) {
             //throw
         }
