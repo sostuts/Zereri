@@ -96,15 +96,13 @@ class Call
     }
 
 
-    /**设置对应控制器方法的参数
-     *
-     * @return \Generator
-     * @throws \Zereri\Lib\UserException
+    /**
+     * 设置对应控制器方法的参数
      */
     private function setControllerParams()
     {
         foreach ($this->reflect->getParameters() as $param) {
-            $this->params[] = $param->isDefaultValueAvailable() ? $param->getDefaultValue() : $this->getPostColmn($param->getName());
+            $this->params[] = $this->getPostColmn($param->getName()) ?: $this->getDefaultValue($param);
         }
     }
 
@@ -113,16 +111,39 @@ class Call
      *
      * @param $param_name
      *
-     * @return mixed
-     * @throws \Zereri\Lib\UserException
+     * @return bool
      */
     private function getPostColmn($param_name)
     {
         if (!isset($this->post[ $param_name ])) {
-            throw new UserException('Post data must have the colmn <b>"' . $param_name . '"</b>.');
+            return false;
         }
 
         return $this->post[ $param_name ];
+    }
+
+
+    /**获取参数默认值
+     *
+     * @param $param
+     *
+     * @throws \Zereri\Lib\UserException
+     */
+    private function getDefaultValue(&$param)
+    {
+        return $param->isDefaultValueAvailable() ? $param->getDefaultValue() : $this->valueError($param->getName());
+    }
+
+
+    /**字段无值抛出异常
+     *
+     * @param $param_name
+     *
+     * @throws \Zereri\Lib\UserException
+     */
+    private function valueError($param_name)
+    {
+        throw new UserException('Post data must have the colmn <b>"' . $param_name . '"</b>.');
     }
 
 
