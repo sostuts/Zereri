@@ -180,9 +180,7 @@ class Call
      */
     private function callBeforeMiddle()
     {
-        if (FALSE === Middle::call("before", $this->controller->middle)) {
-            die();
-        }
+        Middle::call("before", $this->controller->middle);
 
         return $this;
     }

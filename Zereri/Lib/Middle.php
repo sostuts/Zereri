@@ -29,7 +29,7 @@ class Middle
         self::$func = $func;
         self::$middle =& $middle;
 
-        return self::callMethodMiddles();
+        self::callMethodMiddles();
     }
 
 
@@ -41,10 +41,10 @@ class Middle
     {
         foreach (self::getMethod() as $method) {
             if (!isset(self::$middle[ $method ])) {
-                return NULL;
+                continue;
             }
 
-            return self::callMethodEachMiddle($method);
+            self::callMethodEachMiddle($method);
         }
     }
 
@@ -59,10 +59,10 @@ class Middle
     {
         if (is_array(self::$middle[ $method ])) {
             foreach (self::$middle[ $method ] as $middle_name) {
-                return self::callMiddle($middle_name);
+                self::callMiddle($middle_name);
             }
         } else {
-            return self::callMiddle(self::$middle[ $method ]);
+            self::callMiddle(self::$middle[ $method ]);
         }
     }
 
@@ -87,6 +87,6 @@ class Middle
     {
         $name = '\App\Middles\\' . $name;
 
-        return (new $name)->{self::$func}(Register::get("data"));
+        (new $name)->{self::$func}(Register::get("data")) !== FALSE ?: die();
     }
 }
