@@ -22,12 +22,26 @@ class Debug
     public static function outputError($err_content)
     {
         if (self::isDebug()) {
-            self::loadErrorHtml($err_content);
+            self::echoErrorMsg($err_content);
         } else {
-            self::loadErrorHtml();
+            self::echoErrorMsg();
         }
 
         die();
+    }
+
+
+    /**get || post
+     *
+     * @param string $err_content
+     */
+    protected static function echoErrorMsg($err_content = "")
+    {
+        if ("POST" === $_SERVER['REQUEST_METHOD']) {
+            print_r("Something Wrong! " . $err_content);
+        } else {
+            self::loadErrorHtml($err_content);
+        }
     }
 
 
@@ -35,7 +49,7 @@ class Debug
      *
      * @param string $err_content
      */
-    protected static function loadErrorHtml($err_content = "")
+    protected static function loadErrorHtml($err_content)
     {
         Smarty::load("error.html", ["content" => $err_content]);
     }

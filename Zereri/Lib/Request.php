@@ -3,13 +3,6 @@ namespace Zereri\Lib;
 
 class Request
 {
-    /**http请求方法
-     *
-     * @var mixed
-     */
-    private $method;
-
-
     /**http内容
      *
      * @var bool|mixed|string
@@ -19,18 +12,7 @@ class Request
 
     public function __construct()
     {
-        $this->method = $this->getMethod();
         $this->data = $this->getData();
-    }
-
-
-    /**获取请求方法
-     *
-     * @return mixed
-     */
-    private function getMethod()
-    {
-        return $_SERVER['REQUEST_METHOD'];
     }
 
 
@@ -58,7 +40,7 @@ class Request
      */
     private function isPost()
     {
-        return $this->method === "POST";
+        return $_SERVER['REQUEST_METHOD'] === "POST";
     }
 
 
