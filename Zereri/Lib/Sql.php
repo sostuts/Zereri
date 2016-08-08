@@ -735,7 +735,7 @@ class Sql
      */
     protected function selectSql()
     {
-        return "select " . $this->sqlColumns() . " from " . $this->joinTable() . $this->sqlWhere() . " {$this->limit} {$this->orderby} {$this->groupby} {$this->having}";
+        return "select " . $this->sqlColumns() . " from " . $this->joinTable() . $this->sqlWhere() . " {$this->groupby} {$this->having} {$this->orderby} {$this->limit}";
     }
 
 
