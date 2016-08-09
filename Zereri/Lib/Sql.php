@@ -745,7 +745,7 @@ class Sql
      */
     protected function sqlColumns()
     {
-        return $this->aggregation ? $this->columns . "," . implode(",", $this->aggregation) : $this->columns;
+        return $this->aggregation ? ($this->columns ? $this->columns . "," : "") . implode(",", $this->aggregation) : $this->columns;
     }
 
 
