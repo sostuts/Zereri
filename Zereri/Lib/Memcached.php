@@ -173,11 +173,11 @@ class Memcached
     /**memcache公共操作
      *
      * @param       $operation
-     * @param array ...$params
+     * @param array $params
      *
      * @return int
      */
-    public function operate($operation, ...$params)
+    public function operate($operation, $params)
     {
         if ($data = $this->memcache->{$operation}(...$params)) {
             return $data;
@@ -189,6 +189,6 @@ class Memcached
 
     public function __call($method, $params)
     {
-        return $this->operate($method, ...$params);
+        return $this->operate($method, $params);
     }
 }
