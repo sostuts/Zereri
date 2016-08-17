@@ -86,6 +86,7 @@ class Session
                 ini_set("session.save_path", "tcp://" . implode(":", isset($GLOBALS['user_config'][ $drive ]['server'][0]) ? $GLOBALS['user_config'][ $drive ]['server'][0] : $GLOBALS['user_config'][ $drive ]['server']));
             }
 
+            session_set_cookie_params(0, "/", "", FALSE, TRUE);
             session_start();
         }
     }
