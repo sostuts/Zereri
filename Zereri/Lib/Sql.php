@@ -680,6 +680,50 @@ class Sql
     }
 
 
+    /**字段值增加
+     *
+     * @param     $column
+     * @param int $num
+     *
+     * @return array
+     */
+    public function increment($column, $num = 1)
+    {
+        return $this->commonCrement($column, $num, "+");
+    }
+
+
+    /**字段值减少
+     *
+     * @param     $column
+     * @param int $num
+     *
+     * @return array
+     */
+    public function decrement($column, $num = 1)
+    {
+        return $this->commonCrement($column, $num, "-");
+    }
+
+
+    /**字段增减公共操作
+     *
+     * @param $column
+     * @param $num
+     * @param $operation
+     *
+     * @return array
+     */
+    protected function commonCrement($column, $num, $operation)
+    {
+        $this->curd("update");
+
+        $this->columns = "$column = $column $operation $num";
+
+        return $this->execSql();
+    }
+
+
     /**定义当前curd操作
      *
      * @param $method

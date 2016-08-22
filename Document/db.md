@@ -339,6 +339,42 @@ $res = TB('users')->where('name', '=', 'zeffee')->update([
 
 
 
+### Incremrnt
+
+##### 简括：指定字段数据值增加
+
+##### 用法：
+
+``` 
+TB(?)->where(?)->increment("column", num);
+```
+
+##### 例子:
+
+- view字段值加1
+
+``` 
+TB('articles')->where('id', '=', 66)->increment("view");
+```
+
+- view字段值加5
+
+``` 
+TB('articles')->where('id', '=', 66)->increment("view", 5);
+```
+
+
+
+### Decrement
+
+##### 简括：指定字段数据值减少
+
+##### 用法：
+
+- 请参考 `Increment` 的使用说明。
+
+
+
 ### delete
 
 ##### 简括：执行delete语句删除数据
