@@ -66,6 +66,13 @@ class Api
     private $api_html_file;
 
 
+    /**当前的函数名
+     *
+     * @var string
+     */
+    private $now_method;
+
+
     public function __construct()
     {
         $this->file_path = __ROOT__ . '/App/Controllers/';
@@ -90,7 +97,7 @@ class Api
      */
     protected function getApiPath()
     {
-        return dirname(dirname($_SERVER["SERVER_PORT"] === '443' ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . ':' . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"] . '/'));
+        return dirname(dirname(($_SERVER["SERVER_PORT"] === '443' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . ':' . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"] . '/'));
     }
 
 
@@ -237,12 +244,14 @@ class Api
     {
         foreach ($this->controller_doc as $class => $e_controller_doc) {
             foreach ($e_controller_doc as $key => $each_doc) {
+                $this->now_method = $this->controller_class[ $class ] . '/' . $this->controller_method[ $class ][ $key ];
+
                 $this->api_doc[ $class ][ $key ]['title'] = $this->pregMatch('/^[^\n]*/', $each_doc);
                 $this->api_doc[ $class ][ $key ]['params'] = $this->handleParams($this->pregMatch('/@param ([^\n]*)/', $each_doc, 1, true));
                 $this->api_doc[ $class ][ $key ]['return'] = $this->handleReturn($this->pregMatch('/@return ([^\n]*)/', $each_doc, 1));
                 $this->api_doc[ $class ][ $key ]['api_method'] = $this->api_method;
-                $this->api_doc[ $class ][ $key ]['url'] = $this->path . '/' . $this->controller_class[ $class ] . '/' . $this->controller_method[ $class ][ $key ];
-                $this->api_doc[ $class ][ $key ]['url_short'] = $this->controller_class[ $class ] . '/' . $this->controller_method[ $class ][ $key ];
+                $this->api_doc[ $class ][ $key ]['url'] = $this->path . '/' . $this->now_method;
+                $this->api_doc[ $class ][ $key ]['url_short'] = $this->now_method;
             }
         }
 
@@ -302,7 +311,7 @@ class Api
         $pieces = explode(' ', $this->removeMoreSpace($param));
         //参数必须有类型和名字的说明
         if (count($pieces) < 2) {
-            throw new UserException("It must have type and name of the param in <pre>" . $param . "</pre>");
+            throw new UserException("It must have type and name of the param in <pre>" . $this->now_method . " 's " . $param . "</pre>");
         }
         $param = [];
         $param['type'] = $pieces[0];

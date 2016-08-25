@@ -50,6 +50,9 @@ class Redis
     {
         $config = config("redis");
         $instance->connect($config["server"][0], $config["server"][1]);
+        if (isset($config["server"][2])) {
+            $instance->auth($config["server"][2]);
+        }
     }
 
 
