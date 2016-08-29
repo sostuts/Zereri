@@ -127,7 +127,7 @@ TB()->raw('select * from users where id=?', [12]);
 ``` php
 <?php
 
-用法：count('column')    ||    max('column', 'alias')
+用法：count('alias')    ||    max('column', 'alias')
 
 //查询core列平均值
 TB('users')->avg('core')->select("id");
