@@ -22,10 +22,32 @@ return [
      */
     'database'  => [
         'master' => [
+            "drive"   => "mysql",
+            "host"    => "localhost",
+            "dbname"  => "zereri",
+            "user"    => "root",
+            "pwd"     => "root",
+            "charset" => "utf8"
         ],
 
         //若无从库则 'slave' => []
         'slave'  => [
+//            [
+//                "drive"   => "mysql",
+//                "host"    => "localhost",
+//                "dbname"  => "zereri",
+//                "user"    => "root",
+//                "pwd"     => "root",
+//                "charset" => "utf8"
+//            ],
+//            [
+//                "drive"   => "mysql",
+//                "host"    => "localhost",
+//                "dbname"  => "zereri",
+//                "user"    => "root",
+//                "pwd"     => "root",
+//                "charset" => "utf8"
+//            ]
         ]
     ],
 
