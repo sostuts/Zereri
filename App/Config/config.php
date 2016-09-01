@@ -21,12 +21,12 @@ return [
      * 数据库配置
      */
     'database'  => [
-        "drive"   => "mysql",
-        "host"    => "localhost",
-        "dbname"  => "zereri",
-        "user"    => "root",
-        "pwd"     => "root",
-        "charset" => "utf8"
+        'master' => [
+        ],
+
+        //若无从库则 'slave' => []
+        'slave'  => [
+        ]
     ],
 
 

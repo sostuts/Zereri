@@ -5,11 +5,34 @@
 ``` php
 <?php
 'database'  => [
-    "drive"  => "mysql",            //目前仅支持mysql
-    "host"   => "localhost",		//主机地址
-    "dbname" => "zereri",			//数据库名字
-    "user"   => "root",				//数据库用户名
-    "pwd"    => "root"				//数据库用户密码
+    'master' => [
+        "drive"   => "mysql",               //目前仅支持mysql
+        "host"    => "localhost",           //主库地址
+        "dbname"  => "zereri",              //数据库名字
+        "user"    => "root",                //数据库用户名
+        "pwd"     => "root",                //数据库用户密码
+        "charset" => "utf8"                 //设置字符集
+    ],
+
+    //若无从库则 'slave' => []
+    'slave'  => [
+        [
+            "drive"   => "mysql",               //目前仅支持mysql
+            "host"    => "localhost",           //从库一地址
+            "dbname"  => "zereri",              //数据库名字
+            "user"    => "root",                //数据库用户名
+            "pwd"     => "root",                //数据库用户密码
+            "charset" => "utf8"                 //设置字符集
+        ],
+        [
+            "drive"   => "mysql",               //目前仅支持mysql
+            "host"    => "localhost",           //从库二地址
+            "dbname"  => "zereri",              //数据库名字
+            "user"    => "root",                //数据库用户名
+            "pwd"     => "root",                //数据库用户密码
+            "charset" => "utf8"                 //设置字符集
+        ]
+    ]
 ]
 ```
 

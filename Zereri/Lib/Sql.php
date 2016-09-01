@@ -21,7 +21,7 @@ class Sql
      *
      * @var string
      */
-    private $curd;
+    private $crud;
 
 
     /**sql where语句
@@ -572,7 +572,7 @@ class Sql
      */
     public function select($columns = '*')
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
         $this->columns = $columns;
 
         return $this->execSql();
@@ -587,7 +587,7 @@ class Sql
      */
     public function insert($all_data)
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         //一维数组
         if (!isset($all_data[0])) {
@@ -623,7 +623,7 @@ class Sql
      */
     public function add(array $columns, ...$all_data)
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         $this->columns = implode(',', $columns);
         $this->values = $all_data;
@@ -640,7 +640,7 @@ class Sql
      */
     public function update(array $data)
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         $column_val = $this->getUpdateInfo($data);
         $this->columns = implode(',', $this->columns);
@@ -674,7 +674,7 @@ class Sql
      */
     public function delete()
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         return $this->execSql();
     }
@@ -716,7 +716,7 @@ class Sql
      */
     protected function commonCrement($column, $num, $operation)
     {
-        $this->curd("update");
+        $this->crud("update");
 
         $this->columns = "$column = $column $operation $num";
 
@@ -728,9 +728,9 @@ class Sql
      *
      * @param $method
      */
-    private function curd($method)
+    private function crud($method)
     {
-        $this->curd = $method;
+        $this->crud = $method;
     }
 
 
@@ -740,7 +740,11 @@ class Sql
      */
     protected function execSql()
     {
-        return (new Database())->{in_array($this->curd, ['select', 'insert', 'add']) ? $this->curd : 'query'}($this->buildSql()->sql, $this->values ?: []);
+        if ('select' === $this->crud) {
+            return (new Database("select"))->select($this->buildSql()->sql, $this->values ?: []);
+        }
+
+        return (new Database())->{in_array($this->crud, ['insert', 'add']) ? $this->crud : 'query'}($this->buildSql()->sql, $this->values ?: []);
     }
 
 
@@ -750,7 +754,7 @@ class Sql
      */
     protected function buildSql()
     {
-        switch ($this->curd) {
+        switch ($this->crud) {
             case 'select':
                 $this->sql = $this->selectSql();
                 break;
