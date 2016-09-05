@@ -97,7 +97,7 @@ class Api
      */
     protected function getApiPath()
     {
-        return dirname(dirname(($_SERVER["SERVER_PORT"] === '443' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . ':' . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"] . '/'));
+        return dirname(dirname(($_SERVER["SERVER_PORT"] === '443' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST']  . $_SERVER["REQUEST_URI"] . '/'));
     }
 
 
