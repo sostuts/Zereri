@@ -17,6 +17,12 @@ return [
     'debug'     => true,
 
 
+    /*
+     * https端口
+     */
+    'https_port' => 443,
+
+
     /**
      * 数据库配置
      */

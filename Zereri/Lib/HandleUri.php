@@ -34,17 +34,23 @@ class HandleUri
     }
 
 
-    /**分解URI取最后两个数据得类名以及方法名
+    /**分解URI取最后两个数据得类名、方法名和get参数
      *
-     * @throws \Zereri\Lib\UserException
+     * @throws UserException
      */
     private function explodeUri()
     {
         $class_and_method = explode('/', $this->uri);
-        if (count($class_and_method) < 2) {
+        if (($count = count($class_and_method)) < 2) {
             throw new UserException('Wrong Url!');
         }
-        list($this->class, $this->method) = array_slice($class_and_method, -2);
+
+        $method_get = explode("?", $class_and_method[ $count - 1 ], 2);
+        if (isset($method_get[1])) {
+            parse_str($method_get[1], $_GET);
+        }
+        $this->method = $method_get[0];
+        $this->class = $class_and_method[ $count - 2 ];
     }
 
 
