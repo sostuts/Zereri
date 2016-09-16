@@ -67,6 +67,7 @@ class Redis
     public function set($key, $value = "", $time = "")
     {
         if (is_array($key)) {
+            $time = $value;
             foreach ($key as $each_key => $each_value) {
                 $this->redis->setex($each_key, $time ?: config("cache")["time"], $each_value);
             }
