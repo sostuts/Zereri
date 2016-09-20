@@ -80,6 +80,10 @@ class Database
      */
     protected function getSalveNum()
     {
+        if (!isset($GLOBALS['user_config']['database']['slave'])) {
+            return false;
+        }
+
         switch ($count = count($GLOBALS['user_config']['database']['slave'])) {
             //no break at all
             case 0:
