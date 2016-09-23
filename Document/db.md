@@ -37,10 +37,10 @@
 ```
 
 ## 查询构造器
-<br/>
+
 框架提供了辅佐函数 **TB()** 对数据库进行操作，下面将对该函数进行逐步举例说明。
 
-
+<br/>
 
 ### select
 
@@ -308,8 +308,8 @@ Array
     [0] => 55
 )
 ```
-<br/>
 
+<br/>
 
 ### add
 
@@ -358,8 +358,8 @@ Array
 	[3] => 7
 )
 ```
-<br/>
 
+<br/>
 
 ### update
 
@@ -383,10 +383,10 @@ $res = TB('users')->where('name', '=', 'zeffee')->update([
      'password' => 'nice'
 ]);
 ```
-<br/>
+
 返回值为影响的行数。
 
-
+<br/>
 
 ### Incremrnt
 
@@ -411,18 +411,18 @@ TB('articles')->where('id', '=', 66)->increment("view");
 ``` 
 TB('articles')->where('id', '=', 66)->increment("view", 5);
 ```
-<br/>
 
+<br/>
 
 ### Decrement
 
 ##### 简括：指定字段数据值减少
 
 ##### 用法：
-<br/>
+
 - 请参考 `Increment` 的使用说明。
 
-
+<br/>
 
 ### delete
 
