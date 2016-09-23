@@ -37,7 +37,7 @@
 ```
 
 ## 查询构造器
-
+<br/>
 框架提供了辅佐函数 **TB()** 对数据库进行操作，下面将对该函数进行逐步举例说明。
 
 
@@ -60,6 +60,8 @@ TB('table')->select();
 TB('table')->select('column1,column2,column3');
 ```
 
+<br/>
+
 - 简单where条件查询【where、orWhere、andWhere】
 
 ``` php
@@ -75,6 +77,8 @@ TB('users')->where('id', '>', 6)->orWhere('age', '=', 6)->select();
 TB('users')->where('name', '=', 'zereri')->andWhere('password', '=', 'nice')->select();
 ```
 
+<br/>
+
 - In语句【whereIn、whereNotIn】
 
 ``` php
@@ -85,6 +89,8 @@ TB('users')->where('name', '=', 'zereri')->andWhere('password', '=', 'nice')->se
 //查询id为1357的数据
 TB('users')->whereIn('id', [1, 3, 5, 7])->select();
 ```
+
+<br/>
 
 - Null语句【whereNull、whereNotNull】
 
@@ -97,6 +103,8 @@ TB('users')->whereIn('id', [1, 3, 5, 7])->select();
 TB('users')->whereNotNull('id')->select();
 ```
 
+<br/>
+
 - Between语句【whereBetween、whereNotBetween】
 
 ``` php
@@ -107,6 +115,8 @@ TB('users')->whereNotNull('id')->select();
 //查询id在1-10区间的数据
 TB('users')->whereBetween('id', 1, 10)->select();
 ```
+
+<br/>
 
 - 复杂where条件语句【whereOrWhere、whereAndWhere、_or、_and】
 
@@ -134,6 +144,8 @@ TB('users')->whereOrWhere(['name', '=', 'zereri'], ['password', '=', 'test'])
 		
 ```
 
+<br/>
+
 - Raw (执行原生Select SQL)
 
 ``` php
@@ -144,6 +156,8 @@ TB('users')->whereOrWhere(['name', '=', 'zereri'], ['password', '=', 'test'])
 //查询id为12的数据。
 TB()->raw('select * from users where id=?', [12]);
 ```
+
+<br/>
 
 - 聚合函数【count、max、min、avg、sum、concat】
 
@@ -159,6 +173,8 @@ TB('users')->avg('core')->select("id");
 TB('users')->where('name', '=', 'Ben')->min('age', 'old')->select();
 ```
 
+<br/>
+
 - orderBy语句
 
 ``` php
@@ -169,6 +185,8 @@ TB('users')->where('name', '=', 'Ben')->min('age', 'old')->select();
 //name倒序,password顺序排列
 TB('users')->orderBy('name desc', 'pwd')->select();
 ```
+
+<br/>
 
 - groupBy语句【groupBy、having、havingRaw】
 
@@ -183,6 +201,8 @@ TB('users')->groupBy('name', 'pwd')->having("age", ">", "14")->select();
 TB('users')->groupBy('name', 'pwd')->havingRaw("age > 14")->select();
 ```
 
+<br/>
+
 - limit语句
 
 ``` php
@@ -191,6 +211,8 @@ TB('users')->groupBy('name', 'pwd')->havingRaw("age > 14")->select();
 //取第三条到第五条数据
 TB('users')->limit(2, 3)->select();
 ```
+
+<br/>
 
 - InnerJoin语句
 
@@ -210,6 +232,8 @@ TB('a') ->join('b', 'a.name', '=', 'b.name')
         ->select();
 ```
 
+<br/>
+
 - leftJoin语句
 
 ``` php
@@ -227,6 +251,8 @@ TB('a') ->leftJoin('b', 'a.name', '=', 'b.name')
         ->whereNotNull('a.name')
         ->select();
 ```
+
+<br/>
 
 ## insert
 
@@ -282,7 +308,7 @@ Array
     [0] => 55
 )
 ```
-
+<br/>
 
 
 ### add
@@ -332,7 +358,7 @@ Array
 	[3] => 7
 )
 ```
-
+<br/>
 
 
 ### update
@@ -357,7 +383,7 @@ $res = TB('users')->where('name', '=', 'zeffee')->update([
      'password' => 'nice'
 ]);
 ```
-
+<br/>
 返回值为影响的行数。
 
 
@@ -385,7 +411,7 @@ TB('articles')->where('id', '=', 66)->increment("view");
 ``` 
 TB('articles')->where('id', '=', 66)->increment("view", 5);
 ```
-
+<br/>
 
 
 ### Decrement
@@ -393,7 +419,7 @@ TB('articles')->where('id', '=', 66)->increment("view", 5);
 ##### 简括：指定字段数据值减少
 
 ##### 用法：
-
+<br/>
 - 请参考 `Increment` 的使用说明。
 
 
@@ -417,3 +443,39 @@ TB('users')->where('id', '=', 35)->delete();
 ```
 
 返回值为影响的行数。
+
+<br/>
+
+### 事务
+
+- 开始事务
+
+``` php
+<?php
+//开启事务并进行CRUD操作
+TB("test")->beginTransaction()->insert([
+      "name" => "Zereri"
+]);
+```
+
+<br/>
+
+- 回滚事务
+
+``` php
+<?php
+//开启事务并进行CRUD操作
+TB("test")->rollback()->insert([
+    "name" => "Zeffee"
+]);
+```
+
+<br/>
+
+- 提交事务
+
+``` php
+<?php
+
+TB("test")->commit();
+```

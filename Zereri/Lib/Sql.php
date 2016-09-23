@@ -564,6 +564,39 @@ class Sql
     }
 
 
+    /**事务开始
+     *
+     * @return $this
+     */
+    public function beginTransaction()
+    {
+        (new Database())->query("set autocommit=0", []);
+
+        return $this;
+    }
+
+
+    /**回滚事务
+     *
+     * @return $this
+     */
+    public function rollback()
+    {
+        (new Database())->query("rollback", []);
+
+        return $this;
+    }
+
+
+    /**
+     * 提交事务
+     */
+    public function commit()
+    {
+        return (new Database())->query("commit", []);
+    }
+
+
     /**查询操作
      *
      * @param string $columns
