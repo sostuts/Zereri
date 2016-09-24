@@ -177,7 +177,7 @@ class Memcached
      *
      * @return int
      */
-    public function operate($operation, $params)
+    public function operate($operation, ...$params)
     {
         if ($data = $this->memcache->{$operation}(...$params)) {
             return $data;

@@ -13,7 +13,7 @@ class First
   	//新建一个hello方法
     public function hello()
     {
-        response("hello");
+        response(200, "hello");
     }
 }
 ```
@@ -22,22 +22,23 @@ class First
 
 返回值：`"hello"`
 
-
+<br/>
 
 #### 返回Json的控制器
 
 ``` php
 <?php
 //框架辅佐函数response()
-void response($data = NULL,  $mode = 'json', $file = '',array $header = [])
+void response($status_code, $data = NULL, $mode = 'json', $file = '', $header = "")
 ```
 
-| $mode | Description  |
-| ----- | ------------ |
-| json  | 转换为json格式，默认 |
-| xml   | 转换为xml格式     |
-| text  | 纯文本，直接打印     |
-| html  | 调用模板引擎       |
+| $mode       | Description            |
+| ----------- | ---------------------- |
+| status_code | HTTP返回状态码, config文件中配置 |
+| json        | 转换为json格式，默认           |
+| xml         | 转换为xml格式               |
+| text        | 纯文本，直接打印               |
+| html        | 调用模板引擎                 |
 
 所以只需要将数组放进response第一个参数即可。
 
@@ -50,14 +51,14 @@ class First
     public function jsonTest()
     {
         $result = ["name" => "Ben", "age" => 14];
-        response($result);
+        response(200, $result);
     }
 }
 ```
 
 返回值：`{"name":"Ben","age":14}`
 
-
+<br/>
 
 #### 返回xml的控制器
 
@@ -70,7 +71,7 @@ class First
     public function xmlTest()
     {
         $result = ["name" => "Ben", "age" => 14];
-        response($result, "xml");
+        response(200, $result, "xml");
     }
 }
 ```
@@ -84,7 +85,7 @@ class First
 </root>
 ```
 
-
+<br/>
 
 #### 返回html的控制器
 
@@ -100,7 +101,7 @@ class First
     {
         $data = ["name" => "Ben", "age" => 14];
       	//模板中使用 <{$name}>  <{$age}> 即可调用该数组中的变量
-        response($data, "html", "index.tpl");
+        response(200, $data, "html", "index.tpl");
     }
 }
 ```
@@ -117,7 +118,7 @@ I am <{$name}>, <{$age}> years old.
 I am Ben, 14 years old.
 ```
 
-
+<br/>
 
 #### 带参数的控制器
 
@@ -136,7 +137,7 @@ class Project
     public function getAge($name)
     {
         $data = ["age" => 111];
-        response($data);
+        response(200, $data);
     }
 }
 ```
@@ -152,7 +153,7 @@ Return:
 {"age":111}
 ```
 
-
+<br/>
 
 #### 返回带Header的控制器
 
@@ -169,12 +170,12 @@ class Project
           "Content-Type" => "text/html",
           "Server" 		 => "Apache"
         ];
-        response($data, "", "", $header);
+        response(200, $data, "", "", $header);
     }
 }
 ```
 
-
+<br/>
 
 #### 控制器访问配置值
 

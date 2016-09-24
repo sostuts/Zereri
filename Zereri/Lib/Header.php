@@ -3,10 +3,20 @@ namespace Zereri\Lib;
 
 class Header
 {
-    public static function set(array $header)
+    public static function set($header)
     {
-        foreach ($header as $key => $val) {
-            header($key . ':' . $val);
+        if (is_array($header)) {
+            foreach ($header as $key => $val) {
+                if (is_numeric($key)) {
+                    header($val);
+
+                    continue;
+                }
+
+                header($key . ':' . $val);
+            }
+        } else {
+            header($header);
         }
     }
 }

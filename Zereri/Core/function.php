@@ -1,7 +1,8 @@
 <?php
 //控制器调用
-function response($data = NULL, $mode = 'json', $file = '', array $header = [])
 {
+    Zereri\Lib\Header::set(config("status_code")[ $status_code ]);
+
     if ($header) {
         Zereri\Lib\Header::set($header);
     }
