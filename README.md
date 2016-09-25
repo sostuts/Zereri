@@ -9,6 +9,7 @@
 
 ### 核心
 
+- [路由器](https://github.com/sostuts/Zereri/blob/development/Document/route.md)
 - [控制器](https://github.com/sostuts/Zereri/blob/development/Document/controller.md)
 - [中间件](https://github.com/sostuts/Zereri/blob/development/Document/middleware.md)
 - [Api文档生成](https://github.com/sostuts/Zereri/blob/development/Document/api.md)
@@ -23,6 +24,4 @@
 - [Session](https://github.com/sostuts/Zereri/blob/development/Document/session.md)
 - [测试](https://github.com/sostuts/Zereri/blob/development/Document/test.md)
 - [队列](https://github.com/sostuts/Zereri/blob/development/Document/queue.md)
-
-
 
