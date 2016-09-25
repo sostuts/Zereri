@@ -175,15 +175,15 @@ class Admin
 
 - http://localhost/student
 
-​	1.Get访问，返回值：`StudentList`
+> Get访问，返回值：`StudentList`
+> 
+> Post访问，返回值：`This is addStudent`
 
-​	2.Post访问，返回值：`This is addStudent`
+<br/>
 
 - http://localhost/user/123/name/Zereri
 
-​	1.Get访问，返回值：`ID:123 Name:Zereri`
-
-​	2.Post带参数**newName=ZZZ**访问，返回值：`ID:123 Name:Zereri newName:ZZZ`
-
-
+> Get访问，返回值：`ID:123 Name:Zereri`
+> 
+> Post带参数**newName=ZZZ**访问，返回值：`ID:123 Name:Zereri newName:ZZZ`
 
