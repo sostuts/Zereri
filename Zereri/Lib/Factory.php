@@ -24,6 +24,7 @@ class Factory
     public static function newHandleUri()
     {
         $url = new HandleUri();
+        Register::set("class", $url->getClass());
         Register::set("method", $url->getMethod());
 
         return $url;
@@ -38,7 +39,7 @@ class Factory
     {
         $url = self::newHandleUri();
 
-        return new Call($url->getClass(), $url->getMethod());
+        return new Call($url->getClass(), $url->getMethod(), $url->getParams());
     }
 
 

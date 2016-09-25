@@ -21,7 +21,7 @@ class Sql
      *
      * @var string
      */
-    private $curd;
+    private $crud;
 
 
     /**sql where语句
@@ -564,6 +564,39 @@ class Sql
     }
 
 
+    /**事务开始
+     *
+     * @return $this
+     */
+    public function beginTransaction()
+    {
+        (new Database())->query("set autocommit=0", []);
+
+        return $this;
+    }
+
+
+    /**回滚事务
+     *
+     * @return $this
+     */
+    public function rollback()
+    {
+        (new Database())->query("rollback", []);
+
+        return $this;
+    }
+
+
+    /**
+     * 提交事务
+     */
+    public function commit()
+    {
+        return (new Database())->query("commit", []);
+    }
+
+
     /**查询操作
      *
      * @param string $columns
@@ -572,7 +605,7 @@ class Sql
      */
     public function select($columns = '*')
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
         $this->columns = $columns;
 
         return $this->execSql();
@@ -587,7 +620,7 @@ class Sql
      */
     public function insert($all_data)
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         //一维数组
         if (!isset($all_data[0])) {
@@ -623,7 +656,7 @@ class Sql
      */
     public function add(array $columns, ...$all_data)
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         $this->columns = implode(',', $columns);
         $this->values = $all_data;
@@ -640,7 +673,7 @@ class Sql
      */
     public function update(array $data)
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
 
         $column_val = $this->getUpdateInfo($data);
         $this->columns = implode(',', $this->columns);
@@ -674,7 +707,51 @@ class Sql
      */
     public function delete()
     {
-        $this->curd(__FUNCTION__);
+        $this->crud(__FUNCTION__);
+
+        return $this->execSql();
+    }
+
+
+    /**字段值增加
+     *
+     * @param     $column
+     * @param int $num
+     *
+     * @return array
+     */
+    public function increment($column, $num = 1)
+    {
+        return $this->commonCrement($column, $num, "+");
+    }
+
+
+    /**字段值减少
+     *
+     * @param     $column
+     * @param int $num
+     *
+     * @return array
+     */
+    public function decrement($column, $num = 1)
+    {
+        return $this->commonCrement($column, $num, "-");
+    }
+
+
+    /**字段增减公共操作
+     *
+     * @param $column
+     * @param $num
+     * @param $operation
+     *
+     * @return array
+     */
+    protected function commonCrement($column, $num, $operation)
+    {
+        $this->crud("update");
+
+        $this->columns = "$column = $column $operation $num";
 
         return $this->execSql();
     }
@@ -684,9 +761,9 @@ class Sql
      *
      * @param $method
      */
-    private function curd($method)
+    private function crud($method)
     {
-        $this->curd = $method;
+        $this->crud = $method;
     }
 
 
@@ -696,7 +773,11 @@ class Sql
      */
     protected function execSql()
     {
-        return (new Database())->{in_array($this->curd, ['select', 'insert', 'add']) ? $this->curd : 'query'}($this->buildSql()->sql, $this->values ?: []);
+        if ('select' === $this->crud) {
+            return (new Database("select"))->select($this->buildSql()->sql, $this->values ?: []);
+        }
+
+        return (new Database())->{in_array($this->crud, ['insert', 'add']) ? $this->crud : 'query'}($this->buildSql()->sql, $this->values ?: []);
     }
 
 
@@ -706,7 +787,7 @@ class Sql
      */
     protected function buildSql()
     {
-        switch ($this->curd) {
+        switch ($this->crud) {
             case 'select':
                 $this->sql = $this->selectSql();
                 break;
@@ -735,7 +816,7 @@ class Sql
      */
     protected function selectSql()
     {
-        return "select " . $this->sqlColumns() . " from " . $this->joinTable() . $this->sqlWhere() . " {$this->limit} {$this->orderby} {$this->groupby} {$this->having}";
+        return "select " . $this->sqlColumns() . " from " . $this->joinTable() . $this->sqlWhere() . " {$this->groupby} {$this->having} {$this->orderby} {$this->limit}";
     }
 
 
@@ -745,7 +826,7 @@ class Sql
      */
     protected function sqlColumns()
     {
-        return $this->aggregation ? $this->columns . "," . implode(",", $this->aggregation) : $this->columns;
+        return $this->aggregation ? ($this->columns ? $this->columns . "," : "") . implode(",", $this->aggregation) : $this->columns;
     }
 
 

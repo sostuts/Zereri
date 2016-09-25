@@ -6,7 +6,7 @@ define('__ROOT__', dirname(dirname(dirname(__FILE__))));
  */
 $GLOBALS['config'] = require_once __ROOT__ . '/Zereri/Config/config.php';
 $GLOBALS['user_config'] = require_once __ROOT__ . '/App/Config/config.php';
-
+$GLOBALS['route'] = require_once __ROOT__ . "/App/Config/route.php";
 
 /**
  * 日志配置

@@ -1,6 +1,6 @@
-## 访问机制
+# 访问机制
 
-#### 准备工作
+### 准备工作
 
 - 服务器的web服务**根目录**指向**/public/**   。
   
@@ -13,25 +13,20 @@
       try_files $uri $uri/ /index.php?$query_string;
   }
   ```
+  
+  ​
 
----
+### 访问前端文件
 
-#### 访问前端文件
-
-格式：`http://domain/PATH/FILE`
+- 格式：`http://domain/PATH/FILE`
 
 如：/public/  文件夹里面有  index.html ,  a.html
 
 URL: http://www.example.com/   、 http://www.example.com/a.html
 
+<br/>
 
+### 访问控制器
 
----
-
-#### 访问控制器
-
-格式：`http://domain/Class/method`
-
-如：/App/Controllers/ 文件夹里面有 Test.php ，存在**today**方法。
-
-URL: http://www.example.com/Test/today
+- 编写路由规则，请参考 **路由** 文档。
+- 编写控制器， 请参考 **控制器** 文档。

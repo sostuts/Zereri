@@ -41,6 +41,8 @@ public function index($name, $age)
 <?php
 require "../Zereri/Lib/Test.php";
 
+use Zereri\Lib\Test;
+
 class UserTest extends PHPUnit_Framework_TestCase
 {
 	public function testApp()

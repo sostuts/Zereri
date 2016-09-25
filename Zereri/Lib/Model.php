@@ -156,7 +156,7 @@ class Model
      */
     protected function relateCommon($rules, $operation)
     {
-        foreach ($this->$rules[0] as $model => $columns) {
+        foreach ($this->{$rules[0]} as $model => $columns) {
             $this->instance->{$operation}($this->getTableNameInModel($model), $this->getRealColumn($columns[0]), '=', $this->getRealColumn($columns[1]));
         }
     }

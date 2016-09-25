@@ -50,6 +50,9 @@ class Redis
     {
         $config = config("redis");
         $instance->connect($config["server"][0], $config["server"][1]);
+        if (isset($config["server"][2])) {
+            $instance->auth($config["server"][2]);
+        }
     }
 
 
@@ -64,6 +67,7 @@ class Redis
     public function set($key, $value = "", $time = "")
     {
         if (is_array($key)) {
+            $time = $value;
             foreach ($key as $each_key => $each_value) {
                 $this->redis->setex($each_key, $time ?: config("cache")["time"], $each_value);
             }

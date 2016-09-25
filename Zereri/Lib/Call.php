@@ -34,6 +34,13 @@ class Call
     private $post;
 
 
+    /**url中的参数
+     *
+     * @var array
+     */
+    private $url_params;
+
+
     /**控制器方法的参数
      *
      * @var array
@@ -48,10 +55,11 @@ class Call
     private $controller;
 
 
-    public function __construct($class, $method)
+    public function __construct($class, $method, $url_params = [])
     {
         $this->class = $class;
         $this->method = $method;
+        $this->url_params = $url_params;
         $this->reflect = $this->getReflect();
     }
 
@@ -96,15 +104,19 @@ class Call
     }
 
 
-    /**设置对应控制器方法的参数
-     *
-     * @return \Generator
-     * @throws \Zereri\Lib\UserException
+    /**
+     * 设置对应控制器方法的参数
      */
     private function setControllerParams()
     {
-        foreach ($this->reflect->getParameters() as $param) {
-            $this->params[] = $param->isDefaultValueAvailable() ? $param->getDefaultValue() : $this->getPostColmn($param->getName());
+        foreach ($this->reflect->getParameters() as $index => $param) {
+            if ($index < count($this->url_params)) {
+                $this->params[] = $this->url_params[ $index ];
+
+                continue;
+            }
+
+            $this->params[] = $this->getPostColmn($param->getName()) ?: $this->getDefaultValue($param);
         }
     }
 
@@ -113,16 +125,39 @@ class Call
      *
      * @param $param_name
      *
-     * @return mixed
-     * @throws \Zereri\Lib\UserException
+     * @return bool
      */
     private function getPostColmn($param_name)
     {
         if (!isset($this->post[ $param_name ])) {
-            throw new UserException('Post data must have the colmn <b>"' . $param_name . '"</b>.');
+            return false;
         }
 
         return $this->post[ $param_name ];
+    }
+
+
+    /**获取参数默认值
+     *
+     * @param $param
+     *
+     * @throws \Zereri\Lib\UserException
+     */
+    private function getDefaultValue(&$param)
+    {
+        return $param->isDefaultValueAvailable() ? $param->getDefaultValue() : $this->valueError($param->getName());
+    }
+
+
+    /**字段无值抛出异常
+     *
+     * @param $param_name
+     *
+     * @throws \Zereri\Lib\UserException
+     */
+    private function valueError($param_name)
+    {
+        throw new UserException('It requires a parameter <b>"' . $param_name . '"</b>.');
     }
 
 
@@ -159,9 +194,7 @@ class Call
      */
     private function callBeforeMiddle()
     {
-        if (FALSE === Middle::call("before", $this->controller->middle)) {
-            die();
-        }
+        Middle::call("before", $this->controller->middle);
 
         return $this;
     }

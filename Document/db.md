@@ -5,11 +5,34 @@
 ``` php
 <?php
 'database'  => [
-    "drive"  => "mysql",            //目前仅支持mysql
-    "host"   => "localhost",		//主机地址
-    "dbname" => "zereri",			//数据库名字
-    "user"   => "root",				//数据库用户名
-    "pwd"    => "root"				//数据库用户密码
+    'master' => [
+        "drive"   => "mysql",               //目前仅支持mysql
+        "host"    => "localhost",           //主库地址
+        "dbname"  => "zereri",              //数据库名字
+        "user"    => "root",                //数据库用户名
+        "pwd"     => "root",                //数据库用户密码
+        "charset" => "utf8"                 //设置字符集
+    ],
+
+    //若无从库则 'slave' => []
+    'slave'  => [
+        [
+            "drive"   => "mysql",               //目前仅支持mysql
+            "host"    => "localhost",           //从库一地址
+            "dbname"  => "zereri",              //数据库名字
+            "user"    => "root",                //数据库用户名
+            "pwd"     => "root",                //数据库用户密码
+            "charset" => "utf8"                 //设置字符集
+        ],
+        [
+            "drive"   => "mysql",               //目前仅支持mysql
+            "host"    => "localhost",           //从库二地址
+            "dbname"  => "zereri",              //数据库名字
+            "user"    => "root",                //数据库用户名
+            "pwd"     => "root",                //数据库用户密码
+            "charset" => "utf8"                 //设置字符集
+        ]
+    ]
 ]
 ```
 
@@ -17,7 +40,7 @@
 
 框架提供了辅佐函数 **TB()** 对数据库进行操作，下面将对该函数进行逐步举例说明。
 
-
+<br/>
 
 ### select
 
@@ -37,6 +60,8 @@ TB('table')->select();
 TB('table')->select('column1,column2,column3');
 ```
 
+<br/>
+
 - 简单where条件查询【where、orWhere、andWhere】
 
 ``` php
@@ -52,6 +77,8 @@ TB('users')->where('id', '>', 6)->orWhere('age', '=', 6)->select();
 TB('users')->where('name', '=', 'zereri')->andWhere('password', '=', 'nice')->select();
 ```
 
+<br/>
+
 - In语句【whereIn、whereNotIn】
 
 ``` php
@@ -62,6 +89,8 @@ TB('users')->where('name', '=', 'zereri')->andWhere('password', '=', 'nice')->se
 //查询id为1357的数据
 TB('users')->whereIn('id', [1, 3, 5, 7])->select();
 ```
+
+<br/>
 
 - Null语句【whereNull、whereNotNull】
 
@@ -74,6 +103,8 @@ TB('users')->whereIn('id', [1, 3, 5, 7])->select();
 TB('users')->whereNotNull('id')->select();
 ```
 
+<br/>
+
 - Between语句【whereBetween、whereNotBetween】
 
 ``` php
@@ -84,6 +115,8 @@ TB('users')->whereNotNull('id')->select();
 //查询id在1-10区间的数据
 TB('users')->whereBetween('id', 1, 10)->select();
 ```
+
+<br/>
 
 - 复杂where条件语句【whereOrWhere、whereAndWhere、_or、_and】
 
@@ -111,6 +144,8 @@ TB('users')->whereOrWhere(['name', '=', 'zereri'], ['password', '=', 'test'])
 		
 ```
 
+<br/>
+
 - Raw (执行原生Select SQL)
 
 ``` php
@@ -122,12 +157,14 @@ TB('users')->whereOrWhere(['name', '=', 'zereri'], ['password', '=', 'test'])
 TB()->raw('select * from users where id=?', [12]);
 ```
 
+<br/>
+
 - 聚合函数【count、max、min、avg、sum、concat】
 
 ``` php
 <?php
 
-用法：count('column')    ||    max('column', 'alias')
+用法：count('alias')    ||    max('column', 'alias')
 
 //查询core列平均值
 TB('users')->avg('core')->select("id");
@@ -135,6 +172,8 @@ TB('users')->avg('core')->select("id");
 //查询name为Ben中的最小age值的数据,并将最小值age的列名改为old
 TB('users')->where('name', '=', 'Ben')->min('age', 'old')->select();
 ```
+
+<br/>
 
 - orderBy语句
 
@@ -146,6 +185,8 @@ TB('users')->where('name', '=', 'Ben')->min('age', 'old')->select();
 //name倒序,password顺序排列
 TB('users')->orderBy('name desc', 'pwd')->select();
 ```
+
+<br/>
 
 - groupBy语句【groupBy、having、havingRaw】
 
@@ -160,6 +201,8 @@ TB('users')->groupBy('name', 'pwd')->having("age", ">", "14")->select();
 TB('users')->groupBy('name', 'pwd')->havingRaw("age > 14")->select();
 ```
 
+<br/>
+
 - limit语句
 
 ``` php
@@ -168,6 +211,8 @@ TB('users')->groupBy('name', 'pwd')->havingRaw("age > 14")->select();
 //取第三条到第五条数据
 TB('users')->limit(2, 3)->select();
 ```
+
+<br/>
 
 - InnerJoin语句
 
@@ -187,6 +232,8 @@ TB('a') ->join('b', 'a.name', '=', 'b.name')
         ->select();
 ```
 
+<br/>
+
 - leftJoin语句
 
 ``` php
@@ -204,6 +251,8 @@ TB('a') ->leftJoin('b', 'a.name', '=', 'b.name')
         ->whereNotNull('a.name')
         ->select();
 ```
+
+<br/>
 
 ## insert
 
@@ -260,7 +309,7 @@ Array
 )
 ```
 
-
+<br/>
 
 ### add
 
@@ -310,7 +359,7 @@ Array
 )
 ```
 
-
+<br/>
 
 ### update
 
@@ -337,7 +386,43 @@ $res = TB('users')->where('name', '=', 'zeffee')->update([
 
 返回值为影响的行数。
 
+<br/>
 
+### Incremrnt
+
+##### 简括：指定字段数据值增加
+
+##### 用法：
+
+``` 
+TB(?)->where(?)->increment("column", num);
+```
+
+##### 例子:
+
+- view字段值加1
+
+``` 
+TB('articles')->where('id', '=', 66)->increment("view");
+```
+
+- view字段值加5
+
+``` 
+TB('articles')->where('id', '=', 66)->increment("view", 5);
+```
+
+<br/>
+
+### Decrement
+
+##### 简括：指定字段数据值减少
+
+##### 用法：
+
+- 请参考 `Increment` 的使用说明。
+
+<br/>
 
 ### delete
 
@@ -358,3 +443,39 @@ TB('users')->where('id', '=', 35)->delete();
 ```
 
 返回值为影响的行数。
+
+<br/>
+
+### 事务
+
+- 开始事务
+
+``` php
+<?php
+//开启事务并进行CRUD操作
+TB("test")->beginTransaction()->insert([
+      "name" => "Zereri"
+]);
+```
+
+<br/>
+
+- 回滚事务
+
+``` php
+<?php
+//开启事务并进行CRUD操作
+TB("test")->rollback()->insert([
+    "name" => "Zeffee"
+]);
+```
+
+<br/>
+
+- 提交事务
+
+``` php
+<?php
+
+TB("test")->commit();
+```

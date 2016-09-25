@@ -2,7 +2,7 @@
 
 #### 创建第一个Controller
 
-新建：/App/Controllers/First.php
+- 新建：/App/Controllers/First.php
 
 ``` php
 <?php
@@ -13,31 +13,42 @@ class First
   	//新建一个hello方法
     public function hello()
     {
-        response("hello");
+        response(200, "hello");
     }
 }
 ```
 
-浏览器访问：http://localhost/First/hello    
+- 配置路由 /App/Config/route.php
 
-返回值：`"hello"`
+``` php
+<?php
 
+return [
+    "/hello"  => [
+        "GET"  => "First@hello"
+    ]
+];
+```
 
+- Get方法访问 http://localhost/hello 返回值：`"hello"`
+
+<br/>
 
 #### 返回Json的控制器
 
 ``` php
 <?php
 //框架辅佐函数response()
-void response($data = NULL,  $mode = 'json', $file = '',array $header = [])
+void response($status_code, $data = NULL, $mode = 'json', $file = '', $header = "")
 ```
 
-| $mode | Description  |
-| ----- | ------------ |
-| json  | 转换为json格式，默认 |
-| xml   | 转换为xml格式     |
-| text  | 纯文本，直接打印     |
-| html  | 调用模板引擎       |
+| $mode       | Description            |
+| ----------- | ---------------------- |
+| status_code | HTTP返回状态码, config文件中配置 |
+| json        | 转换为json格式，默认           |
+| xml         | 转换为xml格式               |
+| text        | 纯文本，直接打印               |
+| html        | 调用模板引擎                 |
 
 所以只需要将数组放进response第一个参数即可。
 
@@ -50,14 +61,14 @@ class First
     public function jsonTest()
     {
         $result = ["name" => "Ben", "age" => 14];
-        response($result);
+        response(200, $result);
     }
 }
 ```
 
 返回值：`{"name":"Ben","age":14}`
 
-
+<br/>
 
 #### 返回xml的控制器
 
@@ -70,7 +81,7 @@ class First
     public function xmlTest()
     {
         $result = ["name" => "Ben", "age" => 14];
-        response($result, "xml");
+        response(200, $result, "xml");
     }
 }
 ```
@@ -84,7 +95,7 @@ class First
 </root>
 ```
 
-
+<br/>
 
 #### 返回html的控制器
 
@@ -100,7 +111,7 @@ class First
     {
         $data = ["name" => "Ben", "age" => 14];
       	//模板中使用 <{$name}>  <{$age}> 即可调用该数组中的变量
-        response($data, "html", "index.tpl");
+        response(200, $data, "html", "index.tpl");
     }
 }
 ```
@@ -117,7 +128,7 @@ I am <{$name}>, <{$age}> years old.
 I am Ben, 14 years old.
 ```
 
-
+<br/>
 
 #### 带参数的控制器
 
@@ -125,7 +136,7 @@ I am Ben, 14 years old.
 
 `例如：前端传入一个人的名字，后台返回那个人的年龄。`
 
-Controller:    /App/Controllers/Project.php
+**Controller:**    /App/Controllers/Project.php
 
 ``` php
 <?php
@@ -136,23 +147,35 @@ class Project
     public function getAge($name)
     {
         $data = ["age" => 111];
-        response($data);
+        response(200, $data);
     }
 }
 ```
 
-Post:
+**Route:**
 
-- Url:http://localhost/Project/getAge
+``` php
+<?php
+
+return [
+    "/age" => [
+        "GET" => "Project@getAge"
+    ]
+];
+```
+
+**Post:**
+
+- Url:http://localhost/age
 - Data:`{"name":"Ben"}`       [此处的**name字段与函数的参数名对应**]
 
-Return:
+**Return:**
 
 ``` 
 {"age":111}
 ```
 
-
+<br/>
 
 #### 返回带Header的控制器
 
@@ -169,15 +192,22 @@ class Project
           "Content-Type" => "text/html",
           "Server" 		 => "Apache"
         ];
-        response($data, "", "", $header);
+        response(200, $data, "", "", $header);
     }
 }
 ```
 
-
+<br/>
 
 #### 控制器访问配置值
 
 访问配置值：`config($name);` 
 
-例如：`config("smarty")`  
+例如
+
+``` php
+<?php
+
+echo config("https_port"); //返回值 : 443
+```
+
