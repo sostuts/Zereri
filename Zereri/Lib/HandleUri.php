@@ -3,11 +3,17 @@ namespace Zereri\Lib;
 
 class HandleUri
 {
+    //请求的url(不包含版本)
+    private $url;
+
     //解析出来的控制器类名
     private $class;
 
     //解析出来的控制器方法名
     private $method;
+
+    //请求的版本
+    private $version;
 
     //url参数
     private $params;
@@ -18,18 +24,25 @@ class HandleUri
 
     public function __construct()
     {
-        list($this->class, $this->method) = $this->explodeUrl();
         $this->controller_namespace = '\App\Controllers\\';
+        list($this->version, $this->url) = $this->getVersionAndUrl();
+        $this->url = "/" . $this->url;
+        list($this->class, $this->method) = $this->explodeUrl();
     }
 
 
-    /**获取Uri
+    /**获取请求版本以及url地址
      *
      * @return string
      */
-    private function getUrl()
+    private function getVersionAndUrl()
     {
-        return urldecode($_SERVER['QUERY_STRING']);
+        $url = urldecode($_SERVER['QUERY_STRING']);
+        if (!config("version_control")) {
+            return ["", $url];
+        }
+
+        return explode("/", $url, 2);
     }
 
 
@@ -39,10 +52,9 @@ class HandleUri
      */
     private function explodeUrl()
     {
-        $url = "/" . $this->getUrl();
-        if ($this->isRouteExist($url)) {
-            return $this->getReturnClassMethod($url);
-        } elseif (($route = $this->matchParam($url)) && $this->isRouteExist($route)) {
+        if ($this->isRouteExist($this->url)) {
+            return $this->getReturnClassMethod($this->url);
+        } elseif (($route = $this->matchParam($this->url)) && $this->isRouteExist($route)) {
             return $this->getReturnClassMethod($route);
         } else {
             response(404, "", "text", "", 1);
@@ -52,11 +64,14 @@ class HandleUri
 
     /**判断路由是否存在
      *
+     * @param $route
+     *
      * @return bool
      */
     private function isRouteExist($route)
     {
-        if (!isset($GLOBALS["route"][ $route ][ $_SERVER['REQUEST_METHOD'] ])) {
+        $route =& $this->getRouteSelf($route);
+        if (!isset($route)) {
             return false;
         }
 
@@ -72,9 +87,26 @@ class HandleUri
      */
     private function getReturnClassMethod($route)
     {
-        $class_method = preg_replace('/\\//', '\\', $GLOBALS["route"][ $route ][ $_SERVER['REQUEST_METHOD'] ]);
+        $route =& $this->getRouteSelf($route);
+        $class_method = preg_replace('/\\//', '\\', $route);
 
         return explode("@", $class_method);
+    }
+
+
+    /**获取route引用
+     *
+     * @param $route
+     *
+     * @return mixed
+     */
+    private function &getRouteSelf($route)
+    {
+        if ($this->version) {
+            return $GLOBALS["route"][ $this->version ][ $route ][ $_SERVER['REQUEST_METHOD'] ];
+        }
+
+        return $GLOBALS["route"][ $route ][ $_SERVER['REQUEST_METHOD'] ];
     }
 
 
@@ -86,7 +118,7 @@ class HandleUri
      */
     private function matchParam($url)
     {
-        $routes = array_keys($GLOBALS["route"]);
+        $routes = array_keys($this->version ? $GLOBALS["route"][ $this->version ] : $GLOBALS["route"]);
         foreach ($routes as $each_route) {
             if ($rule = preg_replace('/\\{.*\\}/Usm', '([^\\/]*)', $each_route)) {
                 if (preg_match('#^' . $rule . '$#', $url, $param)) {

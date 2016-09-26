@@ -6,7 +6,7 @@ return [
      * -----------------
      *  single || daily
      */
-    'log'       => 'single',
+    'log'             => 'single',
 
 
     /*
@@ -14,19 +14,25 @@ return [
      * ----------------
      *  true || false
      */
-    'debug'     => true,
+    'debug'           => true,
+
+
+    /**
+     * 版本控制
+     */
+    'version_control' => false,
 
 
     /*
      * https端口
      */
-    'https_port' => 443,
+    'https_port'      => 443,
 
 
     /**
      * 数据库配置
      */
-    'database'  => [
+    'database'        => [
         'master' => [
             "drive"   => "mysql",
             "host"    => "localhost",
@@ -61,7 +67,7 @@ return [
     /**
      * Smarty配置
      */
-    'smarty'    => [
+    'smarty'          => [
         "debugging"       => false,
         "caching"         => false,
         "cache_lifetime"  => 120,
@@ -73,7 +79,7 @@ return [
     /**
      * 类名别名
      */
-    'aliases'   => [
+    'aliases'         => [
         'Api'                     => Zereri\Lib\Replacement\Api::class,
         'Factory'                 => Zereri\Lib\Factory::class,
         'App\Models\Model'        => Zereri\Lib\Model::class,
@@ -88,7 +94,7 @@ return [
     /**
      * 缓存配置
      */
-    'cache'     => [
+    'cache'           => [
         "drive" => "redis",
         'time'  => 3600
     ],
@@ -97,7 +103,7 @@ return [
     /**
      * Memcached服务器配置
      */
-    'memcached' => [
+    'memcached'       => [
         'server' => [
             ['127.0.0.1', 11211]
         ]
@@ -107,7 +113,7 @@ return [
     /**
      * redis服务器配置
      */
-    'redis'     => [
+    'redis'           => [
         'server' => ["127.0.0.1", 6379]
     ],
 
@@ -117,7 +123,7 @@ return [
      * --------------------
      *   file || memcached || redis
      */
-    'session'   => [
+    'session'         => [
         'drive' => 'file'
     ],
 
@@ -125,7 +131,7 @@ return [
     /**
      * 状态码
      */
-    'status_code' => [
+    'status_code'     => [
         100 => "HTTP/1.1 100 Continue",
         101 => "HTTP/1.1 101 Switching Protocols",
         200 => "HTTP/1.1 200 OK",

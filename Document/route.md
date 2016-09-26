@@ -187,3 +187,44 @@ class Admin
 > 
 > Post带参数**newName=ZZZ**访问，返回值：`ID:123 Name:Zereri newName:ZZZ`
 
+<br/>
+
+<br/>
+
+# 版本控制
+
+### 开启版本控制
+
+- 修改config.php 
+
+``` php
+'version_control' => true
+```
+
+<br/>
+
+### 编写路由
+
+``` php
+<?php
+
+return [
+    "v1" => [
+        "/api/list" => [
+            "GET" => "Api@index"
+        ],
+        "URL"       => [
+            "Method" => "Controller@Function"
+        ]
+    ],
+
+    "v2" => [
+        "/api/list" => [
+            "GET" => "First@hello"
+        ]
+    ]
+];
+```
+
+- 访问 http://localhost/v1/api/list 访问 `/App/Controllers/Api.php` 的`index` 方法
+- 访问 http://localhost/v2/api/list 访问 `/App/Controllers/First.php` 的`hello` 方法
