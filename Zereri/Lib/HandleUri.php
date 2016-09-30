@@ -18,6 +18,9 @@ class HandleUri
     //url参数
     private $params;
 
+    //回调函数
+    private $callback;
+
     //控制器的命名空间
     private $controller_namespace;
 
@@ -27,13 +30,13 @@ class HandleUri
         $this->controller_namespace = '\App\Controllers\\';
         list($this->version, $this->url) = $this->getVersionAndUrl();
         $this->url = "/" . $this->url;
-        list($this->class, $this->method) = $this->explodeUrl();
+        list($this->class, $this->method, $this->callback) = $this->explodeUrl();
     }
 
 
     /**获取请求版本以及url地址
      *
-     * @return string
+     * @return array
      */
     private function getVersionAndUrl()
     {
@@ -42,7 +45,11 @@ class HandleUri
             return ["", $url];
         }
 
-        return explode("/", $url, 2);
+        if (count($pieces = explode("/", $url, 2)) > 1) {
+            return $pieces;
+        }
+
+        return ["", ""];
     }
 
 
@@ -53,9 +60,9 @@ class HandleUri
     private function explodeUrl()
     {
         if ($this->isRouteExist($this->url)) {
-            return $this->getReturnClassMethod($this->url);
+            return $this->callbackOrGetClassMethod($this->url);
         } elseif (($route = $this->matchParam($this->url)) && $this->isRouteExist($route)) {
-            return $this->getReturnClassMethod($route);
+            return $this->callbackOrGetClassMethod($route);
         } else {
             response(404, "", "text", "", 1);
         }
@@ -79,18 +86,25 @@ class HandleUri
     }
 
 
-    /**从url中提取控制器以及方法
+    /**从路由中提取控制器、方法名以及回调函数
      *
      * @param $route
      *
      * @return array
      */
-    private function getReturnClassMethod($route)
+    private function callbackOrGetClassMethod($route)
     {
         $route =& $this->getRouteSelf($route);
-        $class_method = preg_replace('/\\//', '\\', $route);
 
-        return explode("@", $class_method);
+        //回调
+        if (is_callable($route)) {
+            return ["", "", $route];
+        }
+
+        $class_method = explode("@", preg_replace('/\\//', '\\', $route));
+        array_push($class_method, NULL);
+
+        return $class_method;
     }
 
 
@@ -160,5 +174,15 @@ class HandleUri
     public function getParams()
     {
         return $this->params;
+    }
+
+
+    /**获取路由的回调函数
+     *
+     * @return mixed
+     */
+    public function getCallback()
+    {
+        return $this->callback;
     }
 }

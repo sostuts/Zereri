@@ -108,6 +108,24 @@ class User
 
 <br/>
 
+### 编写带回调函数路由
+
+``` php
+<?php
+
+return [
+    "/user/{id}" => [
+        "DELETE" => function ($id) {
+            echo $id;
+        }
+    ]
+];
+```
+
+- **DELETE 方法**访问 http://www.domain.com/user/123 返回值 `123` 。
+
+<br/>
+
 <br/>
 
 ### 例子
@@ -195,7 +213,7 @@ class Admin
 
 ### 开启版本控制
 
-- 修改config.php 
+- 修改config.php
 
 ``` php
 'version_control' => true

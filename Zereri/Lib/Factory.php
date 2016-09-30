@@ -39,7 +39,7 @@ class Factory
     {
         $url = self::newHandleUri();
 
-        return new Call($url->getClass(), $url->getMethod(), $url->getParams());
+        return new Call($url->getClass(), $url->getMethod(), $url->getParams(), $url->getCallback());
     }
 
 

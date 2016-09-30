@@ -57,7 +57,7 @@ class Document
      */
     protected function setApiArray()
     {
-        if ($GLOBALS["user_config"]["version_control"]) {
+        if (config("version_control")) {
             foreach ($this->routes as $version => $route) {
                 $this->api_array[ $version ] = $this->getApiGroupAndValues($route);
             }
@@ -130,6 +130,11 @@ class Document
         $function_arr = [];
         foreach ($route as $url => $call) {
             foreach ($call as $method => $function) {
+                //跳过回调函数
+                if (is_callable($function)) {
+                    continue;
+                }
+
                 //修改路径为命名空间路径再分割
                 $class_function = explode("@", preg_replace('/\\//', '\\', $function));
                 $function_arr[] = [
