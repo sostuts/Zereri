@@ -16,7 +16,7 @@
  *
  * @param  string $content 详细内容
  *
- * @return content.真实的内容
+ * @return content:真实的内容
  * @example 200 {"result":"ok"}
  */
 ```
@@ -85,7 +85,7 @@ public function welcome($name, $age = 0)
  * @param  string $name 名字
  * @param  int    $age  年龄
  *
- * @return user.用户的名字 age.用户的年龄
+ * @return user:用户的名字 age:用户的年龄
  * @example 200 {"user":"zeffee","age":20}
  */
 public function welcome($name, $age = 0)
@@ -130,8 +130,8 @@ public function findPwd($user)
  *
  * @param  string $user 用户的账号
  *
- * @return password.用户的密码
- * @example 200 {"user":"zeffee","age":20}
+ * @return password:用户的密码
+ * @example 200 {"password":"123456"}
  * @example 404 {"message":"error"}
  */
 public function findPwd($user)
