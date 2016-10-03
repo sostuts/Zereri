@@ -25,6 +25,13 @@ class Document
     private $controller_namespace;
 
 
+    /**url路径
+     *
+     * @var string
+     */
+    private $path;
+
+
     /**api文档
      *
      * @var array
@@ -36,18 +43,22 @@ class Document
     {
         $this->controller_namespace = '\App\Controllers\\';
         $this->routes =& $GLOBALS["route"];
+        $this->path = $this->getApiPath();
     }
 
     public function init()
     {
-        $this->setApiArray()->output();
+        $this->setApiArray()->apiDocToHtml();
     }
 
-    protected function output()
+
+    /**获取api url
+     *
+     * @return string
+     */
+    protected function getApiPath()
     {
-        echo "<pre>";
-        print_r($this->api_array);
-        echo "</pre>";
+        return dirname(dirname(($_SERVER["SERVER_PORT"] == $GLOBALS['user_config']['https_port'] ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . '/'));
     }
 
 
@@ -94,8 +105,9 @@ class Document
                 $group = "Others";
             }
 
-            $api_groups[ $group ][] =& $function;
+            $api_groups[ $group ][ $function["title"] ] =& $function;
         }
+        ksort($api_groups);
 
         return $api_groups;
     }
@@ -124,6 +136,7 @@ class Document
      * @param $route
      *
      * @return array
+     * @throws UserException
      */
     protected function getCallFunctionList($route)
     {
@@ -137,6 +150,11 @@ class Document
 
                 //修改路径为命名空间路径再分割
                 $class_function = explode("@", preg_replace('/\\//', '\\', $function));
+
+                if (count($class_function) < 2) {
+                    throw new UserException("It needs controller@function in the route - $url's $method => $function");
+                }
+
                 $function_arr[] = [
                     "url"      => $url,
                     "method"   => $method,
@@ -339,5 +357,17 @@ class Document
         }
 
         return trim($result[ $part ][0]);
+    }
+
+
+    /**加载或生成html页面
+     *
+     * @param string $fetch_file
+     *
+     * @return mixed
+     */
+    protected function apiDocToHtml($fetch_file = "")
+    {
+        Replacement\Smarty::load("document.html", ["data" => $this->api_array, "path" => $this->path], $fetch_file);
     }
 }
