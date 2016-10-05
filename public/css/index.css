@@ -262,11 +262,11 @@ aside{
   letter-spacing: 2px;
 }
 .web-box-copy{
-  width: 120px;
+  width: 130px;
   height: 40px;
   line-height: 40px;
   position: absolute;
-  left: -107px;
+  left: -135px;
   top: 0px;
   // text-align: right;
   font-family: Arial;
@@ -339,18 +339,23 @@ aside li:hover{
   background-color: #93d9b0;
 }
 .copy{
-  width: 68px;
+  width: 52px;
   height: 27px;
   line-height: 27px;
   position: absolute;
   top: 7px;
   right: 14px;
-  float: right;
   font-size: 14px;
   color: #c8e19d;
+  background-color: transparent;
   background-image: url(../images/copy.png);
   background-position: right;
   background-repeat: no-repeat;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  text-align: right;
+  padding-right: 30px;
 }
 .aside-head{
   width: 88%;
@@ -377,4 +382,7 @@ aside a{
 }
 aside a:hover{
   color: #fff;
+}
+.response_hide{
+  display: none;
 }

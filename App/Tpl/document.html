@@ -8,6 +8,7 @@
     <script type="text/javascript" src="<{$path}>/js/jsonFormater.js"></script>
     <script type="text/javascript" src="<{$path}>/js/index.js"></script>
     <script type="text/javascript" src="<{$path}>/js/navScroll.js"></script>
+    <script type="text/javascript" src="<{$path}>/js/copy.js"></script>
     <title></title>
 </head>
 <body>
@@ -155,7 +156,7 @@
                 <div class="web-left">网址</div>
                 <input class="web-right copy-text api_url" type="text" title="<{$api.method}>"
                        value="<{$path}><{$api.url}>">
-                <div class="copy">
+                <div class="copy copy_content" data-clipboard-text="<{$path}><{$api.url}>">
                     复制
                 </div>
             </div>
@@ -169,7 +170,7 @@
                     <input class="web-right copy-mes headers_val">
                     <div class="header-right headers_type"><{$document.type}></div>
                     <div class="web-box-copy">
-                        <div class="web-box-copybtn">复制</div>
+                        <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
                         <input type="checkbox" class="headers" name="" value="<{$name}>" checked="checked"><{$name}>
                     </div>
                 </div>
@@ -183,14 +184,25 @@
                 <div class="header-title">- Parameter</div>
 
                 <{foreach $api.params as $name => $document}>
+                <{if strpos($api.url,"{"|cat:$name|cat:"}") gt 0}>
+                <div class="web-box" style="margin-top: 60px">
+                    <input class="web-right copy-mes params_val" value="请修改url中的{<{$name}>}" readonly>
+                    <div class="header-right params_type"><{$document.type}></div>
+                    <div class="web-box-copy">
+                        <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
+                        <input type="checkbox" class="params" name="" value="<{$name}>" disabled="disabled"><{$name}>
+                    </div>
+                </div>
+                <{else}>
                 <div class="web-box" style="margin-top: 60px">
                     <input class="web-right copy-mes params_val">
                     <div class="header-right params_type"><{$document.type}></div>
                     <div class="web-box-copy">
-                        <div class="web-box-copybtn">复制</div>
+                        <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
                         <input type="checkbox" class="params" name="" value="<{$name}>" checked="checked"><{$name}>
                     </div>
                 </div>
+                <{/if}>
                 <{/foreach}>
 
             </div>
@@ -198,8 +210,9 @@
 
             <input type="button" name="<{$i}>" value="发送" class="button">
         </form>
-        <p class="send-title">返回</p>
-        <div class="response-content">
+
+        <p class="send-title response_hide">返回</p>
+        <div class="response-content response_hide">
             <div class="code" id="return_<{$i}>">
 
             </div>
@@ -223,12 +236,16 @@
     $(function () {
         $(".button").click(function () {
             var id = $(this).attr("name");
+            var title = $(this).parent().siblings(".send-title");
+            var response = $(this).parent().siblings(".response-content");
             $.ajax({
                 method: $(this).parent().find("input.api_url").attr("title"),
                 url: $(this).parent().find("input.api_url").val(),
                 data: getParamsJsonData(this, "params"),
                 headers: getParamsJsonData(this, "headers"),
                 success: function (data) {
+                    title.show(1000);
+                    response.show(1000);
                     decodeJson("return_" + id, data);
                 }
             });
@@ -249,5 +266,14 @@
             return JSON.parse(JSON.stringify(data));
         }
     });
+
+    var clipboard = new Clipboard('.copy_content');
+    clipboard.on('success', function (e) {
+        console.log("Successfully Copy!");
+    });
+
+    clipboard.on('error', function (e) {
+        alert("请使用升级或更换浏览器！");
+    })
 </script>
 </html>

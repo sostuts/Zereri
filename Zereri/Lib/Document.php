@@ -98,7 +98,8 @@ class Document
             }
 
             $group = $this->getInfoFromDoc($document, $function);
-            $this->setParamDefault($function);
+            $function_params = $this->getFunctionParamDefault($function);
+            $this->checkFunctionParamCompleteness($function, $function_params)->setParamDefault($function, $function_params);
 
             //无分组
             if (!$group) {
@@ -116,18 +117,54 @@ class Document
     /**设置文档的参数默认值
      *
      * @param $function
+     * @param $function_params
      *
      * @throws UserException
      */
-    protected function setParamDefault(&$function)
+    protected function setParamDefault(&$function, $function_params)
     {
-        foreach ($this->getFunctionParamDefault($function) as $name => $default) {
+        foreach ($function_params as $name => $default) {
             if (!isset($function["params"][ $name ])) {
                 throw new UserException("It needs the param document of <b>$$name</b> in " . $function["class"] . "@" . $function["function"]);
             }
 
             $function["params"][ $name ]["default"] = $default;
         }
+    }
+
+
+    /**检查函数的参数是否包含url中的参数
+     *
+     * @param $function
+     * @param $function_params
+     *
+     * @return $this
+     * @throws UserException
+     */
+    protected function checkFunctionParamCompleteness($function, $function_params)
+    {
+        $url_params = $this->getUrlParamName($function["url"]);
+        $function_params_name = array_keys($function_params);
+
+        foreach ($url_params as $index => $name) {
+            if ($name !== $function_params_name[ $index ]) {
+                throw new UserException("It needs a param same with the url_param <b>\"$$name\"</b> in the NO." . ($index + 1) . " function param -- " . $function["class"] . "@" . $function["function"]);
+            }
+        }
+
+        return $this;
+    }
+
+
+    /**获取url中的参数名字
+     *
+     * @param $url
+     *
+     * @return array|string
+     */
+    protected function getUrlParamName($url)
+    {
+        return $this->pregMatch('/{(.*?)}/', $url, 1, true);
     }
 
 
