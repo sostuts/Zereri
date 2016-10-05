@@ -52,13 +52,23 @@ class Document
     }
 
 
-    /**获取api url
+    /**获取api url路径
      *
      * @return string
      */
     protected function getApiPath()
     {
         return dirname(dirname(($_SERVER["SERVER_PORT"] == $GLOBALS['user_config']['https_port'] ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . '/'));
+    }
+
+
+    /**获取root url路径
+     *
+     * @return string
+     */
+    protected function getRootPath()
+    {
+        return config("version_control") ? dirname($this->path) : $this->path;
     }
 
 
@@ -405,6 +415,6 @@ class Document
      */
     protected function apiDocToHtml($fetch_file = "")
     {
-        Replacement\Smarty::load("document.html", ["data" => $this->api_array, "path" => $this->path], $fetch_file);
+        Replacement\Smarty::load("document.html", ["data" => $this->api_array, "path" => $this->path, "root_path" => $this->getRootPath(), "version_control" => config("version_control")], $fetch_file);
     }
 }

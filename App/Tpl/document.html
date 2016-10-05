@@ -2,231 +2,94 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="<{$path}>/css/index.css">
-    <link rel="stylesheet" type="text/css" href="<{$path}>/css/jsonFormater.css">
-    <script type="text/javascript" src="<{$path}>/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="<{$path}>/js/jsonFormater.js"></script>
-    <script type="text/javascript" src="<{$path}>/js/index.js"></script>
-    <script type="text/javascript" src="<{$path}>/js/navScroll.js"></script>
-    <script type="text/javascript" src="<{$path}>/js/copy.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="<{$root_path}>/css/index.css">
+    <link rel="stylesheet" type="text/css" href="<{$root_path}>/css/jsonFormater.css">
+    <script type="text/javascript" src="<{$root_path}>/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="<{$root_path}>/js/jsonFormater.js"></script>
+    <script type="text/javascript" src="<{$root_path}>/js/index.js"></script>
+    <script type="text/javascript" src="<{$root_path}>/js/navScroll.js"></script>
+    <script type="text/javascript" src="<{$root_path}>/js/copy.js"></script>
     <title></title>
 </head>
 <body>
 <aside>
     <div class="aside-head">
-        目录
-        <select>
-            <option>原味版本</option>
-            <option>装逼版本</option>
-            <option>帅气版本</option>
-        </select>
-    </div>
-    <ul class="navigation clearfix" id="navigation">
-        <{$i=0}>
-        <{foreach $data as $group => $apis}>
-        <div class="aside-title"><{$group}></div>
-        <ul>
-            <{foreach $apis as $title => $api}>
-            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+        <span title="<{$root_path}>">目录</span>
+
+        <{if $version_control eq TRUE}>
+        <select id="select">
+            <{$i=0}>
+            <{foreach $data as $version => $document}>
+            <option value="<{$i}>"><{$version}></option>
             <{$i=$i+1}>
             <{/foreach}>
-        </ul>
-        <{/foreach}>
-    </ul>
-</aside>
-<div class="right">
-    <{$i=0}>
-    <{foreach $data as $group => $apis}>
-    <{foreach $apis as $title => $api}>
-    <div class="content" id="box-<{$i}>">
-        <div class="title">
-            <p><{$title}></p>
-            <div class="up-tri"></div>
-            <div class="border"></div>
-        </div>
-        <div class="add-way">
-            <div class="add-left">
-                <div class="down-tri"></div>
-                接口地址：
-                <a href="">
-                    <span class="short-add"><{$api.url}></span>
-                </a>
-            </div>
-            <div class="add-right">
-                <div class="down-tri"></div>
-                请求方式：
-                <a href="">
-                    <span class="short-add"><{$api.method}></span>
-                </a>
-            </div>
-            <div style="clear:both"></div>
-        </div>
-
-        <{if $api.header neq null}>
-        <p class="small-title">头部参数</p>
-        <table class="list-container">
-            <tbody>
-            <tr>
-                <th>名称</th>
-                <th>类型</th>
-                <th>说明</th>
-            </tr>
-            <{foreach $api.header as $name => $document}>
-            <tr>
-                <td><{$name}></td>
-                <td><{$document.type}></td>
-                <td><{$document.description}></td>
-            </tr>
-            <{/foreach}>
-            </tbody>
-        </table>
+        </select>
         <{/if}>
 
-        <{if $api.params neq null}>
-        <p class="small-title">接口参数</p>
-        <table class="list-container">
-            <tbody>
-            <tr>
-                <th>名称</th>
-                <th>类型</th>
-                <th>必须</th>
-                <th>说明</th>
-            </tr>
-            <{foreach $api.params as $name => $document}>
-            <tr>
-                <td><{$name}></td>
-                <td><{$document.type}></td>
-                <{if $document.default neq null}>
-                <td>否</td>
-                <td rowspan="2">
-                    <{$document.description}><br>
-                    默认值：<span><{$document.default}></span>
-                </td>
-                <{else}>
-                <td>是</td>
-                <td>
-                    <{$document.description}>
-                </td>
-                <{/if}>
-            </tr>
-            <{/foreach}>
-            </tbody>
-        </table>
-        <{/if}>
-
-        <{if $api.return neq null}>
-        <p class="small-title">返回说明</p>
-        <table class="list-container">
-            <tbody>
-            <tr>
-                <th>名称</th>
-                <th>说明</th>
-            </tr>
-            <{foreach $api.return as $name => $description}>
-            <tr>
-                <td><{$name}></td>
-                <td><{$description}></td>
-            </tr>
-            <{/foreach}>
-            </tbody>
-        </table>
-        <{/if}>
-
-        <{if $api.example neq null}>
-        <div class="response">
-            <div class="response-title">
-                <div class="response-rect">Response-Example</div>
-                <div class="response-border"></div>
-            </div>
-            <{$e=0}>
-            <{foreach $api.example as $e_example}>
-            <div class="response-content">
-                <div class="code" id="example<{$i}><{$e}>">
-                    <script>decodeJson("example<{$i}><{$e}>", "<{$e_example}>")</script>
-                </div>
-            </div>
-            <{$e=$e+1}>
-            <{/foreach}>
-        </div>
-        <{/if}>
-
-        <p class="send-title">发送示例请求</p>
-        <form>
-            <div class="web-box">
-                <div class="web-left">网址</div>
-                <input class="web-right copy-text api_url" type="text" title="<{$api.method}>"
-                       value="<{$path}><{$api.url}>">
-                <div class="copy copy_content" data-clipboard-text="<{$path}><{$api.url}>">
-                    复制
-                </div>
-            </div>
-
-            <{if $api.header neq null}>
-            <div class="header-box">
-                <div class="header-title">- Header</div>
-
-                <{foreach $api.header as $name => $document}>
-                <div class="web-box" style="margin-top: 60px">
-                    <input class="web-right copy-mes headers_val">
-                    <div class="header-right headers_type"><{$document.type}></div>
-                    <div class="web-box-copy">
-                        <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
-                        <input type="checkbox" class="headers" name="" value="<{$name}>" checked="checked"><{$name}>
-                    </div>
-                </div>
-                <{/foreach}>
-
-            </div>
-            <{/if}>
-
-            <{if $api.params neq null}>
-            <div class="header-box">
-                <div class="header-title">- Parameter</div>
-
-                <{foreach $api.params as $name => $document}>
-                <{if strpos($api.url,"{"|cat:$name|cat:"}") gt 0}>
-                <div class="web-box" style="margin-top: 60px">
-                    <input class="web-right copy-mes params_val" value="请修改url中的{<{$name}>}" readonly>
-                    <div class="header-right params_type"><{$document.type}></div>
-                    <div class="web-box-copy">
-                        <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
-                        <input type="checkbox" class="params" name="" value="<{$name}>" disabled="disabled"><{$name}>
-                    </div>
-                </div>
-                <{else}>
-                <div class="web-box" style="margin-top: 60px">
-                    <input class="web-right copy-mes params_val">
-                    <div class="header-right params_type"><{$document.type}></div>
-                    <div class="web-box-copy">
-                        <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
-                        <input type="checkbox" class="params" name="" value="<{$name}>" checked="checked"><{$name}>
-                    </div>
-                </div>
-                <{/if}>
-                <{/foreach}>
-
-            </div>
-            <{/if}>
-
-            <input type="button" name="<{$i}>" value="发送" class="button">
-        </form>
-
-        <p class="send-title response_hide">返回</p>
-        <div class="response-content response_hide">
-            <div class="code" id="return_<{$i}>">
-
-            </div>
-        </div>
     </div>
-    <{$i=$i+1}>
+
+    <{$i=0}>
+    <{if $version_control eq TRUE}>
+        <{$index=0}>
+        <{foreach $data as $version => $document}>
+            <ul class="navigation clearfix list" id="navigation<{$index}>">
+                <{foreach $document as $group => $apis}>
+                <div class="aside-title"><{$group}></div>
+                <ul>
+                    <{foreach $apis as $title => $api}>
+                    <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+                    <{$i=$i+1}>
+                    <{/foreach}>
+                </ul>
+                <{/foreach}>
+            </ul>
+            <{$index=$index+1}>
+        <{/foreach}>
+    <{else}>
+        <ul class="navigation clearfix list" id="navigation0">
+            <{foreach $data as $group => $apis}>
+            <div class="aside-title"><{$group}></div>
+            <ul>
+                <{foreach $apis as $title => $api}>
+                <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+                <{$i=$i+1}>
+                <{/foreach}>
+            </ul>
+            <{/foreach}>
+        </ul>
+    <{/if}>
+</aside>
+
+<{$i=0}>
+<{if $version_control eq TRUE}>
+    <{foreach $data as $version => $document}>
+        <div class="right edition">
+            <{foreach $document as $group => $apis}>
+                <{foreach $apis as $title => $api}>
+                    <{include 'doc_common.html'}>
+                    <{$i=$i+1}>
+                <{/foreach}>
+            <{/foreach}>
+        </div>
     <{/foreach}>
-    <{/foreach}>
-</div>
+<{else}>
+    <div class="right edition">
+        <{foreach $data as $group => $apis}>
+            <{foreach $apis as $title => $api}>
+                <{include 'doc_common.html'}>
+                <{$i=$i+1}>
+            <{/foreach}>
+        <{/foreach}>
+    </div>
+<{/if}>
+
+
 </body>
 <script type="text/javascript">
     new navScroll({
         nav: {
-            id: 'navigation',
+            id: 'navigation0',
             current: 'current',
             speed: 25,
             fixPx: 0
@@ -245,8 +108,8 @@
                 headers: getParamsJsonData(this, "headers"),
                 success: function (data) {
                     title.show(1000);
-                    response.show(1000);
-                    decodeJson("return_" + id, data);
+                    response.hide().show(1000);
+                    decodeJson("return_" + id, data, $(".aside-head span").eq(0).attr("title"));
                 }
             });
         });

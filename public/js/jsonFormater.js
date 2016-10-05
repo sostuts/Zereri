@@ -1,11 +1,11 @@
-function JsonFormater(opt) {
+function JsonFormater(opt, path) {
     this.options = $.extend({
         dom: '',
         tabSize: 2,
         singleTab: "  ",
         quoteKeys: true,
-        imgCollapsed: "../images/Collapsed.gif",
-        imgExpanded: "../images/Expanded.gif",
+        imgCollapsed: path + "/images/Collapsed.gif",
+        imgExpanded: path + "/images/Expanded.gif",
         isCollapsible: true
     }, opt || {});
     this.isFormated = false;
@@ -24,10 +24,10 @@ JsonFormater.prototype = {
         var html;
         var obj;
         try {
-            if(typeof json == 'object'){
+            if (typeof json == 'object') {
                 obj = [json];
-            }else{
-                if (json == ""){
+            } else {
+                if (json == "") {
                     json = "\"\"";
                 }
                 obj = eval("[" + json + "]");
@@ -37,13 +37,13 @@ JsonFormater.prototype = {
             this.isFormated = true;
         } catch (e) {
             alert("JSON数据格式不正确:\n" + e.message);
-            $(this.options.dom).html("");
+            $(this.options.dom).html(json);
             this.isFormated = false;
         }
     },
     bindEvent: function () {
         var that = this;
-        $(this.options.dom).off('click','.imgToggle');
+        $(this.options.dom).off('click', '.imgToggle');
         $(this.options.dom).on('click', '.imgToggle', function () {
             if (that.isFormated == false) {
                 return;
@@ -56,8 +56,8 @@ JsonFormater.prototype = {
             return;
         }
         var that = this;
-        this.traverseChildren($(this.options.dom), function(element){
-            if(element.hasClass('jf-collapsible')){
+        this.traverseChildren($(this.options.dom), function (element) {
+            if (element.hasClass('jf-collapsible')) {
                 that.makeContentVisible(element, true);
             }
         }, 0);
@@ -67,22 +67,22 @@ JsonFormater.prototype = {
             return;
         }
         var that = this;
-        this.traverseChildren($(this.options.dom), function(element){
-            if(element.hasClass('jf-collapsible')){
+        this.traverseChildren($(this.options.dom), function (element) {
+            if (element.hasClass('jf-collapsible')) {
                 that.makeContentVisible(element, false);
             }
         }, 0);
     },
-    collapseLevel: function(level){
+    collapseLevel: function (level) {
         if (this.isFormated == false) {
             return;
         }
         var that = this;
-        this.traverseChildren($(this.options.dom), function(element, depth){
-            if(element.hasClass('jf-collapsible')){
-                if(depth >= level){
+        this.traverseChildren($(this.options.dom), function (element, depth) {
+            if (element.hasClass('jf-collapsible')) {
+                if (depth >= level) {
                     that.makeContentVisible(element, false);
-                }else{
+                } else {
                     that.makeContentVisible(element, true);
                 }
             }
@@ -90,7 +90,7 @@ JsonFormater.prototype = {
 
     },
     isArray: function (obj) {
-        return  obj &&
+        return obj &&
             typeof obj === 'object' &&
             typeof obj.length === 'number' && !(obj.propertyIsEnumerable('length'));
     },
@@ -137,13 +137,13 @@ JsonFormater.prototype = {
         }
         func(element, depth);
     },
-    makeContentVisible : function(element, visible){
+    makeContentVisible: function (element, visible) {
         var img = element.prev().find('img');
-        if(visible){
+        if (visible) {
             element.show();
             img.attr('src', this.options.imgExpanded);
             img.data('status', 1);
-        }else{
+        } else {
             element.hide();
             img.attr('src', this.options.imgCollapsed);
             img.data('status', 0);
@@ -191,7 +191,7 @@ JsonFormater.prototype = {
             html += this.formatLiteral(obj, "", comma, indent, isArray, "Number");
         } else if (type == 'boolean') {
             html += this.formatLiteral(obj, "", comma, indent, isArray, "Boolean");
-        }else if (type == 'undefined') {
+        } else if (type == 'undefined') {
             html += this.formatLiteral("undefined", "", comma, indent, isArray, "Null");
         } else {
             html += this.formatLiteral(obj.toString().split("\\").join("\\\\").split('"').join('\\"'), "\"", comma, indent, isArray, "String");
