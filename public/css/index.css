@@ -218,7 +218,7 @@ aside {
     box-sizing: border-box;
     color: #fff;
     font-family: "Adobe 黑体 Std";
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .error-bg {
@@ -247,14 +247,16 @@ aside {
 
 .web-box-float {
     margin-left: 0px !important;
+    margin-right: 8%;
+    float: right;
 }
 
 .web-box-container {
     width: auto;
     height: 40px;
     margin-top: 60px;
-    display: flex;
-    justify-content: center;
+    /*display:flex;*/
+    /*justify-content: right;*/
 }
 
 .web-left {
@@ -320,6 +322,7 @@ aside {
     font-family: Arial;
     font-size: 18px;
     font-weight: bold;
+    float: right;
 }
 
 .web-box-copybtn {
@@ -339,7 +342,7 @@ aside {
 }
 
 .button {
-    width: 21%;
+    width: 26%;
     height: 34px;
     margin: 30px auto 46px auto;
     border: none;
@@ -454,7 +457,7 @@ aside a:hover {
     color: #fff;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1049px) {
     .web-box-copy {
         font-size: 14px;
     }
@@ -465,6 +468,14 @@ aside a:hover {
 
     .response-rect {
         width: 25%;
+    }
+
+    .web-box-float {
+        margin-right: 0px;
+    }
+
+    .button {
+        width: 34%;
     }
 }
 
@@ -478,7 +489,7 @@ aside a:hover {
     }
 
     .response-rect {
-        width: 40%;
+        width: 30%;
     }
 }
 
@@ -499,6 +510,10 @@ aside a:hover {
         font-size: 12px;
         width: 3px;
     }
+
+    .web-box-float {
+        width: 20%;
+    }
 }
 
 @media screen and (max-width: 538px) {
@@ -518,10 +533,6 @@ aside a:hover {
     .aside-head span {
         font-size: 12px;
         width: 3px;
-    }
-
-    .response-rect {
-        width: 60%;
     }
 }
 

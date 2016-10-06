@@ -293,12 +293,18 @@ class Document
      * @param bool  $header 是否为header
      *
      * @return array
+     * @throws UserException
      */
     protected function parseParams(array $params, $header = false)
     {
         $param_list = [];
         foreach ($params as $param) {
             $type_name_desc = $this->explodeSpace($param, 3);
+
+            if (count($type_name_desc) < 3) {
+                throw new UserException("It needs <b>\"type name desc\"</b> in \"$param\"");
+            }
+
             //去除$符号
             $name = $header ? $type_name_desc[1] : substr($type_name_desc[1], 1);
             $param_list[ $name ]["type"] = $type_name_desc[0];
@@ -342,10 +348,10 @@ class Document
     {
         $example_list = [];
         foreach ($examples as $example) {
-            list($status_code, $content) = $this->explodeSpace($example);
+            list($status_code, $content) = $this->explodeSpace($example, 2);
             $example_list[ $status_code ] = $content;
         }
-
+        
         return $example_list;
     }
 
