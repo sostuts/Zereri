@@ -40,7 +40,7 @@ class HandleUri
      */
     private function getVersionAndUrl()
     {
-        $url = urldecode($_SERVER['QUERY_STRING']);
+        $url = urldecode($_SERVER['QUERY_STRING'] ?: substr($_SERVER["REQUEST_URI"], 1));
         if (!config("version_control")) {
             return ["", $url];
         }
