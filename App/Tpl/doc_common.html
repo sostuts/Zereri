@@ -101,8 +101,8 @@
         <{$e=0}>
         <{foreach $api.example as $e_example}>
         <div class="response-content">
-            <div class="code" id="example<{$i}><{$e}>">
-                <script>decodeJson("example<{$i}><{$e}>", <{$e_example}>, "<{$root_path}>")</script>
+            <div class="code" id="example<{$i}>_<{$e}>">
+                <script>decodeJson("example<{$i}>_<{$e}>", <{$e_example}>, "<{$root_path}>")</script>
             </div>
         </div>
         <{$e=$e+1}>
