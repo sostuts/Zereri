@@ -85,7 +85,7 @@ class Document
         } else {
             $this->api_array = $this->getApiGroupAndValues($this->routes);
         }
-
+        
         return $this;
     }
 
@@ -320,6 +320,7 @@ class Document
      * @param $return
      *
      * @return array
+     * @throws UserException
      */
     protected function parseReturn($return)
     {
@@ -327,8 +328,13 @@ class Document
         if ($return) {
             $return = $this->explodeSpace($return);
             foreach ($return as $e_return) {
-                list($name, $description) = explode(":", $e_return, 2);
-                $return_list[ $name ] = $description;
+                $name_desc = explode(":", $e_return, 2);
+
+                if (count($name_desc) < 2) {
+                    throw new UserException("It needs <b>\"name:description\"</b> in return param \"" . $name_desc[0] . "\"");
+                }
+
+                $return_list[ $name_desc[0] ] = $name_desc[1];
             }
 
             ksort($return_list);
@@ -351,7 +357,7 @@ class Document
             list($status_code, $content) = $this->explodeSpace($example, 2);
             $example_list[ $status_code ] = $content;
         }
-        
+
         return $example_list;
     }
 

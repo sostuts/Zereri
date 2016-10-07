@@ -1,3 +1,4 @@
+changeMenu(0);
 $(document).ready(function () {
     $('.copy').click(function () {
         $(this).css('backgroundImage', 'url(../images/iscopy.png)').text('已复制');
@@ -10,8 +11,6 @@ $(document).ready(function () {
     var h = $(window).height();
     $("aside").height(h);
 
-
-    changeMenu(0);
     $("#select").change(function () {
         var index = $(this).children('option:selected').val();
 

@@ -56,9 +56,9 @@
         <tr>
             <td><{$name}></td>
             <td><{$document.type}></td>
-            <{if $document.default neq null}>
+            <{if ($document.default neq null) || ($document.default eq '0')}>
             <td>否</td>
-            <td rowspan="2">
+            <td>
                 <{$document.description}><br>
                 默认值：<span><{$document.default}></span>
             </td>
