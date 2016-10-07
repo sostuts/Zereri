@@ -31,57 +31,57 @@
 
     <{$i=0}>
     <{if $version_control eq TRUE}>
-        <{$index=0}>
-        <{foreach $data as $version => $document}>
-            <ul class="navigation clearfix list" id="navigation<{$index}>">
-                <{foreach $document as $group => $apis}>
-                <div class="aside-title"><{$group}></div>
-                <ul>
-                    <{foreach $apis as $title => $api}>
-                    <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
-                    <{$i=$i+1}>
-                    <{/foreach}>
-                </ul>
-                <{/foreach}>
-            </ul>
-            <{$index=$index+1}>
-        <{/foreach}>
-    <{else}>
-        <ul class="navigation clearfix list" id="navigation0">
-            <{foreach $data as $group => $apis}>
-            <div class="aside-title"><{$group}></div>
-            <ul>
-                <{foreach $apis as $title => $api}>
-                <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
-                <{$i=$i+1}>
-                <{/foreach}>
-            </ul>
+    <{$index=0}>
+    <{foreach $data as $version => $document}>
+    <ul class="navigation clearfix list" id="navigation<{$index}>">
+        <{foreach $document as $group => $apis}>
+        <div class="aside-title"><{$group}></div>
+        <ul>
+            <{foreach $apis as $title => $api}>
+            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+            <{$i=$i+1}>
             <{/foreach}>
         </ul>
+        <{/foreach}>
+    </ul>
+    <{$index=$index+1}>
+    <{/foreach}>
+    <{else}>
+    <ul class="navigation clearfix list" id="navigation0">
+        <{foreach $data as $group => $apis}>
+        <div class="aside-title"><{$group}></div>
+        <ul>
+            <{foreach $apis as $title => $api}>
+            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+            <{$i=$i+1}>
+            <{/foreach}>
+        </ul>
+        <{/foreach}>
+    </ul>
     <{/if}>
 </aside>
 
 <{$i=0}>
 <{if $version_control eq TRUE}>
-    <{foreach $data as $version => $document}>
-        <div class="right edition">
-            <{foreach $document as $group => $apis}>
-                <{foreach $apis as $title => $api}>
-                    <{include 'doc_common.html'}>
-                    <{$i=$i+1}>
-                <{/foreach}>
-            <{/foreach}>
-        </div>
+<{foreach $data as $version => $document}>
+<div class="right edition">
+    <{foreach $document as $group => $apis}>
+    <{foreach $apis as $title => $api}>
+    <{include 'doc_common.html'}>
+    <{$i=$i+1}>
     <{/foreach}>
+    <{/foreach}>
+</div>
+<{/foreach}>
 <{else}>
-    <div class="right edition">
-        <{foreach $data as $group => $apis}>
-            <{foreach $apis as $title => $api}>
-                <{include 'doc_common.html'}>
-                <{$i=$i+1}>
-            <{/foreach}>
-        <{/foreach}>
-    </div>
+<div class="right edition">
+    <{foreach $data as $group => $apis}>
+    <{foreach $apis as $title => $api}>
+    <{include 'doc_common.html'}>
+    <{$i=$i+1}>
+    <{/foreach}>
+    <{/foreach}>
+</div>
 <{/if}>
 
 
@@ -106,6 +106,7 @@
                 url: $(this).parent().find("input.api_url").val(),
                 data: getParamsJsonData(this, "params"),
                 headers: getParamsJsonData(this, "headers"),
+                contentType: 'application/json',
                 success: function (data) {
                     title.show(1000);
                     response.hide().show(1000);
@@ -126,14 +127,14 @@
                 }
             }
 
-            return JSON.parse(JSON.stringify(data));
+            return JSON.stringify(data);
         }
 
-        $("input.api_url").focus(function(){
+        $("input.api_url").focus(function () {
             $(this).siblings(".copy").hide(500);
         });
 
-        $("input.api_url").blur(function(){
+        $("input.api_url").blur(function () {
             $(this).siblings(".copy").show(500);
         });
     });

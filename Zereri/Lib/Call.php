@@ -99,7 +99,7 @@ class Call
         $reflect = $this->getReflect();
         foreach ($reflect->getParameters() as $index => $param) {
             if ($index < count($this->url_params)) {
-                $this->params[] = $this->url_params[ $index ];
+                $this->params[] = urldecode($this->url_params[ $index ]);
 
                 continue;
             }
