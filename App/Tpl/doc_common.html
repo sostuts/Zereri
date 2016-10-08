@@ -99,7 +99,8 @@
             <div class="response-border"></div>
         </div>
         <{$e=0}>
-        <{foreach $api.example as $e_example}>
+        <{foreach $api.example as $e_title => $e_example}>
+        <div class="circle"></div><div class="e_title"><{$e_title}></div>
         <div class="response-content">
             <div class="code" id="example<{$i}>_<{$e}>">
                 <script>decodeJson("example<{$i}>_<{$e}>", <{$e_example}>, "<{$root_path}>")</script>
