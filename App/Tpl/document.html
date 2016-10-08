@@ -10,6 +10,7 @@
     <script type="text/javascript" src="<{$root_path}>/js/index.js"></script>
     <script type="text/javascript" src="<{$root_path}>/js/navScroll.js"></script>
     <script type="text/javascript" src="<{$root_path}>/js/copy.js"></script>
+    <script type="text/javascript" src="<{$root_path}>/js/form.js"></script>
     <title></title>
 </head>
 <body>
@@ -98,22 +99,45 @@
 
     $(function () {
         $(".button").click(function () {
-            var id = $(this).attr("name");
-            var title = $(this).parent().siblings(".send-title");
-            var response = $(this).parent().siblings(".response-content");
-            $.ajax({
-                method: $(this).parent().find("input.api_url").attr("title"),
-                url: $(this).parent().find("input.api_url").val(),
-                data: getParamsJsonData(this, "params"),
-                headers: getParamsJsonData(this, "headers"),
-                contentType: 'application/json',
+            var url = $(this).parent().find("input.api_url").val();
+            if (haveFile(this)) {
+                fileFormSubmit(this, url);
+            } else {
+                ajaxJson(this, url);
+            }
+        });
+
+        function haveFile($this) {
+            return ($($this).parent().find("input[type='file']")["length"] > 0);
+        }
+
+        function fileFormSubmit($this, $url) {
+            $($this).parent().ajaxSubmit({
+                url: $url,
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'multipart/form-data',
                 success: function (data) {
-                    title.show(1000);
-                    response.hide().show(1000);
-                    decodeJson("return_" + id, data, $(".aside-head span").eq(0).attr("title"));
+                    showReturn($this, data);
+                },
+                error: function (data) {
+                    alert(JSON.stringify(data) + "--上传失败,请刷新后重试");
                 }
             });
-        });
+        }
+
+        function ajaxJson($this, $url) {
+            $.ajax({
+                method: $($this).parent().find("input.api_url").attr("title"),
+                url: $url,
+                data: getParamsJsonData($this, "params"),
+                headers: JSON.parse(getParamsJsonData($this, "headers")),
+                contentType: 'json',
+                success: function (data) {
+                    showReturn($this, data);
+                }
+            });
+        }
 
         function getParamsJsonData($this, $type) {
             var data = {};
@@ -130,12 +154,30 @@
             return JSON.stringify(data);
         }
 
+        function showReturn($this, $data) {
+            var id = "return_" + $($this).attr("name");
+            var title = $($this).parent().siblings(".send-title");
+            var response = $($this).parent().siblings(".response-content");
+
+            title.show(1000);
+            response.hide().show(1000);
+            decodeJson(id, $data, $(".aside-head span").eq(0).attr("title"));
+        }
+
         $("input.api_url").focus(function () {
             $(this).siblings(".copy").hide(500);
         });
 
         $("input.api_url").blur(function () {
             $(this).siblings(".copy").show(500);
+        });
+
+        $(".file_input").click(function(){
+            $(this).siblings("input[type='file']").click();
+        });
+
+        $("input[type='file']").change(function(){
+            $(this).siblings(".file_input").val(this.files[0].name);
         });
     });
 

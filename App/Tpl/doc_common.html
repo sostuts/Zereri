@@ -170,7 +170,12 @@
             <{else}>
             <div class="web-box-container">
                 <div class="web-box web-box-float">
-                    <input class="web-right copy-mes params_val">
+                    <{if $document.type eq 'file'}>
+                        <input class="web-right copy-mes params_val file_input" name="<{$name}>" value="请点击选择文件" readonly>
+                        <input type="file" name="<{$name}>" hidden>
+                    <{else}>
+                        <input class="web-right copy-mes params_val" name="<{$name}>">
+                    <{/if}>
                     <div class="header-right params_type"><{$document.type}></div>
                 </div>
                 <div class="web-box-copy">

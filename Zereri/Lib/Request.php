@@ -26,11 +26,7 @@ class Request
             return [];
         }
 
-        if ($this->isForm()) {
-            return $_POST;
-        } else {
-            return $this->getInputData();
-        }
+        return $_POST ?: $this->getInputData();
     }
 
 
@@ -41,16 +37,6 @@ class Request
     private function isPost()
     {
         return in_array($_SERVER['REQUEST_METHOD'], ["POST", "PUT", "PATCH"]);
-    }
-
-
-    /**判断是否为表单
-     *
-     * @return bool|int
-     */
-    private function isForm()
-    {
-        return strpos($_SERVER['CONTENT_TYPE'], 'form');
     }
 
 

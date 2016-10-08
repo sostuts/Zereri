@@ -1,7 +1,7 @@
 changeMenu(0);
 $(document).ready(function () {
     $('.copy').click(function () {
-        $(this).css('backgroundImage', 'url(../images/iscopy.png)').text('已复制');
+        $(this).css('backgroundImage', 'url(' + $(".aside-head span").eq(0).attr("title") + '/images/iscopy.png)').text('已复制');
     });
 
     $('.web-box-copybtn').click(function () {
