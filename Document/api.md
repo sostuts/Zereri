@@ -17,7 +17,7 @@
  * @param  string $content 详细内容
  *
  * @return content:真实的内容
- * @example 200 {"result":"ok"}
+ * @example 成功 {"result":"ok"}
  */
 ```
 
@@ -45,11 +45,11 @@ hello 为组名，即为文档一级菜单栏名字。
 | name.Yap:desc2 | 第二个返回值的名字:说明 |
 | nameN.descN    | 第N个返回值的名字.说明 |
 
-- 例子说明：`@example status_code json_data`
+- 例子说明：`@example condition json_data`
 
-| status_code | 返回的HTTP状态码     |
-| ----------- | -------------- |
-| json_data   | 返回的具体信息,json格式 |
+| condition | 具体情况,对此次返回的解释  |
+| --------- | -------------- |
+| json_data | 返回的具体信息,json格式 |
 
 <br/>
 
@@ -86,7 +86,7 @@ public function welcome($name, $age = 0)
  * @param  int    $age  年龄
  *
  * @return user:用户的名字 age:用户的年龄
- * @example 200 {"user":"zeffee","age":20}
+ * @example 成功 {"user":"zeffee","age":20}
  */
 public function welcome($name, $age = 0)
 {
@@ -131,8 +131,8 @@ public function findPwd($user)
  * @param  string $user 用户的账号
  *
  * @return password:用户的密码
- * @example 200 {"password":"123456"}
- * @example 404 {"message":"error"}
+ * @example 成功 {"password":"123456"}
+ * @example AUTHENTICATION有误 {"message":"error"}
  */
 public function findPwd($user)
 {
