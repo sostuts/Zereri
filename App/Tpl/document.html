@@ -39,7 +39,7 @@
         <div class="aside-title"><{$group}></div>
         <ul>
             <{foreach $apis as $title => $api}>
-            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:20}></a></li>
             <{$i=$i+1}>
             <{/foreach}>
         </ul>
@@ -127,10 +127,16 @@
         }
 
         function ajaxJson($this, $url) {
+            var method=$($this).parent().find("input.api_url").attr("title");
+            if(method == "GET" || method =="DELETE"){
+                var data = null;
+            }else{
+                var data =getParamsJsonData($this, "params");
+            }
             $.ajax({
-                method: $($this).parent().find("input.api_url").attr("title"),
+                method: method,
                 url: $url,
-                data: getParamsJsonData($this, "params"),
+                data: data,
                 headers: JSON.parse(getParamsJsonData($this, "headers")),
                 contentType: 'json',
                 success: function (data) {
@@ -172,11 +178,11 @@
             $(this).siblings(".copy").show(500);
         });
 
-        $(".file_input").click(function(){
+        $(".file_input").click(function () {
             $(this).siblings("input[type='file']").click();
         });
 
-        $("input[type='file']").change(function(){
+        $("input[type='file']").change(function () {
             $(this).siblings(".file_input").val(this.files[0].name);
         });
     });
