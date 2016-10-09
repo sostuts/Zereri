@@ -108,7 +108,8 @@
         });
 
         function haveFile($this) {
-            return ($($this).parent().find("input[type='file']")["length"] > 0);
+            var files = $($this).parent().find("input[type='file']");
+            return (files["length"] > 0) && (files.val() != "");
         }
 
         function fileFormSubmit($this, $url) {
@@ -117,6 +118,7 @@
                 type: 'POST',
                 dataType: 'json',
                 contentType: 'multipart/form-data',
+                headers: JSON.parse(getParamsJsonData($this, "headers")),
                 success: function (data) {
                     showReturn($this, data);
                 },
@@ -127,11 +129,11 @@
         }
 
         function ajaxJson($this, $url) {
-            var method=$($this).parent().find("input.api_url").attr("title");
-            if(method == "GET" || method =="DELETE"){
+            var method = $($this).parent().find("input.api_url").attr("title");
+            if (method == "GET" || method == "DELETE") {
                 var data = null;
-            }else{
-                var data =getParamsJsonData($this, "params");
+            } else {
+                var data = getParamsJsonData($this, "params");
             }
             $.ajax({
                 method: method,
