@@ -58,6 +58,8 @@ TB('table')->select();
 
 #指定列名查询
 TB('table')->select('column1,column2,column3');
+#另一种写法
+TB('table')->select(['column1', 'column2', 'column3']);
 ```
 
 <br/>

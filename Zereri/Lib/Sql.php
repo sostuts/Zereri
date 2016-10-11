@@ -606,7 +606,12 @@ class Sql
     public function select($columns = '*')
     {
         $this->crud(__FUNCTION__);
-        $this->columns = $columns;
+
+        if (is_array($columns)) {
+            $this->columns = implode(",", $columns);
+        } else {
+            $this->columns = $columns;
+        }
 
         return $this->execSql();
     }

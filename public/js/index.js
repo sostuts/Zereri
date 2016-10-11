@@ -8,6 +8,22 @@ $(document).ready(function () {
         $(this).text('已复制');
     });
 
+    $("input.api_url").focus(function () {
+        $(this).siblings(".copy").hide(500);
+    });
+
+    $("input.api_url").blur(function () {
+        $(this).siblings(".copy").show(500);
+    });
+
+    $(".file_input").click(function () {
+        $(this).siblings("input[type='file']").click();
+    });
+
+    $("input[type='file']").change(function () {
+        $(this).siblings(".file_input").val(this.files[0].name);
+    });
+
     var h = $(window).height();
     $("aside").height(h);
 
