@@ -2,14 +2,15 @@
 
 框架已经封装Redis和Cached缓存类，控制器里直接使用即可。使用此类前**请确保服务器已经安装了PHP的 Memcached扩展** 或者 **Redis 扩展**。
 
-
+<br/>
 
 #### 配置
 
-/App/Config/config.php
+/App/Config/cache.php
 
 ``` php
 <?php
+return [
     /**
      * 缓存配置
      */
@@ -34,11 +35,23 @@
      * redis服务器配置
      */
     'redis'     => [
-        'server' => ["127.0.0.1", 6379, "Password"]   //设置redis服务器配置
-    ],
+        'cluster' => FALSE,                  //是否开启redis-cluster
+        'auth'    => NULL,					 //Redis认证密码
+        'server'  => ["127.0.0.1", 6379]	 //第一个参数为ip, 第二个为端口 (单台服务器配置)
+      
+      	//开启了cluster的server配置
+        'server'  => [
+            'tcp://127.0.0.1:7000',
+            'tcp://127.0.0.1:7001',
+            'tcp://127.0.0.1:7002',
+            'tcp://127.0.0.1:7003',
+            'tcp://127.0.0.1:7004'
+        ]
+    ]
+];
 ```
 
-
+<br/>
 
 ##### Set
 
@@ -58,7 +71,7 @@ Cache::set([
 
 提示：时间默认值为3600s。
 
-
+<br/>
 
 ##### Get
 
@@ -73,7 +86,7 @@ Cache::get("key");
 Cache::get(["key1", "key2", "key3"]);
 ```
 
-
+<br/>
 
 ##### Has
 
@@ -85,7 +98,7 @@ Cache::get(["key1", "key2", "key3"]);
 Cache::has("key");
 ```
 
-
+<br/>
 
 ##### Delete
 
@@ -97,7 +110,7 @@ Cache::has("key");
 Cache::delete("key");
 ```
 
-
+<br/>
 
 ##### Flush
 
@@ -109,7 +122,7 @@ Cache::delete("key");
 Cache::flush();
 ```
 
-
+<br/>
 
 ##### Increment
 
@@ -127,7 +140,7 @@ Cache::increment("Core");
 Cache::increment("Age", 3);
 ```
 
-
+<br/>
 
 ##### Decrement
 
@@ -145,7 +158,7 @@ Cache::decrement("Core");
 Cache::decrement("people", 7);
 ```
 
-
+<br/>
 
 #### 更多操作
 

@@ -29,30 +29,55 @@ class Redis
     }
 
 
-    /**实例化redis
+    /**实例化、连接redis服务器
      *
      * @return \Redis
      */
     protected function newInstance()
     {
+        $config = config("redis");
+        if (!$config["cluster"]) {
+            return $this->connectSingleRedis($config["server"][0], $config["server"][1], $config["auth"]);
+        } else {
+            return $this->conncetClusterRedis($config["server"], $config["auth"]);
+        }
+    }
+
+
+    /**连接单台redis服务器
+     *
+     * @param $host
+     * @param $port
+     * @param $auth
+     *
+     * @return \Redis
+     */
+    protected function connectSingleRedis($host, $port, $auth)
+    {
         $instance = new \Redis();
-        $this->connect($instance);
+        $instance->connect($host, $port);
+        $instance->auth($auth);
 
         return $instance;
     }
 
 
-    /**连接redis服务器
+    /**predis连接redis集群
      *
-     * @param $instance
+     * @param $hosts
+     * @param $auth
+     *
+     * @return \Predis\Client
      */
-    protected function connect(&$instance)
+    protected function conncetClusterRedis($hosts, $auth)
     {
-        $config = config("redis");
-        $instance->connect($config["server"][0], $config["server"][1]);
-        if (isset($config["server"][2])) {
-            $instance->auth($config["server"][2]);
-        }
+        $options = [
+            'cluster'    => 'redis',
+            'parameters' => [
+                'password' => $auth
+            ]];
+
+        return new \Predis\Client($hosts, $options);
     }
 
 

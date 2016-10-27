@@ -5,7 +5,7 @@ define('__ROOT__', dirname(dirname(dirname(__FILE__))));
  * 获取全局配置
  */
 $GLOBALS['config'] = require_once __ROOT__ . '/Zereri/Config/config.php';
-$GLOBALS['user_config'] = require_once __ROOT__ . '/App/Config/config.php';
+$GLOBALS['user_config'] = array_merge(require_once __ROOT__ . '/App/Config/config.php', require_once __ROOT__ . '/App/Config/cache.php', require_once __ROOT__ . '/App/Config/database.php');
 $GLOBALS['route'] = require_once __ROOT__ . "/App/Config/route.php";
 
 /**

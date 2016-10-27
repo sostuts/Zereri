@@ -23,45 +23,10 @@ return [
     'version_control' => false,
 
 
-    /*
+    /**
      * https端口
      */
     'https_port'      => 443,
-
-
-    /**
-     * 数据库配置
-     */
-    'database'        => [
-        'master' => [
-            "drive"   => "mysql",
-            "host"    => "localhost",
-            "dbname"  => "zereri",
-            "user"    => "root",
-            "pwd"     => "root",
-            "charset" => "utf8"
-        ],
-
-        //若无从库则 'slave' => []
-        'slave'  => [
-//            [
-//                "drive"   => "mysql",
-//                "host"    => "localhost",
-//                "dbname"  => "zereri",
-//                "user"    => "root",
-//                "pwd"     => "root",
-//                "charset" => "utf8"
-//            ],
-//            [
-//                "drive"   => "mysql",
-//                "host"    => "localhost",
-//                "dbname"  => "zereri",
-//                "user"    => "root",
-//                "pwd"     => "root",
-//                "charset" => "utf8"
-//            ]
-        ]
-    ],
 
 
     /**
@@ -88,33 +53,6 @@ return [
         'App\Controllers\Smarty'  => Zereri\Lib\Replacement\Smarty::class,
         'App\Controllers\Session' => Zereri\Lib\Replacement\Session::class,
         'App\Controllers\Cache'   => Zereri\Lib\Replacement\Cache::class
-    ],
-
-
-    /**
-     * 缓存配置
-     */
-    'cache'           => [
-        "drive" => "redis",
-        'time'  => 3600
-    ],
-
-
-    /**
-     * Memcached服务器配置
-     */
-    'memcached'       => [
-        'server' => [
-            ['127.0.0.1', 11211]
-        ]
-    ],
-
-
-    /**
-     * redis服务器配置
-     */
-    'redis'           => [
-        'server' => ["127.0.0.1", 6379]
     ],
 
 
