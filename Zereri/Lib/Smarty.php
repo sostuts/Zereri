@@ -10,26 +10,12 @@ class Smarty
     private $smarty;
 
 
-    /**引入smarty文件
-     *
-     * @return $this
-     */
-    private function requireFile()
-    {
-        require_once __ROOT__ . '/Zereri/Extension/Smarty/libs/Autoloader.php';
-        require_once __ROOT__ . '/Zereri/Extension/Smarty/libs/Smarty.class.php';
-
-        return $this;
-    }
-
-
     /**实例化smarty
      *
      * @return $this
      */
     private function newIntance()
     {
-        \Smarty_Autoloader::register();
         $this->smarty = new \Smarty;
 
         return $this;
@@ -65,7 +51,7 @@ class Smarty
      */
     public function load($file, array $values, $fetch_file = "")
     {
-        $this->requireFile()->newIntance()->setConfig();
+        $this->newIntance()->setConfig();
 
         foreach ($values as $param => $value) {
             $this->smarty->assign($param, $value);

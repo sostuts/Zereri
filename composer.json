@@ -2,6 +2,7 @@
   "name": "zereri",
   "description": "The Zereri Framework.",
   "require": {
+    "smarty/smarty": "v3.1.30"
   },
   "autoload": {
     "classmap": [
