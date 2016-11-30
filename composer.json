@@ -2,7 +2,8 @@
   "name": "zereri",
   "description": "The Zereri Framework.",
   "require": {
-    "smarty/smarty": "v3.1.30"
+    "smarty/smarty": "v3.1.30",
+    "predis/predis":"v1.1.1"
   },
   "autoload": {
     "classmap": [
@@ -10,6 +11,12 @@
     "psr-4": {
       "App\\": "App/",
       "Zereri\\": "Zereri/"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
     }
   }
 }
