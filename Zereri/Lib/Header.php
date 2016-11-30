@@ -13,7 +13,7 @@ class Header
                     continue;
                 }
 
-                header($key . ':' . $val);
+                header($key . ':' . (is_array($val) ? implode(",", $val) : $val));
             }
         } else {
             header($header);

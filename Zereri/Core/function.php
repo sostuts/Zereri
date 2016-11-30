@@ -1,6 +1,6 @@
 <?php
 //控制器调用
-function response($status_code, $data = NULL, $mode = 'json', $file = '', $shutdown = false, $header = "")
+function response($status_code, $data = NULL, $mode = 'json', $file = '', $shutdown = true, $header = "")
 {
     Zereri\Lib\Header::set(config("status_code")[ $status_code ]);
 

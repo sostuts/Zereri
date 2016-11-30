@@ -27,6 +27,22 @@ class HandleUri
 
     public function __construct()
     {
+        if ($this->isOptionsMethod()) {
+            response(200);
+        }
+
+        $this->init();
+    }
+
+
+    private function isOptionsMethod()
+    {
+        return ($_SERVER['REQUEST_METHOD'] === "OPTIONS");
+    }
+
+
+    private function init()
+    {
         $this->controller_namespace = '\App\Controllers\\';
         list($this->version, $this->url) = $this->getVersionAndUrl();
         $this->url = "/" . $this->url;

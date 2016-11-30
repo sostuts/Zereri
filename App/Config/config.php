@@ -20,7 +20,7 @@ return [
     /**
      * 版本控制
      */
-    'version_control' => false,
+    'version_control' => true,
 
 
     /**
@@ -65,6 +65,13 @@ return [
         'drive' => 'file'
     ],
 
+
+    /**
+     * 调用Api允许携带头部字段名
+     */
+    'headers'         => [
+
+    ],
 
     /**
      * 状态码

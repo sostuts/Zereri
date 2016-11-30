@@ -11,8 +11,8 @@ return [
 
     'smarty' => [
         "template_dir" => __ROOT__ . '/App/Tpl/',
-        "compile_dir"  => __ROOT__ . '/Zereri/Extension/Smarty/templates_c/',
-        "config_dir"   => __ROOT__ . '/Zereri/Extension/Smarty/configs/',
-        "cache_dir"    => __ROOT__ . '/Zereri/Extension/Smarty/cache/'
+        "compile_dir"  => __ROOT__ . '/App/Smarty/templates_c/',
+        "config_dir"   => __ROOT__ . '/App/Smarty/configs/',
+        "cache_dir"    => __ROOT__ . '/App/Smarty/cache/'
     ]
 ];
