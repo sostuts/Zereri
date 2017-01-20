@@ -36,7 +36,7 @@ return [
 ];
 ```
 
-- /user 表示访问 http://localhost/user 。
+- /user 表示访问 http://YourDomain/user 。
 - GET   表示Get方法访问该接口。
 - User@getList  表示访问的是 `/App/Controllers/User.php` 中的 `getList` 方法。
 
@@ -55,7 +55,7 @@ class User
 }
 ```
 
-- **Get方法**访问http://localhost/user  将会返回 `hello` 。
+- **Get方法**访问http://YourDomain/user  将会返回 `hello` 。
 
 <br/>
 
@@ -104,7 +104,7 @@ class User
 }
 ```
 
-- **DELETE 方法**访问 http://localhost/user/123 返回值 `123` 。
+- **DELETE 方法**访问 http://YourDomain/user/123 返回值 `123` 。
 
 <br/>
 
@@ -191,18 +191,18 @@ class Admin
 
 ##### 访问
 
-- http://localhost/student
+- http://YourDomain/student
 
 > Get访问，返回值：`StudentList`
-> 
+>
 > Post访问，返回值：`This is addStudent`
 
 <br/>
 
-- http://localhost/user/123/name/Zereri
+- http://YourDomain/user/123/name/Zereri
 
 > Get访问，返回值：`ID:123 Name:Zereri`
-> 
+>
 > Post带参数**newName=ZZZ**访问，返回值：`ID:123 Name:Zereri newName:ZZZ`
 
 <br/>
@@ -244,5 +244,5 @@ return [
 ];
 ```
 
-- 访问 http://localhost/v1/api/list 访问 `/App/Controllers/Api.php` 的`index` 方法
-- 访问 http://localhost/v2/api/list 访问 `/App/Controllers/First.php` 的`hello` 方法
+- 访问 http://YourDomain/v1/api/list 访问 `/App/Controllers/Api.php` 的`index` 方法
+- 访问 http://YourDomain/v2/api/list 访问 `/App/Controllers/First.php` 的`hello` 方法

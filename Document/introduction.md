@@ -1,12 +1,12 @@
-## Zereri
+# Zereri
 
-#### 前言
+### 前言
 
-Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，采用了主流的mvc架构，同时附加了一些实用的功能，让开发项目变得更快速。
+Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，采用了主流的mvc架构，同时附加了一些实用的功能，让项目的开发变得更便捷。
 
+<br/>
 
-
-#### 环境要求
+### 环境要求
 
 - PHP >= 5.6
 - OpenSSL PHP 扩展
@@ -14,8 +14,10 @@ Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，�
 - Mbstring PHP 扩展
 
 
+<br/>
 
-#### 目录结构
+
+### 目录结构
 
 - App     (项目代码文件)
 
@@ -29,6 +31,7 @@ Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，�
 | Tpl         | 存放view层模板     |
 | Middles     | 中间件类          |
 | Queues      | 队列任务类         |
+| Smarty      | 模板引擎配置、编译文件   |
 
 - logs      (日志文件)
 - public  (前端文件，如\*.html、\*.css 、*.image)
@@ -36,21 +39,27 @@ Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，�
 - vendor(Composer扩展)
 - Zereri  (框架文件)
 
+<br/>
+
 ------
 
-#### 配置
+### 配置
 
-/App/Config/config.php 文件包含以下配置
+- /App/Config/config.php 文件包含以下配置
 
-| 名称              | 说明        |
-| --------------- | --------- |
-| log             | 日志记录方式    |
-| debug           | 调试模式      |
-| version_control | 开启版本控制    |
-| https_port      | Https端口   |
-| database        | 数据库配置     |
-| smarty          | 基本配置      |
-| aliases         | 类的别名      |
-| cache           | 缓存配置      |
-| session         | session配置 |
-| status_code     | HTTP返回状态码 |
+| 名称              | 说明             |
+| --------------- | -------------- |
+| log             | 日志记录方式         |
+| debug           | 调试模式           |
+| version_control | 路由版本控制         |
+| https_port      | 程序的HTTPS端口     |
+| smarty          | 基本配置           |
+| aliases         | 类的别名           |
+| session         | session配置      |
+| headers         | 允许携带的HTTP头部字段名 |
+| status_code     | HTTP返回状态码      |
+
+- /App/Config/cache.php 文件包含缓存的配置，具体介绍请在**缓存**文档查看。
+- /App/Config/database.php 文件包含数据库的配置，具体介绍请在**查询构造器**文档查看。
+- /App/Config/route.php 文件包含路由规则，具体介绍请在**路由器**文档查看。
+

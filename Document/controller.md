@@ -1,6 +1,6 @@
-## 控制器
+# 控制器
 
-#### 创建第一个Controller
+### 创建第一个Controller
 
 - 新建：/App/Controllers/First.php
 
@@ -34,12 +34,12 @@ return [
 
 <br/>
 
-#### 返回Json的控制器
+### 返回Json数据的控制器
 
 ``` php
 <?php
 //框架辅佐函数response()
-void response($status_code, $data = NULL, $mode = 'json', $file = '', $header = "")
+void response($status_code, $data = NULL, $mode = 'json', $file = '', $shutdown = true, $header = "")
 ```
 
 | $mode       | Description            |
@@ -50,7 +50,7 @@ void response($status_code, $data = NULL, $mode = 'json', $file = '', $header = 
 | text        | 纯文本，直接打印               |
 | html        | 调用模板引擎                 |
 
-所以只需要将数组放进response第一个参数即可。
+所以只需要将数组放进response第二个参数即可。
 
 ``` php
 <?php
@@ -66,11 +66,11 @@ class First
 }
 ```
 
-返回值：`{"name":"Ben","age":14}`
+**配置路由**之后，返回值：`{"name":"Ben","age":14}`
 
 <br/>
 
-#### 返回xml的控制器
+### 返回xml数据的控制器
 
 ``` php
 <?php
@@ -86,7 +86,7 @@ class First
 }
 ```
 
-返回值:
+**配置路由**之后，返回值:
 
 ``` 
 <root>
@@ -97,7 +97,7 @@ class First
 
 <br/>
 
-#### 返回html的控制器
+### 返回html的控制器
 
 框架引用了Smarty，模板存放在**/App/Tpl** 里，模板使用Smarty语法即可，控制器使用**response()**方法调用Smarty。
 
@@ -122,7 +122,7 @@ class First
 I am <{$name}>, <{$age}> years old.
 ```
 
-返回值：
+**配置路由**之后，返回值：
 
 ``` 
 I am Ben, 14 years old.
@@ -130,7 +130,7 @@ I am Ben, 14 years old.
 
 <br/>
 
-#### 带参数的控制器
+### 带参数的控制器
 
 在前后端分离的项目中，接口的参数是必要的，在Zereri框架中，**接口的参数**是将会**是方法的参数**。
 
@@ -159,7 +159,7 @@ class Project
 
 return [
     "/age" => [
-        "GET" => "Project@getAge"
+        "POST" => "Project@getAge"
     ]
 ];
 ```
@@ -177,7 +177,7 @@ return [
 
 <br/>
 
-#### 返回带Header的控制器
+### 返回带Header的控制器
 
 ``` php
 <?php
@@ -192,22 +192,32 @@ class Project
           "Content-Type" => "text/html",
           "Server" 		 => "Apache"
         ];
-        response(200, $data, "", "", $header);
+        response(200, $data, "json", "", true, $header);
     }
 }
 ```
 
 <br/>
 
-#### 控制器访问配置值
+### 控制器访问config.php配置值
 
-访问配置值：`config($name);` 
+```php
+<?php
+//框架辅佐函数config()
+function &config($config_name)
+```
 
-例如
+例如:
 
 ``` php
 <?php
+//访问第 n(n<=5) 层配置值, 以英文句号相隔
+echo config("n0.n1.n2.n3.n4");  
+  
+//访问第一层配置值
+echo config("https_port");      //返回值 : 443
 
-echo config("https_port"); //返回值 : 443
+//访问第二层配置值
+echo config("session.drive");   //返回值 : file   
 ```
 
