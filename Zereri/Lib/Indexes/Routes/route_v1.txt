@@ -1,0 +1,1 @@
+{"withoutParams":["\/api\/list","\/test"],"withParams":{"116101115116":["\/test\/([^\\\/]*)","\/test\/fuck\/([^\\\/]*)\/dd\/([^\\\/]*)"],"100100":["\/dd\/([^\\\/]*)"]},"withParamsRules":{"\/test\/([^\\\/]*)":"\/test\/{ad}","\/test\/fuck\/([^\\\/]*)\/dd\/([^\\\/]*)":"\/test\/fuck\/{ad}\/dd\/{hh}","\/dd\/([^\\\/]*)":"\/dd\/{ad}"}}

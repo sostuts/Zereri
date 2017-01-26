@@ -1,5 +1,5 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Db;
 
 class Sql
 {

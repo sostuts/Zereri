@@ -1,9 +1,9 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Basic;
 
 class Request
 {
-    /**http内容
+    /**http请求附带的数据
      *
      * @var bool|mixed|string
      */
@@ -12,41 +12,29 @@ class Request
 
     public function __construct()
     {
-        $this->data = $this->getData();
+        $this->data = $this->getRequestData();
     }
 
 
-    /**获取主体信息
-     *
-     * @return bool|mixed|string
-     */
-    private function getData()
+    private function getRequestData()
     {
-        if (!$this->isPost()) {
+        if (!Request::isPost_Put_Patch()) {
             return [];
         }
 
-        return $_POST ?: $this->getInputData();
+        return $_POST ?: $this->getDecodePHPInputData();
     }
 
 
-    /**是否post请求
-     *
-     * @return bool
-     */
-    private function isPost()
+    public static function isPost_Put_Patch()
     {
         return in_array($_SERVER['REQUEST_METHOD'], ["POST", "PUT", "PATCH"]);
     }
 
 
-    /**获取非表单内容
-     *
-     * @return bool|mixed|string
-     */
-    private function getInputData()
+    private function getDecodePHPInputData()
     {
-        $data = $this->getPhpInput();
+        $data = $this->getPHPInput();
 
         if ($decode_data = $this->jsonDecode($data)) {
             return $decode_data;
@@ -56,22 +44,12 @@ class Request
     }
 
 
-    /**获取只读流信息
-     *
-     * @return string
-     */
-    protected function getPhpInput()
+    protected function getPHPInput()
     {
         return file_get_contents('php://input');
     }
 
 
-    /**json反序列化
-     *
-     * @param $data
-     *
-     * @return bool|mixed
-     */
     protected function jsonDecode($data)
     {
         $data = json_decode($data, true);
@@ -82,8 +60,7 @@ class Request
         }
     }
 
-
-    public function data()
+    public function getData()
     {
         return $this->data;
     }

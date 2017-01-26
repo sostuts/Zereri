@@ -3,29 +3,17 @@ namespace Zereri\Lib;
 
 class Log
 {
-    private static $env = [
-        'file'    => '',
-        'type'    => '',
-        'content' => ''
-    ];
-
     public static function mark($content)
     {
-        self::construct($content);
-
-        self::markLog();
+        $file = __LOG__;
+        $type = 3;
+        $content = self::getIntegrateContent($content);
+        error_log($content, $type, $file);
     }
 
-    protected static function construct($content)
+
+    protected static function getIntegrateContent($content)
     {
-        self::$env['file'] = __LOG__;
-        self::$env['type'] = 3;
-        self::$env['content'] = '[' . date('Y-m-d H:i:s') . ']  ' . $content . "\n\n";
+        return '[' . date('Y-m-d H:i:s') . ']  ' . $content . "\n\n";
     }
-
-    protected static function markLog()
-    {
-        error_log(self::$env['content'], self::$env['type'], self::$env['file']);
-    }
-
 }

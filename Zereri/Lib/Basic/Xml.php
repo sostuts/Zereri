@@ -1,14 +1,10 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Basic;
 
 class Xml
 {
-    //版本
     private $version = '1.0';
-
-    //编码
     private $encoding = 'UTF-8';
-
     private $content;
     private $xml;
 
@@ -16,22 +12,16 @@ class Xml
     public function __construct($content)
     {
         $this->content = $content;
-        $this->setHeader();
+        $this->setXmlHeader();
     }
 
 
-    /**
-     * 设置Header
-     */
-    private function setHeader()
+    private function setXmlHeader()
     {
         Header::set(['Content-type' => 'text/xml']);
     }
 
-    /**数组转换xml
-     *
-     * @return mixed
-     */
+
     public function create()
     {
         $this->xmlCreate();
@@ -42,9 +32,6 @@ class Xml
     }
 
 
-    /**
-     * 创建XmlWriter实例
-     */
     private function xmlCreate()
     {
         $this->xml = new \XmlWriter();
@@ -53,17 +40,13 @@ class Xml
     }
 
 
-    /**添加xml节点
-     *
-     * @param $element
-     * @param $content
-     */
     private function xmlAdd($element, $content)
     {
         $this->xml->startElement($element);
         foreach ($content as $key => $val) {
             if (is_array($val)) {
                 $this->xmlAdd($key, $val);
+
                 continue;
             }
             $this->xml->writeElement($key, $val);
@@ -72,9 +55,6 @@ class Xml
     }
 
 
-    /**
-     * 返回xml内容
-     */
     private function xmlEnd()
     {
         $this->content = $this->xml->outputMemory(true);

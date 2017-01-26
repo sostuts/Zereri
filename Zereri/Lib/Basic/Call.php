@@ -1,8 +1,9 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Basic;
 
 use ReflectionMethod;
 use Zereri\Lib\UserException;
+use Zereri\Lib\Middle;
 
 class Call
 {
@@ -18,6 +19,13 @@ class Call
      * @var string
      */
     private $method;
+
+
+    /**控制器关联的中间件
+     *
+     * @var array
+     */
+    private $middlewares;
 
 
     /**post数据内容
@@ -38,7 +46,7 @@ class Call
      *
      * @var array
      */
-    private $params = [];
+    private $controller_params_value;
 
 
     /**回调函数
@@ -48,72 +56,47 @@ class Call
     private $callback;
 
 
-    /**控制器实例
-     *
-     * @var Object
-     */
-    private $controller;
-
-
-    public function __construct($class, $method, $url_params = [], $callback)
+    public function __construct($class, $method, $url_params = [], $middlewares, $callback)
     {
         $this->class = $class;
         $this->method = $method;
         $this->url_params = $url_params;
+        $this->middlewares = $middlewares;
         $this->callback = $callback;
     }
 
 
-    /**方法是否存在
-     *
-     * @return bool
-     */
-    private function isMethodExists()
-    {
-        return method_exists($this->class, $this->method);
-    }
-
-
-    /**设置post内容
-     *
-     * @param $post
-     *
-     * @return $this
-     */
-    public function setPost($post)
+    public function setPostData($post)
     {
         if (!$this->callback) {
             $this->post = $post;
-            $this->setControllerParams();
+            $this->controller_params_value = $this->getControllerParamsValueFromUrlParams();
         }
 
         return $this;
     }
 
 
-    /**
-     * 设置对应控制器方法的参数
-     */
-    private function setControllerParams()
+    private function getControllerParamsValueFromUrlParams()
     {
-        $reflect = $this->getReflect();
-        foreach ($reflect->getParameters() as $index => $param) {
-            if ($index < count($this->url_params)) {
-                $this->params[] = urldecode($this->url_params[ $index ]);
+        $controller_params = $this->getReflect()->getParameters();
+        $controller_params_value = [];
+        $url_params_array_length = count($this->url_params);
+
+        foreach ($controller_params as $index => $param) {
+            if ($index < $url_params_array_length) {
+                $controller_params_value[] = urldecode($this->url_params[ $index ]);
 
                 continue;
             }
 
-            $this->params[] = $this->getPostColmn($param->getName()) ?: $this->getDefaultValue($param);
+            $controller_params_value[] = $this->getPostParamValue($param->getName()) ?: $this->getDefaultValue($param);
         }
+
+        return $controller_params_value;
     }
 
 
-    /**获取控制器反射对象
-     *
-     * @return ReflectionMethod
-     * @throws \Zereri\Lib\UserException
-     */
     private function getReflect()
     {
         if (!$this->isMethodExists()) {
@@ -124,13 +107,13 @@ class Call
     }
 
 
-    /**获取Post里的指定字段内容
-     *
-     * @param $param_name
-     *
-     * @return bool
-     */
-    private function getPostColmn($param_name)
+    private function isMethodExists()
+    {
+        return method_exists($this->class, $this->method);
+    }
+
+
+    private function getPostParamValue($param_name)
     {
         if (!isset($this->post[ $param_name ])) {
             return false;
@@ -140,25 +123,13 @@ class Call
     }
 
 
-    /**获取参数默认值
-     *
-     * @param $param
-     *
-     * @throws \Zereri\Lib\UserException
-     */
     private function getDefaultValue(&$param)
     {
-        return $param->isDefaultValueAvailable() ? $param->getDefaultValue() : $this->valueError($param->getName());
+        return $param->isDefaultValueAvailable() ? $param->getDefaultValue() : $this->throwParamNeedException($param->getName());
     }
 
 
-    /**字段无值抛出异常
-     *
-     * @param $param_name
-     *
-     * @throws \Zereri\Lib\UserException
-     */
-    private function valueError($param_name)
+    private function throwParamNeedException($param_name)
     {
         throw new UserException('It requires a parameter <b>"' . $param_name . '"</b>.');
     }
@@ -175,9 +146,7 @@ class Call
             return false;
         }
 
-        $this->controller = new $this->class;
-
-        if (isset($this->controller->middle)) {
+        if ($this->middlewares) {
             $this->callBeforeMiddle()->callController()->callAfterMiddle();
         } else {
             $this->callController();
@@ -191,7 +160,7 @@ class Call
      */
     private function callController()
     {
-        $this->controller->{$this->method}(...$this->params);
+        (new $this->class)->{$this->method}(...$this->controller_params_value);
 
         return $this;
     }
@@ -203,7 +172,7 @@ class Call
      */
     private function callBeforeMiddle()
     {
-        Middle::call("before", $this->controller->middle);
+        Middle::call("before", $this->middlewares);
 
         return $this;
     }
@@ -214,6 +183,6 @@ class Call
      */
     private function callAfterMiddle()
     {
-        Middle::call("after", $this->controller->middle);
+        Middle::call("after", $this->middlewares);
     }
 }

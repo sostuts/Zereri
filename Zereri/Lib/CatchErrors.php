@@ -13,76 +13,29 @@ class CatchErrors
         });
     }
 
-    /**customError回调
-     *
-     * @param $errno
-     * @param $errstr
-     * @param $errfile
-     * @param $errline
-     */
+
     private static function customErrorCallFunc($errno, $errstr, $errfile, $errline)
     {
-        self::customErrorHtml($errno, $errstr, $errfile, $errline);
-        self::customErrorLog($errno, $errstr, $errfile, $errline);
+        $err_type = self::getErrorTypeByErrorCode($errno);
+        self::sendCustomErrorContentToHtml($err_type, $errstr, $errfile, $errline);
+        self::markCustomErrorContentToLog($err_type, $errstr, $errfile, $errline);
     }
 
 
-    /**输出错误信息到页面
-     *
-     * @param $errno
-     * @param $errstr
-     * @param $errfile
-     * @param $errline
-     */
-    private static function customErrorHtml($errno, $errstr, $errfile, $errline)
+    private static function sendCustomErrorContentToHtml($err_type, $errstr, $errfile, $errline)
     {
-        $err_content = self::errorCode($errno) . ": $errstr<br /> Error on line $errline in $errfile<br />";
+        $err_content = $err_type . ": $errstr<br /> Error on line $errline in $errfile<br />";
         Debug::outputError($err_content);
     }
 
 
-    /**记录错误信息
-     *
-     * @param $errno
-     * @param $errstr
-     * @param $errfile
-     * @param $errline
-     */
-    private static function customErrorLog($errno, $errstr, $errfile, $errline)
+    private static function markCustomErrorContentToLog($err_type, $errstr, $errfile, $errline)
     {
-        Log::mark(self::errorCode($errno) . "   " . $errstr . "  Error on line $errline in $errfile");
+        Log::mark($err_type . "   " . $errstr . "  Error on line $errline in $errfile");
     }
 
 
-    /**
-     * Fatal Error
-     */
-    public static function shutdownError()
-    {
-        register_shutdown_function(function () {
-            self::shutdownErrorCallFunc();
-        });
-    }
-
-    /**
-     * 输出错误信息
-     */
-    private static function shutdownErrorCallFunc()
-    {
-        if ($err_content = error_get_last()) {
-            $err_content = $err_content['message'] . "<br>" . $err_content['file'] . ' line:' . $err_content['line'];
-            Debug::outputError($err_content);
-        }
-    }
-
-
-    /**日志code转换对应的提示
-     *
-     * @param $code
-     *
-     * @return string
-     */
-    public static function errorCode($code)
+    public static function getErrorTypeByErrorCode($code)
     {
         switch (intval($code)) {
             case 1:
@@ -130,5 +83,25 @@ class CatchErrors
         }
 
         return $var;
+    }
+
+
+    /**
+     * Fatal Error
+     */
+    public static function shutdownError()
+    {
+        register_shutdown_function(function () {
+            self::shutdownErrorCallFunc();
+        });
+    }
+
+
+    private static function shutdownErrorCallFunc()
+    {
+        if ($err_content = error_get_last()) {
+            $err_content = $err_content['message'] . "<br>" . $err_content['file'] . ' line:' . $err_content['line'];
+            Debug::outputError($err_content);
+        }
     }
 }

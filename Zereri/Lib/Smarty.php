@@ -10,10 +10,6 @@ class Smarty
     private $smarty;
 
 
-    /**实例化smarty
-     *
-     * @return $this
-     */
     private function newIntance()
     {
         $this->smarty = new \Smarty;
@@ -22,34 +18,24 @@ class Smarty
     }
 
 
-    /**
-     * 设置smarty配置
-     */
     private function setConfig()
     {
-        $this->smarty->debugging = $GLOBALS['user_config']['smarty']['debugging'];
-        $this->smarty->caching = $GLOBALS['user_config']['smarty']['caching'];
-        $this->smarty->cache_lifetime = $GLOBALS['user_config']['smarty']['cache_lifetime'];
+        $smarty_config = config("smarty");
+        $this->smarty->debugging = $smarty_config['debugging'];
+        $this->smarty->caching = $smarty_config['caching'];
+        $this->smarty->cache_lifetime = $smarty_config['cache_lifetime'];
 
         $this->smarty->cache_dir = $GLOBALS['config']['smarty']['cache_dir'];
         $this->smarty->template_dir = $GLOBALS['config']['smarty']['template_dir'];
         $this->smarty->compile_dir = $GLOBALS['config']['smarty']['compile_dir'];
         $this->smarty->config_dir = $GLOBALS['config']['smarty']['config_dir'];
 
-        $this->smarty->left_delimiter = $GLOBALS['user_config']['smarty']['left_delimiter'];
-        $this->smarty->right_delimiter = $GLOBALS['user_config']['smarty']['right_delimiter'];
+        $this->smarty->left_delimiter = $smarty_config['left_delimiter'];
+        $this->smarty->right_delimiter = $smarty_config['right_delimiter'];
     }
 
 
-    /**渲染加载模板文件或生成静态文件
-     *
-     * @param        $file
-     * @param array  $values
-     * @param string $fetch_file
-     *
-     * @return mixed
-     */
-    public function load($file, array $values, $fetch_file = "")
+    public function load($file, array $values, $save_file_path = "")
     {
         $this->newIntance()->setConfig();
 
@@ -57,23 +43,16 @@ class Smarty
             $this->smarty->assign($param, $value);
         }
 
-        if ($fetch_file) {
-            return $this->saveHtml($file, $fetch_file);
+        if ($save_file_path) {
+            return $this->smartyRenderAndSaveHtmlToFile($file, $save_file_path);
         }
 
         $this->smarty->display($file);
     }
 
 
-    /**页面静态化
-     *
-     * @param $file
-     * @param $fetch_file
-     *
-     * @return int
-     */
-    protected function saveHtml($file, $fetch_file)
+    protected function smartyRenderAndSaveHtmlToFile($file, $save_file_path)
     {
-        return file_put_contents($fetch_file, $this->smarty->fetch($file));
+        return file_put_contents($save_file_path, $this->smarty->fetch($file));
     }
 }

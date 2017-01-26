@@ -56,9 +56,9 @@
         <tr>
             <td><{$name}></td>
             <td><{$document.type}></td>
-            <{if ($document.default neq null) || ($document.default eq '0')}>
+            <{if $document.default neq null}>
             <td>否</td>
-            <td>
+            <td rowspan="2">
                 <{$document.description}><br>
                 默认值：<span><{$document.default}></span>
             </td>
@@ -99,11 +99,10 @@
             <div class="response-border"></div>
         </div>
         <{$e=0}>
-        <{foreach $api.example as $e_title => $e_example}>
-        <div class="circle"></div><div class="e_title"><{$e_title}></div>
+        <{foreach $api.example as $e_example}>
         <div class="response-content">
-            <div class="code" id="example<{$i}>_<{$e}>">
-                <script>decodeJson("example<{$i}>_<{$e}>", <{$e_example}>, "<{$root_path}>")</script>
+            <div class="code" id="example<{$i}><{$e}>">
+                <script>decodeJson("example<{$i}><{$e}>", "<{$e_example}>", "<{$root_path}>")</script>
             </div>
         </div>
         <{$e=$e+1}>
@@ -138,13 +137,13 @@
 
             <{foreach $api.header as $name => $document}>
             <div class="web-box-container">
-                <div class="web-box web-box-float">
-                    <input class="web-right copy-mes headers_val">
-                    <div class="header-right headers_type"><{$document.type}></div>
-                </div>
                 <div class="web-box-copy">
                     <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
                     <input type="checkbox" class="headers" name="" value="<{$name}>" checked="checked"><{$name}>
+                </div>
+                <div class="web-box web-box-float">
+                    <input class="web-right copy-mes headers_val">
+                    <div class="header-right headers_type"><{$document.type}></div>
                 </div>
             </div>
             <{/foreach}>
@@ -159,29 +158,24 @@
             <{foreach $api.params as $name => $document}>
             <{if strpos($api.url,"{"|cat:$name|cat:"}") gt 0}>
             <div class="web-box-container">
-                <div class="web-box web-box-float">
-                    <input class="web-right copy-mes params_val" value="请修改url中的{<{$name}>}" readonly>
-                    <div class="header-right params_type"><{$document.type}></div>
-                </div>
                 <div class="web-box-copy">
                     <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
                     <input type="checkbox" class="params" name="" value="<{$name}>" disabled="disabled"><{$name}>
                 </div>
+                <div class="web-box web-box-float">
+                    <input class="web-right copy-mes params_val" value="请修改url中的{<{$name}>}" readonly>
+                    <div class="header-right params_type"><{$document.type}></div>
+                </div>
             </div>
             <{else}>
             <div class="web-box-container">
-                <div class="web-box web-box-float">
-                    <{if $document.type eq 'file'}>
-                        <input class="web-right copy-mes params_val file_input" name="<{$name}>" value="请点击选择文件" readonly>
-                        <input type="file" name="<{$name}>" hidden>
-                    <{else}>
-                        <input class="web-right copy-mes params_val" name="<{$name}>">
-                    <{/if}>
-                    <div class="header-right params_type"><{$document.type}></div>
-                </div>
                 <div class="web-box-copy">
                     <div class="web-box-copybtn copy_content" data-clipboard-text="<{$name}>">复制</div>
                     <input type="checkbox" class="params" name="" value="<{$name}>" checked="checked"><{$name}>
+                </div>
+                <div class="web-box web-box-float">
+                    <input class="web-right copy-mes params_val">
+                    <div class="header-right params_type"><{$document.type}></div>
                 </div>
             </div>
             <{/if}>

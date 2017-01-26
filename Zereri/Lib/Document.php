@@ -42,9 +42,10 @@ class Document
     public function __construct()
     {
         $this->controller_namespace = '\App\Controllers\\';
-        $this->routes =& $GLOBALS["route"];
+        $this->routes = $this->getConfigRoutesExceptMiddleWareGroup();
         $this->path = $this->getApiPath();
     }
+
 
     public function init()
     {
@@ -52,13 +53,23 @@ class Document
     }
 
 
+    private function getConfigRoutesExceptMiddleWareGroup()
+    {
+        $config_routes = config("route");
+        if (isset($config_routes["MiddleWareGroups"])) {
+            unset($config_routes["MiddleWareGroups"]);
+        }
+
+        return $config_routes;
+    }
+
     /**获取api url路径
      *
      * @return string
      */
     protected function getApiPath()
     {
-        return dirname(dirname(($_SERVER["SERVER_PORT"] == $GLOBALS['user_config']['https_port'] ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . '/'));
+        return dirname(dirname(($_SERVER["SERVER_PORT"] == config("https_port") ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"] . '/'));
     }
 
 
@@ -85,7 +96,7 @@ class Document
         } else {
             $this->api_array = $this->getApiGroupAndValues($this->routes);
         }
-        
+
         return $this;
     }
 
@@ -157,7 +168,9 @@ class Document
         $function_params_name = array_keys($function_params);
 
         foreach ($url_params as $index => $name) {
-            if ($name !== $function_params_name[ $index ]) {
+            if (!isset($function_params_name[ $index ])
+                || $name !== $function_params_name[ $index ]
+            ) {
                 throw new UserException("It needs a param same with the url_param <b>\"$$name\"</b> in the NO." . ($index + 1) . " function param -- " . $function["class"] . "@" . $function["function"]);
             }
         }
@@ -189,17 +202,16 @@ class Document
     {
         $function_arr = [];
         foreach ($route as $url => $call) {
-            foreach ($call as $method => $function) {
+            foreach ($call as $method => $controller_info) {
                 //跳过回调函数
-                if (is_callable($function)) {
+                if (is_callable($controller_info)) {
                     continue;
                 }
 
-                //修改路径为命名空间路径再分割
-                $class_function = explode("@", preg_replace('/\\//', '\\', $function));
+                $class_function = $this->getControllerClass_Method($controller_info);
 
                 if (count($class_function) < 2) {
-                    throw new UserException("It needs controller@function in the route - $url's $method => $function");
+                    throw new UserException("It needs controller@function in the route - $url's $method => $controller_info");
                 }
 
                 $function_arr[] = [
@@ -212,6 +224,18 @@ class Document
         }
 
         return $function_arr;
+    }
+
+
+    private function getControllerClass_Method($route_value)
+    {
+        return is_array($route_value) ? $this->getClass_MethodByExplodeRouteValue($route_value[0]) : $this->getClass_MethodByExplodeRouteValue($route_value);
+    }
+
+
+    private function getClass_MethodByExplodeRouteValue($route_value)
+    {
+        return explode("@", preg_replace('/\\//', '\\', $route_value));
     }
 
 

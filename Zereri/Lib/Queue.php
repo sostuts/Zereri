@@ -1,6 +1,8 @@
 <?php
 namespace Zereri\Lib;
 
+use Zereri\Lib\Cache\Redis;
+
 class Queue
 {
     /**Redis连接

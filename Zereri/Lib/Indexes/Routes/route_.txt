@@ -1,0 +1,1 @@
+{"withoutParams":["\/api\/list","\/test"],"withParams":{"116101115116":["\/test\/([^\\\/]*)"]},"withParamsRules":{"\/test\/([^\\\/]*)":"\/test\/{word}"}}

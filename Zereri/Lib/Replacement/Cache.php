@@ -5,6 +5,6 @@ class Cache extends Common
 {
     protected static function getClassName()
     {
-        return '\Zereri\Lib\Cache';
+        return '\Zereri\Lib\Cache\Cache';
     }
 }

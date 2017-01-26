@@ -1,0 +1,1 @@
+{"\/api\/list":{"GET":["Api","index",null,null]},"\/test":{"GET":["First","hello",["Test","Example","Example"],null]},"\/test\/{word}":{"POST":["First","aaa",["Test","Example","Test"],null],"GET":["First","aaa",["Test","Example"],null]}}

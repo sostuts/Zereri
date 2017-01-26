@@ -1,9 +1,9 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Cache;
 
 class Redis
 {
-    /**redis连接
+    /**redis实例
      *
      * @var \Redis
      */
@@ -12,15 +12,11 @@ class Redis
 
     public function __construct()
     {
-        $this->redis = Register::get("redis") ?: $this->registerInstance();
+        $this->redis = Register::get("redis") ?: $this->newInstanceAndAddToRegister();
     }
 
 
-    /**注册redis实例
-     *
-     * @return \Redis
-     */
-    protected function registerInstance()
+    protected function newInstanceAndAddToRegister()
     {
         $instance = $this->newInstance();
         Register::set("redis", $instance);
@@ -29,10 +25,6 @@ class Redis
     }
 
 
-    /**实例化、连接redis服务器
-     *
-     * @return \Redis
-     */
     protected function newInstance()
     {
         $config = config("redis");
@@ -44,14 +36,6 @@ class Redis
     }
 
 
-    /**连接单台redis服务器
-     *
-     * @param $host
-     * @param $port
-     * @param $auth
-     *
-     * @return \Redis
-     */
     protected function connectSingleRedis($host, $port, $auth)
     {
         $instance = new \Redis();
@@ -62,54 +46,34 @@ class Redis
     }
 
 
-    /**predis连接redis集群
-     *
-     * @param $hosts
-     * @param $auth
-     *
-     * @return \Predis\Client
-     */
     protected function conncetClusterRedis($hosts, $auth)
     {
         $options = [
             'cluster'    => 'redis',
             'parameters' => [
                 'password' => $auth
-            ]];
+            ]
+        ];
 
         return new \Predis\Client($hosts, $options);
     }
 
 
-    /**添加或者修改数据
-     *
-     * @param        $key
-     * @param string $value
-     * @param string $time
-     *
-     * @return bool|int
-     */
     public function set($key, $value = "", $time = "")
     {
         if (is_array($key)) {
             $time = $value;
             foreach ($key as $each_key => $each_value) {
-                $this->redis->setex($each_key, $time ?: config("cache")["time"], $each_value);
+                $this->redis->setex($each_key, $time ?: config("cache.time"), $each_value);
             }
 
             return 1;
         }
 
-        return $this->redis->setex($key, $time ?: config("cache")["time"], $value);
+        return $this->redis->setex($key, $time ?: config("cache.time"), $value);
     }
 
 
-    /**获取数据
-     *
-     * @param $key
-     *
-     * @return array|bool|string
-     */
     public function get($key)
     {
         if (is_array($key)) {
@@ -125,48 +89,24 @@ class Redis
     }
 
 
-    /**判断键是否存在
-     *
-     * @param $key
-     *
-     * @return bool
-     */
     public function has($key)
     {
         return $this->redis->exists($key);
     }
 
 
-    /**键值增加
-     *
-     * @param     $key
-     * @param int $num
-     *
-     * @return int
-     */
     public function increment($key, $num = 1)
     {
         return $this->redis->incrby($key, $num);
     }
 
 
-    /**键值减少
-     *
-     * @param     $key
-     * @param int $num
-     *
-     * @return int
-     */
     public function decrement($key, $num = 1)
     {
         return $this->redis->decrby($key, $num);
     }
 
 
-    /**清空所有数据
-     *
-     * @return bool
-     */
     public function flush()
     {
         return $this->redis->flushAll();

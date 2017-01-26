@@ -3,55 +3,30 @@ namespace Zereri\Lib;
 
 class Session
 {
-    /**设置session值
-     *
-     * @param $key
-     * @param $value
-     *
-     * @throws UserException
-     */
     public static function set($key, $value)
     {
-        self::isStart();
-        $session =& self::getSession($key);
+        self::isStartOrNotStartSession();
+        $session =& self::getSessionSelf($key);
         $session = $value;
     }
 
 
-    /**获取session值
-     *
-     * @param $key
-     *
-     * @return mixed
-     * @throws UserException
-     */
     public static function get($key)
     {
-        self::isStart();
-        $value = $session =& self::getSession($key);
+        self::isStartOrNotStartSession();
+        $value = $session =& self::getSessionSelf($key);
 
         return $value;
     }
 
 
-    /**清空指定session值
-     *
-     * @param $key
-     */
     public static function remove($key)
     {
         self::set($key, NULL);
     }
 
 
-    /**获取session对象
-     *
-     * @param $key
-     *
-     * @return mixed
-     * @throws UserException
-     */
-    protected static function &getSession($key)
+    protected static function &getSessionSelf($key)
     {
         $keys = explode('.', $key);
         switch (count($keys)) {
@@ -67,27 +42,54 @@ class Session
             case 5:
                 return $_SESSION[ $keys[0] ][ $keys[1] ][ $keys[2] ][ $keys[3] ][ $keys[4] ];
             default:
-                throw new UserException('Out of the index!');
+                throw new UserException('Out Of The Session Index!');
         }
     }
 
 
-    /**
-     *  判断是否开启 & 启动session
-     */
-    protected static function isStart()
+    protected static function isStartOrNotStartSession()
     {
         if (!isset($_SESSION)) {
-            $drive = $GLOBALS['user_config']['session']['drive'];
-            if ("file" === $drive) {
-                session_save_path($GLOBALS['config']['session']['path']);
-            } else {
-                ini_set("session.save_handler", $drive);
-                ini_set("session.save_path", "tcp://" . implode(":", isset($GLOBALS['user_config'][ $drive ]['server'][0]) ? $GLOBALS['user_config'][ $drive ]['server'][0] : $GLOBALS['user_config'][ $drive ]['server']));
-            }
+            self::setSessionSavePath();
+            self::setHttpOnlyCookie();
 
-            session_set_cookie_params(0, "/", "", FALSE, TRUE);
             session_start();
         }
+    }
+
+
+    protected static function setSessionSavePath()
+    {
+        switch (config("session.drive")) {
+            case "file":
+                session_save_path($GLOBALS['config']['session']['path']);
+                break;
+            case "memcached":
+                self::setSessionSaveIni("memcached", self::implodeServerArrayToString(config("memcached.server.0")));
+                break;
+            case "redis":
+                $path = config("redis.cluster") ? config("redis.server.0") : self::implodeServerArrayToString(config("redis.server"));
+                self::setSessionSaveIni("redis", $path);
+                break;
+        }
+    }
+
+
+    protected static function implodeServerArrayToString($server_array)
+    {
+        return implode(":", $server_array);
+    }
+
+
+    protected static function setSessionSaveIni($drive, $path)
+    {
+        ini_set("session.save_handler", $drive);
+        ini_set("session.save_path", $path);
+    }
+
+
+    protected static function setHttpOnlyCookie()
+    {
+        session_set_cookie_params(0, "/", "", FALSE, TRUE);
     }
 }

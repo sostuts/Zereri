@@ -22,7 +22,16 @@ function TB($table = '')
 }
 
 
-function config($name)
+function &config($config_name)
 {
-    return $GLOBALS["user_config"][ $name ];
+    $config_self =& \Zereri\Lib\Basic\Config::getConfigSelf($config_name);
+
+    return $config_self;
+}
+
+function isConfigExist($config_name)
+{
+    $config_self =& \Zereri\Lib\Basic\Config::getConfigSelf($config_name);
+
+    return isset($config_self);
 }

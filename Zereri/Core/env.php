@@ -4,7 +4,7 @@
  */
 $GLOBALS['config'] = require_once __ROOT__ . '/Zereri/Config/config.php';
 $GLOBALS['user_config'] = array_merge(require_once __ROOT__ . '/App/Config/config.php', require_once __ROOT__ . '/App/Config/cache.php', require_once __ROOT__ . '/App/Config/database.php');
-$GLOBALS['route'] = require_once __ROOT__ . "/App/Config/route.php";
+$GLOBALS['user_config']['route'] = require_once __ROOT__ . "/App/Config/route.php";
 
 /**
  * 日志配置

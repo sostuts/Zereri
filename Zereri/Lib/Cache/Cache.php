@@ -1,5 +1,5 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Cache;
 
 class Cache
 {
@@ -10,8 +10,9 @@ class Cache
         return (new $class)->$func(...$arguments);
     }
 
+
     protected function getClass()
     {
-        return '\Zereri\Lib\\'.ucfirst(config("cache")["drive"]);
+        return ucfirst(config("cache.drive"));
     }
 }

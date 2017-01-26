@@ -11,9 +11,6 @@ class UserException extends Exception
     }
 
 
-    /**
-     * 捕捉异常
-     */
     public static function catchException()
     {
         set_exception_handler(function ($exception) {
@@ -22,10 +19,6 @@ class UserException extends Exception
     }
 
 
-    /**输出异常信息
-     *
-     * @param $content
-     */
     private static function catchExceptionCallFunc($content)
     {
         $err_content = "Exception:" . $content;

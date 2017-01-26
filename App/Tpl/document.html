@@ -10,8 +10,7 @@
     <script type="text/javascript" src="<{$root_path}>/js/index.js"></script>
     <script type="text/javascript" src="<{$root_path}>/js/navScroll.js"></script>
     <script type="text/javascript" src="<{$root_path}>/js/copy.js"></script>
-    <script type="text/javascript" src="<{$root_path}>/js/form.js"></script>
-    <title>API || Document</title>
+    <title></title>
 </head>
 <body>
 <aside>
@@ -32,59 +31,112 @@
 
     <{$i=0}>
     <{if $version_control eq TRUE}>
-    <{$index=0}>
-    <{foreach $data as $version => $document}>
-    <ul class="navigation clearfix list" id="navigation<{$index}>">
-        <{foreach $document as $group => $apis}>
-        <div class="aside-title"><{$group}></div>
-        <ul>
-            <{foreach $apis as $title => $api}>
-            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:20}></a></li>
-            <{$i=$i+1}>
-            <{/foreach}>
-        </ul>
+        <{$index=0}>
+        <{foreach $data as $version => $document}>
+            <ul class="navigation clearfix list" id="navigation<{$index}>">
+                <{foreach $document as $group => $apis}>
+                <div class="aside-title"><{$group}></div>
+                <ul>
+                    <{foreach $apis as $title => $api}>
+                    <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+                    <{$i=$i+1}>
+                    <{/foreach}>
+                </ul>
+                <{/foreach}>
+            </ul>
+            <{$index=$index+1}>
         <{/foreach}>
-    </ul>
-    <{$index=$index+1}>
-    <{/foreach}>
     <{else}>
-    <ul class="navigation clearfix list" id="navigation0">
-        <{foreach $data as $group => $apis}>
-        <div class="aside-title"><{$group}></div>
-        <ul>
-            <{foreach $apis as $title => $api}>
-            <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
-            <{$i=$i+1}>
+        <ul class="navigation clearfix list" id="navigation0">
+            <{foreach $data as $group => $apis}>
+            <div class="aside-title"><{$group}></div>
+            <ul>
+                <{foreach $apis as $title => $api}>
+                <li><a href="#box-<{$i}>" title="<{$title}>"><{$title|truncate:30}></a></li>
+                <{$i=$i+1}>
+                <{/foreach}>
+            </ul>
             <{/foreach}>
         </ul>
-        <{/foreach}>
-    </ul>
     <{/if}>
 </aside>
 
 <{$i=0}>
 <{if $version_control eq TRUE}>
-<{foreach $data as $version => $document}>
-<div class="right edition">
-    <{foreach $document as $group => $apis}>
-    <{foreach $apis as $title => $api}>
-    <{include 'doc_common.html'}>
-    <{$i=$i+1}>
+    <{foreach $data as $version => $document}>
+        <div class="right edition">
+            <{foreach $document as $group => $apis}>
+                <{foreach $apis as $title => $api}>
+                    <{include 'doc_common.html'}>
+                    <{$i=$i+1}>
+                <{/foreach}>
+            <{/foreach}>
+        </div>
     <{/foreach}>
-    <{/foreach}>
-</div>
-<{/foreach}>
 <{else}>
-<div class="right edition">
-    <{foreach $data as $group => $apis}>
-    <{foreach $apis as $title => $api}>
-    <{include 'doc_common.html'}>
-    <{$i=$i+1}>
-    <{/foreach}>
-    <{/foreach}>
-</div>
+    <div class="right edition">
+        <{foreach $data as $group => $apis}>
+            <{foreach $apis as $title => $api}>
+                <{include 'doc_common.html'}>
+                <{$i=$i+1}>
+            <{/foreach}>
+        <{/foreach}>
+    </div>
 <{/if}>
 
+
 </body>
-<script type="text/javascript" src="<{$root_path}>/js/ready.js"></script>
+<script type="text/javascript">
+    new navScroll({
+        nav: {
+            id: 'navigation0',
+            current: 'current',
+            speed: 25,
+            fixPx: 0
+        }
+    });
+
+    $(function () {
+        $(".button").click(function () {
+            var id = $(this).attr("name");
+            var title = $(this).parent().siblings(".send-title");
+            var response = $(this).parent().siblings(".response-content");
+            $.ajax({
+                method: $(this).parent().find("input.api_url").attr("title"),
+                url: $(this).parent().find("input.api_url").val(),
+                data: getParamsJsonData(this, "params"),
+                headers: getParamsJsonData(this, "headers"),
+                success: function (data) {
+                    title.show(1000);
+                    response.hide().show(1000);
+                    decodeJson("return_" + id, data, $(".aside-head span").eq(0).attr("title"));
+                }
+            });
+        });
+
+        function getParamsJsonData($this, $type) {
+            var data = {};
+            var self = $($this).parent().find("." + $type);
+            var values = $($this).parent().find("." + $type + "_val");
+            var type = $($this).parent().find("." + $type + "_type");
+            var size = self.size();
+            for (var i = 0; i < size; i++) {
+                if (self.eq(i).is(":checked")) {
+                    data[self.eq(i).val()] = (type.eq(i).html() == "int") ? Number(values.eq(i).val()) : values.eq(i).val();
+                }
+            }
+
+            return JSON.parse(JSON.stringify(data));
+        }
+    });
+
+    var clipboard = new Clipboard('.copy_content');
+    clipboard.on('success', function (e) {
+        console.log("Successfully Copy!");
+    });
+
+    clipboard.on('error', function (e) {
+        alert("请使用升级或更换浏览器！");
+    })
+</script>
 </html>

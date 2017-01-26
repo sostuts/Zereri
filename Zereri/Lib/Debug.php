@@ -5,20 +5,12 @@ use Zereri\Lib\Replacement\Smarty;
 
 class Debug
 {
-    /**是否为调试模式
-     *
-     * @return bool
-     */
     public static function isDebug()
     {
-        return ($GLOBALS['user_config']['debug'] === true);
+        return config("debug");
     }
 
 
-    /**输出错误信息
-     *
-     * @param $err_content
-     */
     public static function outputError($err_content)
     {
         if (self::isDebug()) {
@@ -31,13 +23,9 @@ class Debug
     }
 
 
-    /**get || post
-     *
-     * @param string $err_content
-     */
     protected static function echoErrorMsg($err_content = "")
     {
-        if ("POST" === $_SERVER['REQUEST_METHOD']) {
+        if (Request::isPost_Put_Patch()) {
             print_r("Something Wrong! " . $err_content);
         } else {
             self::loadErrorHtml($err_content);
@@ -45,10 +33,6 @@ class Debug
     }
 
 
-    /**加载错误页面
-     *
-     * @param string $err_content
-     */
     protected static function loadErrorHtml($err_content)
     {
         Smarty::load("error.html", ["content" => $err_content]);

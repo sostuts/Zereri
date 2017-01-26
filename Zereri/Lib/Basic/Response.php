@@ -1,5 +1,5 @@
 <?php
-namespace Zereri\Lib;
+namespace Zereri\Lib\Basic;
 
 use Zereri\Lib\Replacement\Smarty;
 
@@ -34,32 +34,34 @@ class Response
     }
 
 
-    /**
-     * 输出序列化之后的内容
-     */
     public function send()
     {
-        $this->{$this->mode}()->output();
+        switch ($this->mode) {
+            case "json":
+                $this->isArrayContentAndJsonEncode()->output();
+                break;
+            case "xml":
+                $this->xmlFormatContent()->output();
+                break;
+            case "text":
+                $this->textFormatContent()->output();
+                break;
+            case "html":
+                $this->loadHtmlAndSmartyRender();
+                break;
+        }
     }
 
 
-    /**json格式
-     *
-     * @return $this
-     */
-    private function json()
+    private function isArrayContentAndJsonEncode()
     {
-        $this->content = json_encode($this->content);
+        $this->content = is_array($this->content) ? json_encode($this->content) : $this->content;
 
         return $this;
     }
 
 
-    /**xml格式
-     *
-     * @return $this
-     */
-    private function xml()
+    private function xmlFormatContent()
     {
         $this->content = (new Xml($this->content))->create();
 
@@ -67,29 +69,19 @@ class Response
     }
 
 
-    /**纯文本
-     *
-     * @return $this
-     */
-    private function text()
+    private function textFormatContent()
     {
         return $this;
     }
 
 
-    /**
-     * html解析
-     */
-    private function html()
+    private function loadHtmlAndSmartyRender()
     {
         Smarty::load($this->file, $this->content);
 
         die();
     }
 
-    /**
-     * print
-     */
     private function output()
     {
         print_r($this->content);
