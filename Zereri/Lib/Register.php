@@ -12,13 +12,19 @@ class Register
 
     public static function get($name)
     {
-        return isset(self::$instance[ $name ]) ? self::$instance[ $name ] : "";
+        return self::has($name) ? self::$instance[ $name ] : "";
     }
 
 
     public static function set($name, $value)
     {
         self::$instance[ $name ] = $value;
+    }
+
+
+    public static function has($name)
+    {
+        return isset(self::$instance[ $name ]);
     }
 
 

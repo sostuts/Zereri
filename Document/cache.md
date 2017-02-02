@@ -15,7 +15,7 @@ return [
      * 缓存配置
      */
     'cache'     => [
-        "drive" => "redis",		//选择使用redis或者memcached
+        "drive" => "redis",		//可以选择使用 file 或 redis 或 memcached
         'time'  => 3600			//数据的默认过期时间
     ],
 
@@ -64,7 +64,7 @@ Cache::set("key", "value", "time");
 
 //多条数据
 Cache::set([
-  "key1" => "value1",
+  "key1" => "value1",    //若value为数组，请先序列化value
   "key2" => "value2"
 ], "time");
 ```

@@ -2,6 +2,7 @@
 namespace Zereri\Lib;
 
 use Zereri\Lib\Replacement\Smarty;
+use Zereri\Lib\Basic\Request;
 
 class Debug
 {

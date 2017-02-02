@@ -2,6 +2,7 @@
 namespace Zereri\Lib\Basic;
 
 use Zereri\Lib\Db\Sql;
+use Zereri\Lib\Register;
 
 class Factory
 {

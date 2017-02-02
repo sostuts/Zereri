@@ -1,7 +1,7 @@
 <?php
 namespace Zereri\Lib\Cache;
 
-class Redis
+class Redis implements \Zereri\Lib\Interfaces\Cache
 {
     /**redis实例
      *
@@ -12,16 +12,7 @@ class Redis
 
     public function __construct()
     {
-        $this->redis = Register::get("redis") ?: $this->newInstanceAndAddToRegister();
-    }
-
-
-    protected function newInstanceAndAddToRegister()
-    {
-        $instance = $this->newInstance();
-        Register::set("redis", $instance);
-
-        return $instance;
+        $this->redis = $this->newInstance();
     }
 
 
@@ -62,9 +53,9 @@ class Redis
     public function set($key, $value = "", $time = "")
     {
         if (is_array($key)) {
-            $time = $value;
+            $time = $value ?: config("cache.time");
             foreach ($key as $each_key => $each_value) {
-                $this->redis->setex($each_key, $time ?: config("cache.time"), $each_value);
+                $this->redis->setex($each_key, $time, $each_value);
             }
 
             return 1;
@@ -92,6 +83,12 @@ class Redis
     public function has($key)
     {
         return $this->redis->exists($key);
+    }
+
+
+    public function delete($key)
+    {
+        return $this->redis->del($key);
     }
 
 

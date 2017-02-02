@@ -1,18 +1,44 @@
 <?php
 namespace Zereri\Lib\Cache;
 
+use Zereri\Lib\Register;
+
 class Cache
 {
     public function __call($func, $arguments)
     {
-        $class = $this->getClass();
+        if ($this->isFirstCallCache()) {
+            $class = $this->getCacheClassName();
+            $cache_instance = new $class;
+            $this->registerCacheInstance($cache_instance);
+        } else {
+            $cache_instance = $this->getCacheInstance();
+        }
 
-        return (new $class)->$func(...$arguments);
+        return $cache_instance->$func(...$arguments);
     }
 
 
-    protected function getClass()
+    protected function isFirstCallCache()
     {
-        return ucfirst(config("cache.drive"));
+        return !Register::has("CacheInstance");
+    }
+
+
+    protected function registerCacheInstance($cache_instance)
+    {
+        Register::set("CacheInstance", $cache_instance);
+    }
+
+
+    protected function getCacheInstance()
+    {
+        return Register::get("CacheInstance");
+    }
+
+
+    protected function getCacheClassName()
+    {
+        return "\Zereri\Lib\Cache\\" . ucfirst(config("cache.drive"));
     }
 }

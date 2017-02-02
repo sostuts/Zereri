@@ -25,6 +25,7 @@ Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，�
 | ----------- | ------------- |
 | Config      | 配置文件          |
 | Controllers | 控制器文件         |
+| FileCache   | 缓存文件          |
 | Lib         | 自己封装的类库       |
 | Models      | 模型文件          |
 | Session     | 默认存放session文件 |

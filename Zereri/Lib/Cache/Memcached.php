@@ -1,7 +1,7 @@
 <?php
 namespace Zereri\Lib\Cache;
 
-class Memcached
+class Memcached implements \Zereri\Lib\Interfaces\Cache
 {
     /**memcache对象
      *
@@ -12,16 +12,7 @@ class Memcached
 
     public function __construct()
     {
-        $this->memcached = Register::get("memcached") ?: $this->newInstanceAndAddToRegister();
-    }
-
-
-    protected function newInstanceAndAddToRegister()
-    {
-        $instance = $this->newInstance();
-        Register::set("memcached", $instance);
-
-        return $instance;
+        $this->memcached = $this->newInstance();
     }
 
 

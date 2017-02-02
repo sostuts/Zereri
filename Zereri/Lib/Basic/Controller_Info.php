@@ -55,7 +55,7 @@ class Controller_Info
             foreach ($each_route_value_array as $method => $each_route_value) {
                 $controller_class = NULL;
                 $controller_method = NULL;
-                $controller_middlewares = NULL;
+                $controller_middlewares = $this->getRouteGlobalMiddleWares();
                 $callback = NULL;
 
                 if (is_callable($each_route_value)) {
@@ -65,7 +65,7 @@ class Controller_Info
                 } else {
                     list($controller_class, $controller_method) = $this->getControllerClass_Method($each_route_value[0]);
 
-                    $controller_middlewares = $this->getControllerMiddleWares($each_route_value);
+                    $controller_middlewares = $this->getControllerMiddleWares($each_route_value, $controller_middlewares);
                 }
 
                 $controller_info_arr[ $each_config_route ][ $method ] = [$controller_class, $controller_method, $controller_middlewares, $callback];
@@ -88,13 +88,18 @@ class Controller_Info
     }
 
 
-    private function getControllerMiddleWares(&$route_value)
+    private function getRouteGlobalMiddleWares()
+    {
+        $global_middlewares_group_name = "ALL";
+
+        return $this->getControllerMiddleWaresArrayFromMiddleWareGroups($global_middlewares_group_name, true);
+    }
+
+
+    private function getControllerMiddleWares(&$route_value, $global_middlewares)
     {
         $middlewares =& $route_value[1];
         $middleware_group_name =& $route_value[2];
-        $global_middlewares_group_name = "ALL";
-
-        $global_middlewares = $this->getControllerMiddleWaresArrayFromMiddleWareGroups($global_middlewares_group_name, true);
 
         $route_value_middlewares = $this->getControllerMiddleWaresArraryFromRouteValue($middlewares);
 
