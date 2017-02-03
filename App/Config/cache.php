@@ -4,7 +4,7 @@ return [
      * 缓存配置
      */
     'cache'     => [
-        "drive" => "redis",
+        "drive" => "file",
         'time'  => 3600
     ],
 
