@@ -20,7 +20,7 @@ return [
     /**
      * 版本控制
      */
-    'version_control' => true,
+    'version_control' => false,
 
 
     /**
@@ -46,10 +46,10 @@ return [
      */
     'aliases'         => [
         'Api'                     => Zereri\Lib\Replacement\Api::class,
-        'Factory'                 => Zereri\Lib\Factory::class,
-        'App\Models\Model'        => Zereri\Lib\Model::class,
-        'App\Queues\InQueue'      => Zereri\Lib\InQueue::class,
-        'App\Middles\MiddleWare'  => Zereri\Lib\MiddleWare::class,
+        'Factory'                 => Zereri\Lib\Basic\Factory::class,
+        'App\Models\Model'        => Zereri\Lib\Db\Model::class,
+        'App\Queues\InQueue'      => Zereri\Lib\Interfaces\InQueue::class,
+        'App\Middles\MiddleWare'  => Zereri\Lib\Interfaces\MiddleWare::class,
         'App\Controllers\Smarty'  => Zereri\Lib\Replacement\Smarty::class,
         'App\Controllers\Session' => Zereri\Lib\Replacement\Session::class,
         'App\Controllers\Cache'   => Zereri\Lib\Replacement\Cache::class
