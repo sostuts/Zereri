@@ -23,4 +23,4 @@ $request = Factory::newRequest();
 
 $controller = Factory::newController();
 
-$controller->setPostData($request->data())->call();
+$controller->setPostData($request->getData())->call();
