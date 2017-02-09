@@ -47,7 +47,7 @@ class Document
     }
 
 
-    public function init()
+    public function show()
     {
         $this->setApiArray()->apiDocToHtml();
     }

@@ -5,6 +5,6 @@ class Api extends Common
 {
     protected static function getClassName()
     {
-        return '\Zereri\Lib\Api';
+        return '\Zereri\Lib\Document';
     }
 }
