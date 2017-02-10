@@ -171,22 +171,6 @@
             response.hide().show(1000);
             decodeJson(id, $data, $(".aside-head span").eq(0).attr("title"));
         }
-
-        $("input.api_url").focus(function () {
-            $(this).siblings(".copy").hide(500);
-        });
-
-        $("input.api_url").blur(function () {
-            $(this).siblings(".copy").show(500);
-        });
-
-        $(".file_input").click(function () {
-            $(this).siblings("input[type='file']").click();
-        });
-
-        $("input[type='file']").change(function () {
-            $(this).siblings(".file_input").val(this.files[0].name);
-        });
     });
 
     var clipboard = new Clipboard('.copy_content');

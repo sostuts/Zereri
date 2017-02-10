@@ -27,7 +27,12 @@ class Controller_Info
 
     public function getControllerInfoArrayByRequestConfigRoute($request_config_route)
     {
-        return $this->haveNewRoutesAndSaveNewIndexToFile_GetAllControllerInfoArray()[ $request_config_route ][ $_SERVER["REQUEST_METHOD"] ];
+        $request_controller_info_array =& $this->haveNewRoutesAndSaveNewIndexToFile_GetAllControllerInfoArray()[ $request_config_route ][ $_SERVER["REQUEST_METHOD"] ];
+        if (!isset($request_controller_info_array)) {
+            Common::response404NotFount();
+        }
+
+        return $request_controller_info_array;
     }
 
 
