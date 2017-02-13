@@ -48,17 +48,18 @@ Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，�
 
 - /App/Config/config.php 文件包含以下配置
 
-| 名称              | 说明             |
-| --------------- | -------------- |
-| log             | 日志记录方式         |
-| debug           | 调试模式           |
-| version_control | 路由版本控制         |
-| https_port      | 程序的HTTPS端口     |
-| smarty          | 基本配置           |
-| aliases         | 类的别名           |
-| session         | session配置      |
-| headers         | 允许携带的HTTP头部字段名 |
-| status_code     | HTTP返回状态码      |
+| 名称              | 说明               |
+| --------------- | ---------------- |
+| log             | 日志记录方式           |
+| debug           | 调试模式             |
+| version_control | 路由版本控制           |
+| https_port      | 程序的HTTPS端口       |
+| smarty          | 基本配置             |
+| aliases         | 类的别名             |
+| session         | session配置        |
+| origin          | 允许跨域的源地址，默认为允许全部 |
+| headers         | 允许携带的HTTP头部字段名   |
+| status_code     | HTTP返回状态码        |
 
 - /App/Config/cache.php 文件包含缓存的配置，具体介绍请在**缓存**文档查看。
 - /App/Config/database.php 文件包含数据库的配置，具体介绍请在**查询构造器**文档查看。
