@@ -2,7 +2,7 @@
 
 ### 前言
 
-    Zereri，PHP框架，一个专为**前后端分离**而写的轻量级框架，采用了主流的mvc架构，同时附加了一些实用的功能，让项目的开发变得更便捷。
+    Zereri，PHP框架，一个适用但不仅限于**开发后端接口**的轻量级框架，采用了主流的mvc架构，同时附加了一些实用的功能，让项目的开发变得更便捷。
 
 <br/>
 
@@ -27,29 +27,28 @@ composer create-project --no-install zereri/zereri Your-Project-Name
 
 <br/>
 
-
 ### 目录结构
 
-- App     (项目代码文件)
-
-| 文件夹         | 说明            |
-| ----------- | ------------- |
-| Config      | 配置文件          |
-| Controllers | 控制器文件         |
-| FileCache   | 缓存文件          |
-| Lib         | 自己封装的类库       |
-| Models      | 模型文件          |
-| Session     | 默认存放session文件 |
-| Tpl         | 存放view层模板     |
-| Middles     | 中间件类          |
-| Queues      | 队列任务类         |
-| Smarty      | 模板引擎配置、编译文件   |
-
-- logs      (日志文件)
-- public  (前端文件，如\*.html、\*.css 、*.image)
-- tests    (测试文件)
-- vendor(Composer扩展)
-- Zereri  (框架文件)
+```bash
+Zereri-1.0
+├── App
+│   ├── Config			 # 配置文件
+│   ├── Controllers	      # 控制器文件
+│   ├── FileCach   	   	  # 缓存文件
+│   ├── Lib			     # 自己封装的类
+│   ├── Middles			 # 中间件类
+│   ├── Models 	  		 # 模型文件
+│   ├── Queues 	   		 # 队列任务类
+│   ├── Session	 	   	 # 存放session文件
+│   ├── Smarty 	   	  	 # 模板引擎配置、编译文件
+│   └── Tpl				# 存放view层模板
+│
+├── logs	  			# 日志文件
+├── publi	 			# 前端文件，如*.html、*.css 、*.image
+├── tests  				# 测试文件
+├── vendor 	  			# Composer扩展
+└── Zereri			   	# 框架文件
+```
 
 <br/>
 
