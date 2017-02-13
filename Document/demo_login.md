@@ -272,6 +272,7 @@ return [
      * 调用Api允许携带头部字段名
      */
     'headers'         => [
+      	"content-type",
         "authentication"
     ],
 ```
