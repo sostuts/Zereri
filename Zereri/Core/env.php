@@ -18,7 +18,8 @@ ini_set('log_errors', 1);                   //开启错误日志记录
  * 跨域设置
  */
 \Zereri\Lib\Header::set([
-    "Access-Control-Allow-Origin"  => "*",
-    "Access-Control-Allow-Methods" => "*",
-    "Access-Control-Allow-Headers" => $GLOBALS['user_config']['headers']
+    "Access-Control-Allow-Origin"      => $GLOBALS['user_config']['origin'],
+    "Access-Control-Allow-Methods"     => "*",
+    "Access-Control-Allow-Credentials" => "true",
+    "Access-Control-Allow-Headers"     => $GLOBALS['user_config']['headers']
 ]);
