@@ -34,8 +34,6 @@
 
 <br/>
 
-<br/>
-
 # 常见疑问
 
 ### 为什么显示Permission denied？ 怎么解决？
@@ -44,3 +42,8 @@
 
     解决方案：给对应的目录添加写的权限。一般来说框架仅在 `/Zereri/Lib/Indexes` 、`/App/FileCache` 、`/App/Session`  、 `/App/Smarty` 、`/logs` 五个目录有写操作。
 
+
+
+### 联系方式
+
+    若您发现什么问题(如:BUG)或有什么疑问，请提交Issue或 Email: me@zeffee.com。
