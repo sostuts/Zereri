@@ -70,7 +70,7 @@ return [
 ];
 ```
 
-    GET方式访问 /login/{username}/{password} 则会访问 `/App/Controller/Login` 类里面的 `normalLogin` 方法。
+    GET方式访问 /login/{username}/{password} 则会访问 `/App/Controllers/Login` 类里面的 `normalLogin` 方法。
 
 <br/>
 
@@ -141,7 +141,7 @@ class Login
 ```
 
 - 打开浏览器访问：`http://localhost/login/zeffee/123456`
-- 若显示的内容为 `{"status":"200"}` 、Response Header 有 `authorization : xxxxxxxxxxxxxxxxxxx`  ，则成功登陆， authorization 为调用其他接口的口令
+- 若显示的内容为 `{"status":200,"authentication":"xxxxxxxxxxxxxxxxxxxxxxxxxxx"}`  ，则成功登陆， authentication为调用其他接口的口令
 
 <br/>
 
