@@ -55,7 +55,7 @@ CREATE TABLE `user` (
 
 <br/>
 
-### 编写路由
+### 编写[路由](./route.md)
 
 - 修改 /App/Config/route.php
 
@@ -76,7 +76,7 @@ return [
 
 ### 控制器
 
-- 控制器中需要连接`user`表，则先创建User model : /App/Models/User.php
+- 控制器中需要连接`user`表，则先创建User [model](./model.md) : /App/Models/User.php
 
 ```php
 <?php
@@ -88,7 +88,7 @@ class User extends Model
 }
 ```
 
-- 创建控制器 /App/Controllers/Login.php
+- 创建[控制器](./controller.md) /App/Controllers/Login.php
 
 ```php
 <?php
@@ -129,7 +129,7 @@ class Login
 
 ### 调试
 
-- 先配置好访问路径，请参考 **访问机制** 文档。
+- 先配置好访问路径，请参考 [**访问机制** ](./visit.md)文档。
 - 插入数据至数据库，演示的数据为
 
 ```sql
@@ -154,7 +154,7 @@ class Login
 ### 免密码登录一周
 
 - 免密码登录在前面的登录功能上加一点代码，即将token保存至数据库中，当缓存的token过期后，将查询数据库，再保存至缓存当中。
-- 那再改改之前的Login控制器的代码 (为了能自己生产api文档，添加了一些注释，请参考 **Api文档生成** 文档)
+- 那再改改之前的Login控制器的代码 (为了能自己生产api文档，添加了一些注释，请参考 [**Api文档生成**](./api.md) 文档)
 
 ```php
 <?php
@@ -264,7 +264,7 @@ return [
 
 ### 获取用户信息
 
-- 获取当前登录的用户信息相当于一个需要认证的接口，需要前面登录的时候返回的 token 作为密钥来换取用户信息，现在可以思考一下，如果其他类似的接口也需要 token 作为身份验证的话，那可能就需要先走一个公用的方法，也可以用**中间件**来实现。
+- 获取当前登录的用户信息相当于一个需要认证的接口，需要前面登录的时候返回的 token 作为密钥来换取用户信息，现在可以思考一下，如果其他类似的接口也需要 token 作为身份验证的话，那可能就需要先走一个公用的方法，也可以用[**中间件**](./middleware.md)来实现。
 - 因为需要跨域传header . authentication字段, 需要先在config.php设置headers
 
 ```php

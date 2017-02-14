@@ -70,3 +70,5 @@ input: http://YourDomain/test
 
 result: `Welcome, i am Zereri !`
 
+(若打开为空白页或提示Permission denied 请参考[常见疑问](../README.md#常见疑问))
+
