@@ -22,7 +22,7 @@
 - Composer 安装:
 
 ```bash
-composer create-project --no-install zereri/zereri Your-Project-Name
+composer create-project zereri/zereri Your-Project-Name
 ```
 
 <br/>
