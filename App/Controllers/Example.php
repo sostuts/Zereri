@@ -5,10 +5,10 @@ class Example
 {
     /**样本测试
      *
-     * @return json name.Zereri
+     * @return name:Zereri
      */
     public function test()
     {
-        response(["name" => "zereri"]);
+        response(200, ["name" => "zereri"]);
     }
 }
